@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" font-family="Plus Jakarta Sans, DejaVu Sans, Noto Sans CJK SC, sans-serif">
-<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E9E4D6"/><stop offset=".55" stop-color="#F3EFE4"/><stop offset="1" stop-color="#EEF3EC"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity=".18"/></filter></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" font-family="Atkinson Hyperlegible, DejaVu Sans, Noto Sans CJK SC, sans-serif">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E6ECE9"/><stop offset=".55" stop-color="#F1F5F3"/><stop offset="1" stop-color="#EAF1EE"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity=".18"/></filter></defs>
 <rect width="900" height="680" rx="22" fill="url(#bg)"/>
-<path d="M0,0 H430 C400,120 380,220 330,300 C300,360 250,420 230,520 C215,600 200,640 190,680 H0Z" fill="#E1D9C6" opacity=".75"/>
-<path d="M0,0 H260 C230,140 200,260 150,360 C120,430 90,560 70,680 H0Z" fill="#D7CDB6" opacity=".7"/>
+<path d="M0,0 H430 C400,120 380,220 330,300 C300,360 250,420 230,520 C215,600 200,640 190,680 H0Z" fill="#D9E2DE" opacity=".75"/>
+<path d="M0,0 H260 C230,140 200,260 150,360 C120,430 90,560 70,680 H0Z" fill="#CBD7D1" opacity=".7"/>
 <path d="M440,40 C430,120 420,200 438,321 C470,420 560,470 640,520 C700,560 760,600 860,640" fill="none" stroke="#A9CBE0" stroke-width="5" stroke-linecap="round" opacity=".8"/>
 <path d="M180,40 C200,140 230,220 274,302" fill="none" stroke="#A9CBE0" stroke-width="3" opacity=".7"/>
-<path d="M48,120 L70,86 L92,120Z" fill="#C9BFA9"/><path d="M62,98 L70,86 L78,98 L73,100 L68,96Z" fill="#fff"/>
-<path d="M91,250 L110,221 L129,250Z" fill="#C9BFA9"/><path d="M104,231 L110,221 L116,231 L112,233 L108,230Z" fill="#fff"/>
-<path d="M36,380 L60,344 L84,380Z" fill="#C9BFA9"/><path d="M52,356 L60,344 L68,356 L63,359 L58,355Z" fill="#fff"/>
-<path d="M100,420 L115,397 L130,420Z" fill="#C9BFA9"/><path d="M110,405 L115,397 L120,405 L117,406 L113,404Z" fill="#fff"/>
-<path d="M230,110 L250,79 L270,110Z" fill="#C9BFA9"/><path d="M243,89 L250,79 L257,89 L252,92 L248,88Z" fill="#fff"/>
-<path d="M283,220 L300,194 L317,220Z" fill="#C9BFA9"/><path d="M294,203 L300,194 L306,203 L302,205 L298,202Z" fill="#fff"/>
-<path d="M180,560 L200,529 L220,560Z" fill="#C9BFA9"/><path d="M193,539 L200,529 L207,539 L202,542 L198,538Z" fill="#fff"/>
-<path d="M123,520 L140,494 L157,520Z" fill="#C9BFA9"/><path d="M134,503 L140,494 L146,503 L142,505 L138,502Z" fill="#fff"/>
-<path d="M316,380 L330,359 L344,380Z" fill="#C9BFA9"/><path d="M325,366 L330,359 L335,366 L332,368 L329,365Z" fill="#fff"/>
-<path d="M61,600 L80,571 L99,600Z" fill="#C9BFA9"/><path d="M74,581 L80,571 L86,581 L82,583 L78,580Z" fill="#fff"/>
-<path d="M345,90 L360,67 L375,90Z" fill="#C9BFA9"/><path d="M355,75 L360,67 L365,75 L362,76 L358,74Z" fill="#fff"/>
-<path d="M213,330 L230,304 L247,330Z" fill="#C9BFA9"/><path d="M224,313 L230,304 L236,313 L232,315 L228,312Z" fill="#fff"/>
-<path d="M245,600 L260,577 L275,600Z" fill="#C9BFA9"/><path d="M255,585 L260,577 L265,585 L262,586 L258,584Z" fill="#fff"/>
-<text x="700" y="380" font-size="13" fill="#8E9A86" font-style="italic" text-anchor="middle">Dataran Chengdu</text>
-<text x="120" y="660" font-size="13" fill="#9C8F74" font-style="italic">Pergunungan Sichuan Barat (sejuk, bersalji)</text>
+<path d="M48,120 L70,86 L92,120Z" fill="#AFC0B8"/><path d="M62,98 L70,86 L78,98 L73,100 L68,96Z" fill="#fff"/>
+<path d="M91,250 L110,221 L129,250Z" fill="#AFC0B8"/><path d="M104,231 L110,221 L116,231 L112,233 L108,230Z" fill="#fff"/>
+<path d="M36,380 L60,344 L84,380Z" fill="#AFC0B8"/><path d="M52,356 L60,344 L68,356 L63,359 L58,355Z" fill="#fff"/>
+<path d="M100,420 L115,397 L130,420Z" fill="#AFC0B8"/><path d="M110,405 L115,397 L120,405 L117,406 L113,404Z" fill="#fff"/>
+<path d="M230,110 L250,79 L270,110Z" fill="#AFC0B8"/><path d="M243,89 L250,79 L257,89 L252,92 L248,88Z" fill="#fff"/>
+<path d="M283,220 L300,194 L317,220Z" fill="#AFC0B8"/><path d="M294,203 L300,194 L306,203 L302,205 L298,202Z" fill="#fff"/>
+<path d="M180,560 L200,529 L220,560Z" fill="#AFC0B8"/><path d="M193,539 L200,529 L207,539 L202,542 L198,538Z" fill="#fff"/>
+<path d="M123,520 L140,494 L157,520Z" fill="#AFC0B8"/><path d="M134,503 L140,494 L146,503 L142,505 L138,502Z" fill="#fff"/>
+<path d="M316,380 L330,359 L344,380Z" fill="#AFC0B8"/><path d="M325,366 L330,359 L335,366 L332,368 L329,365Z" fill="#fff"/>
+<path d="M61,600 L80,571 L99,600Z" fill="#AFC0B8"/><path d="M74,581 L80,571 L86,581 L82,583 L78,580Z" fill="#fff"/>
+<path d="M345,90 L360,67 L375,90Z" fill="#AFC0B8"/><path d="M355,75 L360,67 L365,75 L362,76 L358,74Z" fill="#fff"/>
+<path d="M213,330 L230,304 L247,330Z" fill="#AFC0B8"/><path d="M224,313 L230,304 L236,313 L232,315 L228,312Z" fill="#fff"/>
+<path d="M245,600 L260,577 L275,600Z" fill="#AFC0B8"/><path d="M255,585 L260,577 L265,585 L262,586 L258,584Z" fill="#fff"/>
+<text x="700" y="380" font-size="13" fill="#7D8E88" font-style="italic" text-anchor="middle">Dataran Chengdu</text>
+<text x="120" y="660" font-size="13" fill="#7D8E88" font-style="italic">Pergunungan Sichuan Barat (sejuk, bersalji)</text>
 <g><path d="M744,571 Q607,445 523,384 Q439,322 370,316 Q301,311 226,311 L152,311" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M744,571 Q607,445 523,384 Q439,322 370,316 Q301,311 226,311 L152,311" fill="none" stroke="#D64933" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g><path d="M152,311 Q150,230 184,194 L219,159" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M152,311 Q150,230 184,194 L219,159" fill="none" stroke="#E8912D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g><path d="M219,159 Q413,177 426,250 Q439,322 523,384 L607,445" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M219,159 Q413,177 426,250 Q439,322 523,384 L607,445" fill="none" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/></g>
@@ -30,32 +30,32 @@
 <g filter="url(#sh)"><rect x="254" y="183" width="151" height="24" rx="12" fill="#8A5CC4"/><text x="330" y="200" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Van ~4j · 4pm→8pm</text></g>
 <g filter="url(#sh)"><rect x="351" y="507" width="159" height="24" rx="12" fill="#2F7FC1"/><text x="430" y="524" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Bas ~3j · 7am→10am</text></g>
 <g filter="url(#sh)"><rect x="627" y="383" width="83" height="24" rx="12" fill="#2E9A6A"/><text x="668" y="400" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Tren ~1j</text></g>
-<circle cx="744" cy="571" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="730" y="605" font-size="15" font-weight="800" fill="#1E2321" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Tianfu Airport (TFU) <tspan font-size="12" font-weight="600" fill="#6B716E">天府机场</tspan></text>
-<text x="730" y="622" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Tiba 22:40 · 7 Jan</text>
-<circle cx="607" cy="445" r="11" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="623" y="451" font-size="17" font-weight="800" fill="#1E2321" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Chengdu <tspan font-size="12" font-weight="600" fill="#6B716E">成都</tspan></text>
-<text x="623" y="468" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Hotel 3 malam</text>
-<circle cx="439" cy="322" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="453" y="290" font-size="15" font-weight="800" fill="#1E2321" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Dujiangyan <tspan font-size="12" font-weight="600" fill="#6B716E">都江堰</tspan></text>
-<text x="453" y="305" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Panda Valley · Old Town</text>
-<circle cx="152" cy="311" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="152" y="347" font-size="15" font-weight="800" fill="#1E2321" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Siguniang <tspan font-size="12" font-weight="600" fill="#6B716E">四姑娘山</tspan></text>
-<text x="152" y="364" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">~3,200m · Shuangqiao</text>
-<circle cx="219" cy="159" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="203" y="153" font-size="15" font-weight="800" fill="#1E2321" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Bipenggou <tspan font-size="12" font-weight="600" fill="#6B716E">毕棚沟</tspan></text>
-<text x="203" y="170" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Lembah salji</text>
-<circle cx="271" cy="445" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="271" y="481" font-size="15" font-weight="800" fill="#1E2321" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Xiling Snow Mtn <tspan font-size="12" font-weight="600" fill="#6B716E">西岭雪山</tspan></text>
-<text x="271" y="498" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Ski · cable car</text>
-<text x="301" y="333" font-size="11" fill="#8a7f68" text-anchor="middle" font-style="italic">via Wolong · Balang</text>
+<circle cx="744" cy="571" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="730" y="605" font-size="15" font-weight="800" fill="#18282D" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Tianfu Airport (TFU) <tspan font-size="12" font-weight="600" fill="#6B716E">天府机场</tspan></text>
+<text x="730" y="622" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Tiba 22:40 · 7 Jan</text>
+<circle cx="607" cy="445" r="11" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="623" y="451" font-size="17" font-weight="800" fill="#18282D" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Chengdu <tspan font-size="12" font-weight="600" fill="#6B716E">成都</tspan></text>
+<text x="623" y="468" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Hotel 3 malam</text>
+<circle cx="439" cy="322" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="453" y="290" font-size="15" font-weight="800" fill="#18282D" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Dujiangyan <tspan font-size="12" font-weight="600" fill="#6B716E">都江堰</tspan></text>
+<text x="453" y="305" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Panda Valley · Old Town</text>
+<circle cx="152" cy="311" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="152" y="347" font-size="15" font-weight="800" fill="#18282D" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Siguniang <tspan font-size="12" font-weight="600" fill="#6B716E">四姑娘山</tspan></text>
+<text x="152" y="364" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">~3,200m · Shuangqiao</text>
+<circle cx="219" cy="159" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="203" y="153" font-size="15" font-weight="800" fill="#18282D" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Bipenggou <tspan font-size="12" font-weight="600" fill="#6B716E">毕棚沟</tspan></text>
+<text x="203" y="170" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Lembah salji</text>
+<circle cx="271" cy="445" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="271" y="481" font-size="15" font-weight="800" fill="#18282D" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Xiling Snow Mtn <tspan font-size="12" font-weight="600" fill="#6B716E">西岭雪山</tspan></text>
+<text x="271" y="498" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Ski · cable car</text>
+<text x="301" y="333" font-size="11" fill="#6F807A" text-anchor="middle" font-style="italic">via Wolong · Balang</text>
 <g filter="url(#sh)"><rect x="560" y="28" width="312" height="196" rx="16" fill="#fff"/></g>
-<text x="580" y="58" font-size="18" font-weight="800" fill="#1E2321">Laluan Trip Chengdu</text>
+<text x="580" y="58" font-size="18" font-weight="800" fill="#18282D">Laluan Trip Chengdu</text>
 <text x="580" y="78" font-size="12" fill="#6B716E">7 – 12 Jan 2027 · peta ringkas, bukan ikut skala</text>
-<line x1="582" y1="104" x2="612" y2="104" stroke="#D64933" stroke-width="5" stroke-linecap="round"/><text x="622" y="108" font-size="13" fill="#1E2321">Hari 2: Airport → Siguniang</text>
-<line x1="582" y1="127" x2="612" y2="127" stroke="#E8912D" stroke-width="5" stroke-linecap="round"/><text x="622" y="131" font-size="13" fill="#1E2321">Hari 3: Siguniang → Bipenggou</text>
-<line x1="582" y1="150" x2="612" y2="150" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 5"/><text x="622" y="154" font-size="13" fill="#1E2321">Hari 3: Bipenggou → Chengdu</text>
-<line x1="582" y1="173" x2="612" y2="173" stroke="#2F7FC1" stroke-width="5" stroke-linecap="round"/><text x="622" y="177" font-size="13" fill="#1E2321">Hari 4: Chengdu ⇄ Xiling</text>
-<line x1="582" y1="196" x2="612" y2="196" stroke="#2E9A6A" stroke-width="5" stroke-linecap="round"/><text x="622" y="200" font-size="13" fill="#1E2321">Hari 5: Chengdu ⇄ Dujiangyan</text>
-<g transform="translate(846,620)"><circle r="20" fill="#fff" opacity=".85"/><path d="M0,-14 L5,2 L0,-2 L-5,2Z" fill="#1E2321"/><text y="15" font-size="10" font-weight="800" text-anchor="middle" fill="#1E2321">U</text></g>
+<line x1="582" y1="104" x2="612" y2="104" stroke="#D64933" stroke-width="5" stroke-linecap="round"/><text x="622" y="108" font-size="13" fill="#18282D">Hari 2: Airport → Siguniang</text>
+<line x1="582" y1="127" x2="612" y2="127" stroke="#E8912D" stroke-width="5" stroke-linecap="round"/><text x="622" y="131" font-size="13" fill="#18282D">Hari 3: Siguniang → Bipenggou</text>
+<line x1="582" y1="150" x2="612" y2="150" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 5"/><text x="622" y="154" font-size="13" fill="#18282D">Hari 3: Bipenggou → Chengdu</text>
+<line x1="582" y1="173" x2="612" y2="173" stroke="#2F7FC1" stroke-width="5" stroke-linecap="round"/><text x="622" y="177" font-size="13" fill="#18282D">Hari 4: Chengdu ⇄ Xiling</text>
+<line x1="582" y1="196" x2="612" y2="196" stroke="#2E9A6A" stroke-width="5" stroke-linecap="round"/><text x="622" y="200" font-size="13" fill="#18282D">Hari 5: Chengdu ⇄ Dujiangyan</text>
+<g transform="translate(846,620)"><circle r="20" fill="#fff" opacity=".85"/><path d="M0,-14 L5,2 L0,-2 L-5,2Z" fill="#18282D"/><text y="15" font-size="10" font-weight="800" text-anchor="middle" fill="#18282D">U</text></g>
 </svg>

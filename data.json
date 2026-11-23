@@ -243,7 +243,9 @@
       "id": "d20270107",
       "food": [
         "tfu"
-      ]
+      ],
+      "alt": 50,
+      "place": "KLIA"
     },
     {
       "date": "2027-01-08",
@@ -349,7 +351,9 @@
       "id": "d20270108",
       "food": [
         "siguniang"
-      ]
+      ],
+      "alt": 3160,
+      "place": "Siguniang"
     },
     {
       "date": "2027-01-09",
@@ -494,7 +498,9 @@
       "food": [
         "bipenggou",
         "chengdu"
-      ]
+      ],
+      "alt": 3000,
+      "place": "Bipenggou"
     },
     {
       "date": "2027-01-10",
@@ -589,7 +595,9 @@
       "food": [
         "xiling",
         "chengdu"
-      ]
+      ],
+      "alt": 2400,
+      "place": "Xiling"
     },
     {
       "date": "2027-01-11",
@@ -689,7 +697,9 @@
       "id": "d20270111",
       "food": [
         "dujiangyan"
-      ]
+      ],
+      "alt": 700,
+      "place": "Dujiangyan"
     },
     {
       "date": "2027-01-12",
@@ -755,7 +765,9 @@
       "id": "d20270112",
       "food": [
         "chengdu"
-      ]
+      ],
+      "alt": 500,
+      "place": "Chengdu"
     },
     {
       "date": "2027-01-13",
@@ -781,7 +793,9 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270113"
+      "id": "d20270113",
+      "alt": 50,
+      "place": "KLIA"
     }
   ],
   "packing": {
@@ -1160,5 +1174,19 @@
   "halalTips": {
     "ms": "Cari papan tanda 清真 atau حلال. Dalam Dianping, cari \"清真\". Ada restoran \"halal\" di China yang jual arak, jadi pilih yang tiada arak dan tanya bila ragu.",
     "en": "Look for the 清真 or حلال sign. On Dianping, search \"清真\". Some \"halal\" restaurants in China sell alcohol, so pick ones without it and ask when unsure."
+  },
+  "split": {
+    "rate": 0.61,
+    "people": [
+      {
+        "id": "p1",
+        "name": "Yoi"
+      },
+      {
+        "id": "p2",
+        "name": "Aiman"
+      }
+    ],
+    "items": []
   }
 }

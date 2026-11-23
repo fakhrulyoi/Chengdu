@@ -5,210 +5,261 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Trip Chengdu · Jan 2027</title>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#2B5E8C">
+<meta name="theme-color" content="#1F5E4B">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Trip Chengdu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F4F5F2;--card:#FFF;--ink:#1C2228;--mute:#68717A;--line:#E3E6E1;--accent:#2B5E8C;--accent-soft:#E2ECF5;--pepper:#C8412B;--pepper-soft:#FBE9E5;--amber:#B7791F;--amber-soft:#FBF1DF;--green:#2E9A6A;--r:14px}
+:root{
+  --snow:#F3F6F4;--surface:#FFFFFF;--ink:#18282D;--mute:#5E6E70;--faint:#8A9896;--line:#DDE4E1;
+  --pine:#1F5E4B;--pine-soft:#E3EEE9;--saffron:#E0A030;--saffron-soft:#FBF0DA;--chili:#B23A2A;--chili-soft:#F8E6E2;--glacier:#D3E3E9;
+  --head:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;--body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
-button,input,select{font:inherit;color:inherit}
-a{color:var(--accent)}
-.app{max-width:520px;margin:0 auto;min-height:100vh;padding:calc(env(safe-area-inset-top) + 4px) 16px 100px}
-header.top{padding:14px 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.top small{display:block;font-size:12px;color:var(--mute)}
-.top h1{font-size:21px;font-weight:800;letter-spacing:-.02em}
-.lang{display:flex;background:var(--line);border-radius:99px;padding:3px;flex:none}
-.lang button{border:none;background:none;font-size:12px;font-weight:800;padding:4px 9px;border-radius:99px;cursor:pointer;color:var(--mute)}
-.lang button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--snow);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--pine)}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.app{max-width:560px;margin:0 auto;min-height:100vh;padding:calc(env(safe-area-inset-top) + 8px) 20px 110px}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:12px 0 4px}
+.top .when{font-size:14px;color:var(--mute)}
+.top h1{font-family:var(--head);font-weight:800;font-size:34px;line-height:1.05;letter-spacing:-.025em;font-variation-settings:"opsz" 96}
+.lang{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:none;margin-top:4px;background:var(--surface)}
+.lang button{border:none;background:none;font-size:13px;font-weight:700;padding:6px 10px;cursor:pointer;color:var(--mute)}
+.lang button.on{background:var(--ink);color:#fff}
+.sync{font-size:13px;color:var(--faint);margin:2px 0 18px;display:flex;align-items:center;gap:6px}
+.sync i{width:7px;height:7px;border-radius:50%;background:var(--faint)}
+.sync.ok i{background:var(--pine)}.sync.bad{color:var(--chili)}.sync.bad i{background:var(--chili)}
+
+/* type */
+h2.sec{font-family:var(--head);font-weight:700;font-size:21px;letter-spacing:-.01em;margin:30px 0 10px;font-variation-settings:"opsz" 48}
+h2.sec:first-child{margin-top:4px}
+.sub{color:var(--mute);font-size:14px}
+.small{font-size:13px;color:var(--mute)}
 section.view{display:none}section.view.active{display:block}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
-.card h2{font-size:15px;font-weight:700;margin-bottom:8px}
-.label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:18px 2px 8px}
-.muted{color:var(--mute);font-size:13px}
-.hero{background:linear-gradient(135deg,#2B5E8C,#3E7FAF);color:#fff;border:none}
-.hero .big{font-size:40px;font-weight:800;line-height:1;letter-spacing:-.03em}
-.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
-.hero .muted{color:rgba(255,255,255,.8)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
-.stats div{background:rgba(255,255,255,.14);border-radius:10px;padding:8px;min-width:0}
-.stats b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.stats span{font-size:11px;color:rgba(255,255,255,.8)}
-.mapcard{padding:8px}
-.mapwrap svg{width:100%;height:auto;display:block;border-radius:12px}
-.mapwrap .route{transition:opacity .25s}
+
+/* altitude strip: the one loud thing */
+.alt{background:var(--surface);border-radius:22px;padding:18px 16px 10px;border:1px solid var(--line)}
+.alt .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.alt .count{font-family:var(--head);font-weight:800;font-size:44px;line-height:1;letter-spacing:-.03em;font-variation-settings:"opsz" 96}
+.alt .count small{font-size:16px;font-weight:600;letter-spacing:0;color:var(--mute);margin-left:6px}
+.alt svg{display:block;width:100%;height:auto;margin-top:8px;overflow:visible}
+.alt .pt{cursor:pointer}
+.alt .pt:focus-visible circle{stroke:var(--saffron);stroke-width:4}
+.alt-note{font-size:12px;color:var(--faint);text-align:right;margin-top:2px}
+
+/* next / quick links */
+.next{margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.next a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.next b{display:block;font-family:var(--head);font-size:20px;font-weight:700;line-height:1.1}
+.next span{font-size:13px;color:var(--mute)}
+.upnext{margin-top:14px;padding:14px 16px;border-radius:16px;background:var(--pine);color:#fff}
+.upnext .k{font-size:13px;opacity:.8}.upnext .v{font-family:var(--head);font-size:20px;font-weight:700;line-height:1.2;margin-top:2px}
+
+/* plain lists */
+.rows{border-top:1px solid var(--line)}
+.row{padding:12px 0;border-bottom:1px solid var(--line)}
+.row p{font-size:15px}
+.rem{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.rem .n{font-family:var(--head);font-weight:700;color:var(--pine);font-size:15px;min-width:18px}
+
+/* leave */
+.leave{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:6px}
+.leave div{text-align:center;border-radius:10px;padding:7px 0 6px;font-size:12px;color:var(--mute);border:1px solid var(--line);background:var(--surface)}
+.leave b{display:block;font-family:var(--head);font-size:17px;color:var(--ink);line-height:1.2}
+.leave .al{background:var(--pine);border-color:var(--pine);color:#dfece6}.leave .al b{color:#fff}
+.leave .half{background:var(--pine-soft);border:1.5px dashed var(--pine);color:var(--pine);font-weight:700}.leave .half b{color:var(--pine)}
+
+/* map */
+.mapwrap svg{width:100%;height:auto;display:block;border-radius:16px}
+.mapwrap .route{transition:opacity .2s}
 .mapwrap.dim .route{opacity:.12}.mapwrap.dim .route.on{opacity:1}
-.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 2px 4px;scrollbar-width:none}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
-.chips button{flex:none;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 11px;font-size:12.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px}
-.chips button i{width:10px;height:10px;border-radius:50%;display:inline-block}
-.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.dl{display:flex;gap:8px;margin-top:8px}
-.btn{border:none;background:var(--ink);color:#fff;border-radius:10px;padding:9px 14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13.5px}
-.btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
-.btn.wa{background:#25D366}
-.remind{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
-.remind:first-child{border-top:none;padding-top:0}
-.remind .ic{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:15px;background:var(--accent-soft)}
-.remind p{font-size:13.5px}
-.leg{padding:10px 0;border-top:1px dashed var(--line)}.leg:first-child{border-top:none;padding-top:0}
-.leg .dt{font-size:11.5px;font-weight:700;color:var(--mute);margin-bottom:4px}
-.leg .g{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
-.leg .code{font-size:20px;font-weight:800}.leg .t{font-size:13px;color:var(--mute)}
-.leg .mid{text-align:center;font-size:11px;color:var(--mute);min-width:90px}.leg .mid i{display:block;height:1px;background:var(--line);margin:4px 0}
+.chip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--ink);text-decoration:none}
+.chip i{width:9px;height:9px;border-radius:50%}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+a.chip.link{background:var(--pine-soft);border-color:transparent;color:var(--pine);font-weight:700;padding:4px 10px;font-size:13px}
+
+/* flights */
+.leg{padding:14px 0;border-bottom:1px solid var(--line)}
+.leg .d{font-size:13px;color:var(--mute)}
+.leg .g{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px;margin-top:2px}
+.leg .code{font-family:var(--head);font-size:26px;font-weight:800;letter-spacing:-.01em;line-height:1}
+.leg .t{font-size:14px;color:var(--mute)}
+.leg .mid{font-size:12px;color:var(--mute);text-align:center;padding-bottom:4px;border-bottom:1px dashed var(--faint)}
 .leg .r{text-align:right}
-.transit{font-size:12px;background:var(--bg);border-radius:8px;padding:6px 10px;margin-top:8px}
-.days{display:flex;gap:8px;overflow-x:auto;padding:2px 16px 10px;margin:0 -16px;scrollbar-width:none}
+.leg .note{font-size:13px;color:var(--mute);margin-top:6px}
+
+/* itinerary */
+.days{display:flex;gap:6px;overflow-x:auto;margin:0 -20px;padding:2px 20px 12px;scrollbar-width:none;position:sticky;top:0;background:var(--snow);z-index:3}
 .days::-webkit-scrollbar{display:none}
-.daychip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:8px 12px;text-align:center;cursor:pointer;min-width:62px}
-.daychip small{display:block;font-size:11px;color:var(--mute);font-weight:600}
-.daychip b{font-size:16px}
-.daychip.on{background:var(--ink);border-color:var(--ink);color:#fff}.daychip.on small{color:rgba(255,255,255,.7)}
-.dayhead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin:4px 2px 12px}
-.dayhead h2{font-size:18px;font-weight:800;letter-spacing:-.01em}
-.pace{font-size:11px;font-weight:700;padding:4px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
-.pace.moderate{background:var(--amber-soft);color:var(--amber)}.pace.busy{background:var(--pepper-soft);color:var(--pepper)}
-.minimap{border-radius:12px;overflow:hidden;margin-bottom:12px;border:1px solid var(--line)}
-.tl{position:relative;padding-left:18px}
-.tl:before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line)}
-.stop{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
-.stop:before{content:"";position:absolute;left:-17px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--card);border:2px solid var(--accent)}
-.stop.opt:before{border-color:var(--amber)}
-.stop .time{font-size:12px;font-weight:700;color:var(--accent)}.stop.opt .time{color:var(--amber)}
-.stop h3{font-size:14.5px;font-weight:700;margin:1px 0 2px}
-.stop p{font-size:13px;color:var(--mute)}
-.acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-a.chip{font-size:12px;font-weight:600;border-radius:99px;padding:3px 9px;text-decoration:none;color:var(--accent);background:var(--accent-soft)}
-.move{font-size:12px;color:var(--mute);margin:-2px 0 8px 2px}
-.optlabel{font-size:12.5px;font-weight:800;color:var(--ink);margin:10px 0 8px 2px}
-.crow{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
-.crow:first-of-type{border-top:none}
-.crow b{white-space:nowrap}
-.ctot{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;padding-top:10px;border-top:2px solid var(--ink)}
-.ctot b{font-size:22px;font-weight:800}
-.bars{display:flex;height:12px;border-radius:9px;overflow:hidden;margin:12px 0 8px}
-.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--mute)}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
-.leave{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}
-.leave div{text-align:center;border-radius:10px;padding:6px 0;background:var(--bg);font-size:11px;color:var(--mute)}
-.leave div b{display:block;font-size:15px;color:var(--ink)}
-.leave .al{background:var(--accent);color:#fff}.leave .al b{color:#fff}
-.leave .half{background:linear-gradient(180deg,var(--accent) 55%,var(--accent-soft) 55%);color:var(--accent);font-weight:700}.leave .half b{color:#fff}
-.altag{font-size:10.5px;font-weight:800;padding:3px 7px;border-radius:99px;background:var(--accent);color:#fff;margin-left:6px;vertical-align:2px}
-.budget{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.budget div{background:var(--bg);border-radius:10px;padding:10px}
-.budget span{display:block;font-size:11.5px;color:var(--mute)}.budget b{font-size:17px}
-.budget input{width:100%;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-weight:700;font-size:16px;background:#fff;margin-top:2px}
-.left{margin-top:10px;padding:12px;border-radius:12px;background:var(--accent-soft)}.left.neg{background:var(--pepper-soft)}
-.left b{font-size:22px}
-.ck{font-size:13.5px;display:flex;gap:8px;align-items:center;margin-top:10px}
-.prog{display:flex;align-items:center;gap:12px}
-.ring{--p:0;width:56px;height:56px;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
-.ring span{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:12px;font-weight:800}
-.prog b{font-size:18px}
-.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:6px}
-.bar i{display:block;height:100%;background:var(--accent);border-radius:9px;transition:width .3s}
-.cat{margin-bottom:12px}
-.cat .ch{display:flex;justify-content:space-between;align-items:center;padding:4px 2px 6px}
-.cat .ch b{font-size:13px;font-weight:700}.cat .ch span{font-size:12px;color:var(--mute)}
-.list{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-top:1px solid var(--line)}
-.item:first-child{border-top:none}
-.cb{flex:none;width:22px;height:22px;border-radius:7px;border:2px solid #C3C8C2;display:grid;place-items:center;cursor:pointer;background:#fff}
-.cb.on{background:var(--accent);border-color:var(--accent)}
+.dc{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:12px;width:54px;padding:6px 0;text-align:center;cursor:pointer}
+.dc small{display:block;font-size:12px;color:var(--mute)}
+.dc b{font-family:var(--head);font-size:19px;font-weight:700}
+.dc.on{background:var(--ink);border-color:var(--ink);color:#fff}.dc.on small{color:#c4cfcd}
+.dc.today{box-shadow:inset 0 -3px 0 var(--saffron)}
+.dayhead h2{font-family:var(--head);font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:4px}
+.dayhead .meta{font-size:14px;color:var(--mute)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;background:var(--pine-soft);color:var(--pine);margin-right:6px;vertical-align:2px}
+.tag.busy{background:var(--chili-soft);color:var(--chili)}.tag.moderate{background:var(--saffron-soft);color:#8A5A06}
+.minimap{margin:14px 0 6px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+.tl{margin-top:14px}
+.st{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.st .time{font-family:var(--head);font-weight:700;font-size:16px;color:var(--pine);padding-top:1px}
+.st h3{font-size:16px;font-weight:700;line-height:1.35}
+.st p{font-size:14px;color:var(--mute);margin-top:2px}
+.st.opt .time{color:#8A5A06}
+.st .acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.mv{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--mute)}
+.mv span:first-child{text-align:center;color:var(--faint)}
+.secth{font-family:var(--head);font-weight:700;font-size:17px;padding:16px 0 6px;border-bottom:1px solid var(--line)}
+
+/* halal */
+.hal{padding:12px 0;border-bottom:1px solid var(--line)}
+.hal h3{font-size:16px;font-weight:700}
+.hal p{font-size:14px;color:var(--mute);margin-top:2px}
+.hal.none h3{color:#8A5A06}
+.hal .acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tip{background:var(--saffron-soft);border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:6px}
+
+/* segmented */
+.seg{display:flex;background:#E4EAE7;border-radius:12px;padding:3px;margin-bottom:18px}
+.seg button{flex:1;border:none;background:none;padding:9px 6px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;color:var(--mute)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 0 rgba(24,40,45,.08)}
+
+/* money */
+.big{font-family:var(--head);font-weight:800;font-size:36px;letter-spacing:-.02em;line-height:1}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.kv:last-child{border-bottom:none}
+.kv b{white-space:nowrap}
+.kv .cr{display:flex;align-items:center;gap:8px}
+.bars{display:flex;height:10px;border-radius:6px;overflow:hidden;margin:14px 0 8px;background:var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--mute)}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+.left{margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--pine-soft)}
+.left.neg{background:var(--chili-soft)}
+.left b{font-family:var(--head);font-size:24px}
+.inp{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);font-size:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ck{display:flex;gap:8px;align-items:center;font-size:15px;margin-top:12px}
+.ck input{width:18px;height:18px;accent-color:var(--pine)}
+.who{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.person{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.person button{border:none;background:none;color:var(--faint);cursor:pointer;font-size:16px;line-height:1}
+.bal{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.bal .pos{color:var(--pine);font-weight:700}.bal .neg{color:var(--chili);font-weight:700}
+.settle{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.settle b{font-family:var(--head)}
+.exp-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.exp-item h3{font-size:15px;font-weight:700}
+.exp-item p{font-size:13px;color:var(--mute)}
+.exp-item .amt{text-align:right;font-family:var(--head);font-weight:700}
+.exp-item .amt small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--faint)}
+
+/* packing */
+.prog{display:flex;align-items:center;gap:14px}
+.prog .pct{font-family:var(--head);font-weight:800;font-size:36px;line-height:1}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--pine);transition:width .3s}
+.cat h3{font-family:var(--head);font-size:17px;font-weight:700;margin:22px 0 4px;display:flex;justify-content:space-between}
+.cat h3 span{font-family:var(--body);font-size:13px;font-weight:400;color:var(--mute)}
+.item{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.cb{flex:none;width:24px;height:24px;border-radius:7px;border:2px solid #B7C3BF;display:grid;place-items:center;cursor:pointer;background:var(--surface)}
+.cb.on{background:var(--pine);border-color:var(--pine)}
 .cb.on:after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.item .nm{flex:1;font-size:14px;cursor:pointer}
-.item.done .nm{color:var(--mute);text-decoration:line-through}
-.x{flex:none;border:none;background:none;color:#B3B8B2;font-size:18px;cursor:pointer;width:24px}
-.add{display:flex;gap:6px;margin-top:8px}
-.add input,.add select{border:1px solid var(--line);border-radius:10px;padding:9px 10px;background:var(--card);min-width:0}
-.add input{flex:1}
-.seg{display:flex;gap:6px;overflow-x:auto;margin:0 -16px 12px;padding:0 16px;scrollbar-width:none}
-.seg::-webkit-scrollbar{display:none}
-.seg button{flex:none;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
-.seg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.appi{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
-.appi:first-child{border-top:none;padding-top:2px}
-.appi .lg{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:800;color:#fff}
-.appi h3{font-size:14.5px;font-weight:700}.appi p{font-size:13px;color:var(--mute)}
-.appi a{font-size:12.5px;font-weight:600;text-decoration:none}
-.sync{font-size:12px;color:var(--mute);margin:-6px 2px 12px}.sync.ok{color:var(--green)}.sync.bad{color:var(--pepper)}
-.toolbar{display:flex;justify-content:flex-end;margin:-4px 0 10px}
-.ebtn{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
-.ebtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.item .nm{flex:1;cursor:pointer;font-size:15px}
+.item.done .nm{color:var(--faint);text-decoration:line-through}
+.x{flex:none;border:none;background:none;color:var(--faint);font-size:20px;cursor:pointer;width:28px;height:28px;line-height:1}
+.addline{display:flex;gap:8px;margin-top:12px}
+.addline .inp{flex:1;min-width:0}
+.addline select{width:auto;flex:none}
+
+/* apps */
+.appi{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.appi .lg{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-family:var(--head);font-weight:800;color:#fff;font-size:17px}
+.appi h3{font-size:16px;font-weight:700}.appi p{font-size:14px;color:var(--mute)}
+.appi a{font-size:13px;font-weight:700;text-decoration:none}
+
+/* buttons + forms */
+.btn{border:none;background:var(--ink);color:#fff;border-radius:11px;padding:10px 16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:15px}
+.btn.pine{background:var(--pine)}.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}.btn.wa{background:#1E9E57}
+.btn.sm{padding:7px 12px;font-size:14px}
+.btn:disabled{opacity:.55}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.toolbar{display:flex;justify-content:flex-end;margin:0 0 6px}
+.ebtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:700;cursor:pointer}
+.ebtn.on{background:var(--saffron);border-color:var(--saffron);color:var(--ink)}
 .ctl{display:flex;gap:4px;margin-top:8px}
-.move .ctl,.optlabel .ctl,.cr .ctl{margin-top:0}
-.ctl button{border:1px solid var(--line);background:var(--bg);min-width:30px;height:28px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--mute);padding:0 6px}
-button.arm{background:var(--pepper)!important;border-color:var(--pepper)!important;color:#fff!important;font-weight:700}
-.move,.optlabel{display:flex;align-items:center;justify-content:space-between;gap:6px}
-.cr{display:flex;align-items:center;gap:8px}
-.remind .bd{flex:1;min-width:0}
-.tl.em .stop{border-style:dashed}
-form.edit{margin:6px 0}
-form.edit input,form.edit textarea,form.edit select{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:6px;background:#fff;font-size:14px}
-form.edit .fl{font-size:11px;font-weight:700;color:var(--mute);margin:2px 0 3px;display:block}
-form.edit .ck input{width:auto;margin:0}
-.frow{display:flex;gap:6px}.frow>*{flex:1;min-width:0}
-.addbtn{border:1px dashed #C3C8C2;background:none;border-radius:10px;padding:9px 4px;font-weight:600;font-size:13px;cursor:pointer;color:var(--accent);width:100%;margin-top:8px}
+.ctl button{border:1px solid var(--line);background:var(--snow);min-width:34px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;color:var(--mute);padding:0 8px}
+button.arm{background:var(--chili)!important;border-color:var(--chili)!important;color:#fff!important;font-weight:700}
+.addbtn{border:1px dashed #AFC0B8;background:none;border-radius:12px;padding:11px;font-weight:700;font-size:14px;cursor:pointer;color:var(--pine);width:100%;margin-top:10px}
 .addrow{display:flex;gap:6px}.addrow .addbtn{flex:1}
-.linkb{border:none;background:none;color:var(--accent);font-weight:700;font-size:12.5px;cursor:pointer;margin:-6px 2px 10px;padding:0;display:inline-block;text-decoration:none}
-.exph{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
-.exp{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
-.exp .exph span{font-size:12.5px;color:var(--mute)}
-.hal{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}.hal:first-child{border-top:none;padding-top:0}
-.hal .hi{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#E6F4EC;font-size:15px}
-.hal.none .hi{background:var(--amber-soft)}.hal .bd{flex:1;min-width:0}.hal h3{font-size:14.5px;font-weight:700}.hal p{font-size:13px;color:var(--mute)}
-.tipcard{background:var(--accent-soft);border-color:transparent;font-size:13px}
-.err{color:var(--pepper);font-size:13px;margin-top:6px;min-height:1em}
-nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:5}
-nav.tabs .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 8px calc(8px + env(safe-area-inset-bottom))}
-nav.tabs button{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:600;color:var(--mute);padding:6px 0;cursor:pointer}
-nav.tabs svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-nav.tabs button.on{color:var(--accent)}
+.linkb{border:none;background:none;color:var(--pine);font-weight:700;font-size:14px;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+form.edit{background:var(--surface);border:2px solid var(--saffron);border-radius:16px;padding:14px;margin:10px 0}
+form.edit .fl{display:block;font-size:13px;font-weight:700;color:var(--mute);margin:6px 0 4px}
+form.edit input,form.edit textarea,form.edit select{width:100%;border:1px solid var(--line);border-radius:9px;padding:9px 11px;background:#fff;font-size:15px}
+form.edit textarea{resize:vertical}
+form.edit .ck input{width:18px}
+.frow{display:flex;gap:8px}.frow>*{flex:1;min-width:0}
+.err{color:var(--chili);font-size:14px;margin-top:8px;min-height:1em}
+.empty{color:var(--mute);font-size:15px;padding:14px 0}
+
+/* bottom nav */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:10}
+nav.tabs .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 6px calc(8px + env(safe-area-inset-bottom))}
+nav.tabs button{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;font-weight:700;color:var(--faint);padding:6px 0;cursor:pointer;border-radius:10px}
+nav.tabs svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs button.on{color:var(--pine)}
+nav.tabs button.on svg{stroke-width:2.3}
 </style>
 </head>
 <body>
 <div class="app">
   <header class="top">
-    <div><small id="hRoute"></small><h1 id="hName"></h1></div>
+    <div><div class="when" id="hWhen"></div><h1 id="hName">Trip Chengdu</h1></div>
     <div class="lang" id="lang"><button data-l="ms" type="button">BM</button><button data-l="en" type="button">EN</button></div>
   </header>
-  <div class="sync" id="sync"></div>
+  <div class="sync" id="sync"><i></i><span></span></div>
 
-  <section class="view" id="v-trip">
-    <div id="tripTools"></div>
-    <div class="card hero" id="hero"></div>
-    <div class="label" data-i18n="leaveTitle"></div>
-    <div class="card" id="leaveCard"></div>
-    <div class="label" data-i18n="routeMap"></div>
-    <div class="card mapcard">
-      <div class="mapwrap" id="bigMap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" font-family="Plus Jakarta Sans, DejaVu Sans, Noto Sans CJK SC, sans-serif">
-<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E9E4D6"/><stop offset=".55" stop-color="#F3EFE4"/><stop offset="1" stop-color="#EEF3EC"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity=".18"/></filter></defs>
+  <section class="view" id="v-home"></section>
+  <section class="view" id="v-plan"><div class="days" id="days"></div><div id="dayBody"></div></section>
+  <section class="view" id="v-food"></section>
+  <section class="view" id="v-money"></section>
+  <section class="view" id="v-more"></section>
+</div>
+<template id="mapTpl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" font-family="Atkinson Hyperlegible, DejaVu Sans, Noto Sans CJK SC, sans-serif">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E6ECE9"/><stop offset=".55" stop-color="#F1F5F3"/><stop offset="1" stop-color="#EAF1EE"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity=".18"/></filter></defs>
 <rect width="900" height="680" rx="22" fill="url(#bg)"/>
-<path d="M0,0 H430 C400,120 380,220 330,300 C300,360 250,420 230,520 C215,600 200,640 190,680 H0Z" fill="#E1D9C6" opacity=".75"/>
-<path d="M0,0 H260 C230,140 200,260 150,360 C120,430 90,560 70,680 H0Z" fill="#D7CDB6" opacity=".7"/>
+<path d="M0,0 H430 C400,120 380,220 330,300 C300,360 250,420 230,520 C215,600 200,640 190,680 H0Z" fill="#D9E2DE" opacity=".75"/>
+<path d="M0,0 H260 C230,140 200,260 150,360 C120,430 90,560 70,680 H0Z" fill="#CBD7D1" opacity=".7"/>
 <path d="M440,40 C430,120 420,200 438,321 C470,420 560,470 640,520 C700,560 760,600 860,640" fill="none" stroke="#A9CBE0" stroke-width="5" stroke-linecap="round" opacity=".8"/>
 <path d="M180,40 C200,140 230,220 274,302" fill="none" stroke="#A9CBE0" stroke-width="3" opacity=".7"/>
-<path d="M48,120 L70,86 L92,120Z" fill="#C9BFA9"/><path d="M62,98 L70,86 L78,98 L73,100 L68,96Z" fill="#fff"/>
-<path d="M91,250 L110,221 L129,250Z" fill="#C9BFA9"/><path d="M104,231 L110,221 L116,231 L112,233 L108,230Z" fill="#fff"/>
-<path d="M36,380 L60,344 L84,380Z" fill="#C9BFA9"/><path d="M52,356 L60,344 L68,356 L63,359 L58,355Z" fill="#fff"/>
-<path d="M100,420 L115,397 L130,420Z" fill="#C9BFA9"/><path d="M110,405 L115,397 L120,405 L117,406 L113,404Z" fill="#fff"/>
-<path d="M230,110 L250,79 L270,110Z" fill="#C9BFA9"/><path d="M243,89 L250,79 L257,89 L252,92 L248,88Z" fill="#fff"/>
-<path d="M283,220 L300,194 L317,220Z" fill="#C9BFA9"/><path d="M294,203 L300,194 L306,203 L302,205 L298,202Z" fill="#fff"/>
-<path d="M180,560 L200,529 L220,560Z" fill="#C9BFA9"/><path d="M193,539 L200,529 L207,539 L202,542 L198,538Z" fill="#fff"/>
-<path d="M123,520 L140,494 L157,520Z" fill="#C9BFA9"/><path d="M134,503 L140,494 L146,503 L142,505 L138,502Z" fill="#fff"/>
-<path d="M316,380 L330,359 L344,380Z" fill="#C9BFA9"/><path d="M325,366 L330,359 L335,366 L332,368 L329,365Z" fill="#fff"/>
-<path d="M61,600 L80,571 L99,600Z" fill="#C9BFA9"/><path d="M74,581 L80,571 L86,581 L82,583 L78,580Z" fill="#fff"/>
-<path d="M345,90 L360,67 L375,90Z" fill="#C9BFA9"/><path d="M355,75 L360,67 L365,75 L362,76 L358,74Z" fill="#fff"/>
-<path d="M213,330 L230,304 L247,330Z" fill="#C9BFA9"/><path d="M224,313 L230,304 L236,313 L232,315 L228,312Z" fill="#fff"/>
-<path d="M245,600 L260,577 L275,600Z" fill="#C9BFA9"/><path d="M255,585 L260,577 L265,585 L262,586 L258,584Z" fill="#fff"/>
-<text x="700" y="380" font-size="13" fill="#8E9A86" font-style="italic" text-anchor="middle">Dataran Chengdu</text>
-<text x="120" y="660" font-size="13" fill="#9C8F74" font-style="italic">Pergunungan Sichuan Barat (sejuk, bersalji)</text>
+<path d="M48,120 L70,86 L92,120Z" fill="#AFC0B8"/><path d="M62,98 L70,86 L78,98 L73,100 L68,96Z" fill="#fff"/>
+<path d="M91,250 L110,221 L129,250Z" fill="#AFC0B8"/><path d="M104,231 L110,221 L116,231 L112,233 L108,230Z" fill="#fff"/>
+<path d="M36,380 L60,344 L84,380Z" fill="#AFC0B8"/><path d="M52,356 L60,344 L68,356 L63,359 L58,355Z" fill="#fff"/>
+<path d="M100,420 L115,397 L130,420Z" fill="#AFC0B8"/><path d="M110,405 L115,397 L120,405 L117,406 L113,404Z" fill="#fff"/>
+<path d="M230,110 L250,79 L270,110Z" fill="#AFC0B8"/><path d="M243,89 L250,79 L257,89 L252,92 L248,88Z" fill="#fff"/>
+<path d="M283,220 L300,194 L317,220Z" fill="#AFC0B8"/><path d="M294,203 L300,194 L306,203 L302,205 L298,202Z" fill="#fff"/>
+<path d="M180,560 L200,529 L220,560Z" fill="#AFC0B8"/><path d="M193,539 L200,529 L207,539 L202,542 L198,538Z" fill="#fff"/>
+<path d="M123,520 L140,494 L157,520Z" fill="#AFC0B8"/><path d="M134,503 L140,494 L146,503 L142,505 L138,502Z" fill="#fff"/>
+<path d="M316,380 L330,359 L344,380Z" fill="#AFC0B8"/><path d="M325,366 L330,359 L335,366 L332,368 L329,365Z" fill="#fff"/>
+<path d="M61,600 L80,571 L99,600Z" fill="#AFC0B8"/><path d="M74,581 L80,571 L86,581 L82,583 L78,580Z" fill="#fff"/>
+<path d="M345,90 L360,67 L375,90Z" fill="#AFC0B8"/><path d="M355,75 L360,67 L365,75 L362,76 L358,74Z" fill="#fff"/>
+<path d="M213,330 L230,304 L247,330Z" fill="#AFC0B8"/><path d="M224,313 L230,304 L236,313 L232,315 L228,312Z" fill="#fff"/>
+<path d="M245,600 L260,577 L275,600Z" fill="#AFC0B8"/><path d="M255,585 L260,577 L265,585 L262,586 L258,584Z" fill="#fff"/>
+<text x="700" y="380" font-size="13" fill="#7D8E88" font-style="italic" text-anchor="middle">Dataran Chengdu</text>
+<text x="120" y="660" font-size="13" fill="#7D8E88" font-style="italic">Pergunungan Sichuan Barat (sejuk, bersalji)</text>
 <g class="route" data-day="d2"><path d="M744,571 Q607,445 523,384 Q439,322 370,316 Q301,311 226,311 L152,311" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M744,571 Q607,445 523,384 Q439,322 370,316 Q301,311 226,311 L152,311" fill="none" stroke="#D64933" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g class="route" data-day="d3"><path d="M152,311 Q150,230 184,194 L219,159" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M152,311 Q150,230 184,194 L219,159" fill="none" stroke="#E8912D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
 <g class="route" data-day="d3"><path d="M219,159 Q413,177 426,250 Q439,322 523,384 L607,445" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M219,159 Q413,177 426,250 Q439,322 523,384 L607,445" fill="none" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/></g>
@@ -219,228 +270,259 @@ nav.tabs button.on{color:var(--accent)}
 <g class="route" data-day="d3" filter="url(#sh)"><rect x="254" y="183" width="151" height="24" rx="12" fill="#8A5CC4"/><text x="330" y="200" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Van ~4j · 4pm→8pm</text></g>
 <g class="route" data-day="d4" filter="url(#sh)"><rect x="351" y="507" width="159" height="24" rx="12" fill="#2F7FC1"/><text x="430" y="524" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Bas ~3j · 7am→10am</text></g>
 <g class="route" data-day="d5" filter="url(#sh)"><rect x="627" y="383" width="83" height="24" rx="12" fill="#2E9A6A"/><text x="668" y="400" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Tren ~1j</text></g>
-<circle cx="744" cy="571" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="730" y="605" font-size="15" font-weight="800" fill="#1E2321" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Tianfu Airport (TFU) <tspan font-size="12" font-weight="600" fill="#6B716E">天府机场</tspan></text>
-<text x="730" y="622" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Tiba 22:40 · 7 Jan</text>
-<circle cx="607" cy="445" r="11" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="623" y="451" font-size="17" font-weight="800" fill="#1E2321" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Chengdu <tspan font-size="12" font-weight="600" fill="#6B716E">成都</tspan></text>
-<text x="623" y="468" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Hotel 3 malam</text>
-<circle cx="439" cy="322" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="453" y="290" font-size="15" font-weight="800" fill="#1E2321" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Dujiangyan <tspan font-size="12" font-weight="600" fill="#6B716E">都江堰</tspan></text>
-<text x="453" y="305" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Panda Valley · Old Town</text>
-<circle cx="152" cy="311" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="152" y="347" font-size="15" font-weight="800" fill="#1E2321" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Siguniang <tspan font-size="12" font-weight="600" fill="#6B716E">四姑娘山</tspan></text>
-<text x="152" y="364" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">~3,200m · Shuangqiao</text>
-<circle cx="219" cy="159" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="203" y="153" font-size="15" font-weight="800" fill="#1E2321" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Bipenggou <tspan font-size="12" font-weight="600" fill="#6B716E">毕棚沟</tspan></text>
-<text x="203" y="170" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Lembah salji</text>
-<circle cx="271" cy="445" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
-<text x="271" y="481" font-size="15" font-weight="800" fill="#1E2321" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Xiling Snow Mtn <tspan font-size="12" font-weight="600" fill="#6B716E">西岭雪山</tspan></text>
-<text x="271" y="498" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Ski · cable car</text>
-<text x="301" y="333" font-size="11" fill="#8a7f68" text-anchor="middle" font-style="italic">via Wolong · Balang</text>
+<circle cx="744" cy="571" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="730" y="605" font-size="15" font-weight="800" fill="#18282D" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Tianfu Airport (TFU) <tspan font-size="12" font-weight="600" fill="#6B716E">天府机场</tspan></text>
+<text x="730" y="622" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Tiba 22:40 · 7 Jan</text>
+<circle cx="607" cy="445" r="11" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="623" y="451" font-size="17" font-weight="800" fill="#18282D" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Chengdu <tspan font-size="12" font-weight="600" fill="#6B716E">成都</tspan></text>
+<text x="623" y="468" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Hotel 3 malam</text>
+<circle cx="439" cy="322" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="453" y="290" font-size="15" font-weight="800" fill="#18282D" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Dujiangyan <tspan font-size="12" font-weight="600" fill="#6B716E">都江堰</tspan></text>
+<text x="453" y="305" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Panda Valley · Old Town</text>
+<circle cx="152" cy="311" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="152" y="347" font-size="15" font-weight="800" fill="#18282D" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Siguniang <tspan font-size="12" font-weight="600" fill="#6B716E">四姑娘山</tspan></text>
+<text x="152" y="364" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">~3,200m · Shuangqiao</text>
+<circle cx="219" cy="159" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="203" y="153" font-size="15" font-weight="800" fill="#18282D" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Bipenggou <tspan font-size="12" font-weight="600" fill="#6B716E">毕棚沟</tspan></text>
+<text x="203" y="170" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Lembah salji</text>
+<circle cx="271" cy="445" r="8" fill="#18282D" stroke="#fff" stroke-width="3"/>
+<text x="271" y="481" font-size="15" font-weight="800" fill="#18282D" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Xiling Snow Mtn <tspan font-size="12" font-weight="600" fill="#6B716E">西岭雪山</tspan></text>
+<text x="271" y="498" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F1F5F3" stroke-width="4">Ski · cable car</text>
+<text x="301" y="333" font-size="11" fill="#6F807A" text-anchor="middle" font-style="italic">via Wolong · Balang</text>
 <g filter="url(#sh)"><rect x="560" y="28" width="312" height="196" rx="16" fill="#fff"/></g>
-<text x="580" y="58" font-size="18" font-weight="800" fill="#1E2321">Laluan Trip Chengdu</text>
+<text x="580" y="58" font-size="18" font-weight="800" fill="#18282D">Laluan Trip Chengdu</text>
 <text x="580" y="78" font-size="12" fill="#6B716E">7 – 12 Jan 2027 · peta ringkas, bukan ikut skala</text>
-<line x1="582" y1="104" x2="612" y2="104" stroke="#D64933" stroke-width="5" stroke-linecap="round"/><text x="622" y="108" font-size="13" fill="#1E2321">Hari 2: Airport → Siguniang</text>
-<line x1="582" y1="127" x2="612" y2="127" stroke="#E8912D" stroke-width="5" stroke-linecap="round"/><text x="622" y="131" font-size="13" fill="#1E2321">Hari 3: Siguniang → Bipenggou</text>
-<line x1="582" y1="150" x2="612" y2="150" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 5"/><text x="622" y="154" font-size="13" fill="#1E2321">Hari 3: Bipenggou → Chengdu</text>
-<line x1="582" y1="173" x2="612" y2="173" stroke="#2F7FC1" stroke-width="5" stroke-linecap="round"/><text x="622" y="177" font-size="13" fill="#1E2321">Hari 4: Chengdu ⇄ Xiling</text>
-<line x1="582" y1="196" x2="612" y2="196" stroke="#2E9A6A" stroke-width="5" stroke-linecap="round"/><text x="622" y="200" font-size="13" fill="#1E2321">Hari 5: Chengdu ⇄ Dujiangyan</text>
-<g transform="translate(846,620)"><circle r="20" fill="#fff" opacity=".85"/><path d="M0,-14 L5,2 L0,-2 L-5,2Z" fill="#1E2321"/><text y="15" font-size="10" font-weight="800" text-anchor="middle" fill="#1E2321">U</text></g>
-</svg></div>
-      <div class="chips" id="mapChips"></div>
-      <div class="dl"><a class="btn ghost" href="map.png" download="peta-trip-chengdu.png" data-i18n="dlMap"></a><a class="btn ghost" id="openMap" href="map.png" target="_blank" rel="noopener" data-i18n="openMap"></a></div>
-    </div>
-    <div class="label" data-i18n="mustRemember"></div>
-    <div class="card" id="remList"></div>
-    <div class="label" data-i18n="flights"></div>
-    <div class="card" id="flightList"></div>
-  </section>
+<line x1="582" y1="104" x2="612" y2="104" stroke="#D64933" stroke-width="5" stroke-linecap="round"/><text x="622" y="108" font-size="13" fill="#18282D">Hari 2: Airport → Siguniang</text>
+<line x1="582" y1="127" x2="612" y2="127" stroke="#E8912D" stroke-width="5" stroke-linecap="round"/><text x="622" y="131" font-size="13" fill="#18282D">Hari 3: Siguniang → Bipenggou</text>
+<line x1="582" y1="150" x2="612" y2="150" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 5"/><text x="622" y="154" font-size="13" fill="#18282D">Hari 3: Bipenggou → Chengdu</text>
+<line x1="582" y1="173" x2="612" y2="173" stroke="#2F7FC1" stroke-width="5" stroke-linecap="round"/><text x="622" y="177" font-size="13" fill="#18282D">Hari 4: Chengdu ⇄ Xiling</text>
+<line x1="582" y1="196" x2="612" y2="196" stroke="#2E9A6A" stroke-width="5" stroke-linecap="round"/><text x="622" y="200" font-size="13" fill="#18282D">Hari 5: Chengdu ⇄ Dujiangyan</text>
+<g transform="translate(846,620)"><circle r="20" fill="#fff" opacity=".85"/><path d="M0,-14 L5,2 L0,-2 L-5,2Z" fill="#18282D"/><text y="15" font-size="10" font-weight="800" text-anchor="middle" fill="#18282D">U</text></g>
+</svg></template>
 
-  <section class="view" id="v-plan"><div class="days" id="days"></div><div id="dayBody"></div></section>
-
-  <section class="view" id="v-cost"><div id="costBody"></div></section>
-
-  <section class="view" id="v-pack">
-    <div class="card prog">
-      <div class="ring" id="ring"><span id="ringTxt">0%</span></div>
-      <div style="flex:1"><b id="progTxt">0 / 0</b> <span class="muted" data-i18n="packed"></span><div class="bar"><i id="progBar" style="width:0"></i></div><div class="muted" style="margin-top:6px;font-size:12px" data-i18n="packNote"></div></div>
-    </div>
-    <div id="packCats"></div>
-    <div class="card">
-      <h2 data-i18n="addItem"></h2>
-      <form class="add" id="addForm"><input id="addName" maxlength="60" data-i18n-ph="phItem"><select id="addCat"></select><button class="btn" data-i18n="add"></button></form>
-      <div class="dl" style="margin-top:12px"><a class="btn wa" id="waShare" target="_blank" rel="noopener" data-i18n="shareWa"></a><button class="btn ghost" type="button" id="resetBtn" data-i18n="reset"></button></div>
-    </div>
-  </section>
-
-  <section class="view" id="v-apps"><div class="seg" id="appSeg"></div><div id="halalBox"></div><div class="card" id="appList"></div>
-    <div class="card" id="adminCard"></div>
-    <div class="card"><h2 data-i18n="installApp"></h2><p class="muted" data-i18n="installTxt"></p></div>
-  </section>
-</div>
-
-<nav class="tabs"><div class="in" id="tabs">
-  <button data-v="trip" type="button"><svg viewBox="0 0 24 24"><path d="M3 20l6-14 4 8 3-5 5 11z"/></svg><span data-i18n="tabTrip"></span></button>
-  <button data-v="plan" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span data-i18n="tabPlan"></span></button>
-  <button data-v="cost" type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg><span data-i18n="tabCost"></span></button>
-  <button data-v="pack" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V4h6v3M9 12l2 2 4-4"/></svg><span data-i18n="tabPack"></span></button>
-  <button data-v="apps" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span data-i18n="tabApps"></span></button>
+<nav class="tabs" aria-label="Menu"><div class="in" id="tabs">
+  <button data-v="home" type="button"><svg viewBox="0 0 24 24"><path d="M2.5 19.5l6-11 4 7 2.5-4 6.5 8z"/><path d="M8.5 8.5l1.6 2.8"/></svg><span data-i18n="tabHome"></span></button>
+  <button data-v="plan" type="button"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="3"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4"/></svg><span data-i18n="tabPlan"></span></button>
+  <button data-v="food" type="button"><svg viewBox="0 0 24 24"><path d="M6 3v8a2 2 0 0 0 4 0V3M8 11v10M16.5 21V3c-2 1-3.5 3.5-3.5 7v3h3.5"/></svg><span data-i18n="tabFood"></span></button>
+  <button data-v="money" type="button"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M7 15h3"/></svg><span data-i18n="tabMoney"></span></button>
+  <button data-v="more" type="button"><svg viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="14" rx="3"/><path d="M9 7V4.5h6V7M9 13l2 2 4-4"/></svg><span data-i18n="tabMore"></span></button>
 </div></nav>
 
 <script>
-/* ===== config ===== */
-const REPO={owner:"fakhrulyoi",repo:"chengdu",branch:"main",path:"data.json"};
+/* ================= config & helpers ================= */
+const REPO={owner:"fakhrulyoi",repo:"Chengdu",branch:"main",path:"data.json"};
 const API=`https://api.github.com/repos/${REPO.owner}/${REPO.repo}/contents/${REPO.path}`;
+const RAW=`https://raw.githubusercontent.com/${REPO.owner}/${REPO.repo}/${REPO.branch}/${REPO.path}`;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const uid=()=>Math.random().toString(36).slice(2,9);
 const clone=o=>JSON.parse(JSON.stringify(o));
 const okUrl=u=>/^https?:\/\//i.test(u||"");
-let L=store.get("sc-lang","ms");
-let T=store.get("sc-data",null);
-let etag=store.get("sc-etag",""),lastSync=store.get("sc-synced",0);
-let token=store.get("sc-token",""),editMode=false,editing=null,newId=null,saving=0,syncState="";
-
-const I={
- ms:{tabTrip:"Trip",tabPlan:"Jadual",tabCost:"Kos",tabPack:"Barang",tabApps:"Apps",daysToGo:"Hari lagi",days:"{n} hari",nights:"{n} malam",checkpoints:"Checkpoint",weather:"Cuaca",perPax:"Seorang",
-  routeMap:"Peta laluan",all:"Semua",dlMap:"⬇ Muat turun peta",openMap:"↗ Buka besar",mustRemember:"Jangan lupa",flights:"Penerbangan",
-  pace_easy:"Santai",pace_moderate:"Sederhana",pace_busy:"Padat",optional:"pilihan",map:"📍 Peta",
-  costTitle:"Kos darat seorang",transport:"Pengangkutan",hotel:"Hotel",fees:"Tiket masuk",total:"Jumlah",student:"Saya pelajar (harga pelajar)",buffer:"Bajet selamat (+5%)",
-  packed:"item siap dikemas",packNote:"Senarai ni disimpan dalam telefon kau sendiri.",addItem:"Tambah item",phItem:"cth. Pemanas kaki",add:"Tambah",shareWa:"Kongsi ke WhatsApp",reset:"Set semula",confirm:"Pasti?",
-  waHead:"Senarai barang trip Chengdu saya",waLeft:"Belum dikemas",
-  installApp:"Pasang sebagai app",installTxt:"iPhone: buka dalam Safari → Share → Add to Home Screen. Android: menu Chrome ⋮ → Install app.",
-  cat_hotels:"Hotel",cat_food:"Makanan",cat_maps:"Peta",cat_transport:"Pengangkutan",cat_essentials:"Keperluan",
-  bc_documents:"Dokumen",bc_clothing:"Pakaian sejuk",bc_toiletries:"Kelengkapan diri",bc_electronics:"Elektronik",bc_medication:"Ubat-ubatan",bc_food:"Makanan & minuman",bc_other:"Lain-lain",
-  day:"Hari",dayMap:"Laluan hari ni",leaveTitle:"Cuti tahunan (AL)",leaveSum:"{n} hari AL",halfAm:"½ pagi",fullDay:"Penuh",weekend:"Hujung minggu",alTag:"AL",alHalf:"AL ½",
-  budgetTitle:"Bajet RM{b} (termasuk flight)",ground:"Kos darat",flightCost:"Tiket flight (isi sendiri)",leftLbl:"Baki untuk makan, permainan salji & belanja",overLbl:"Lebih bajet",
-  syncOk:"✓ Terkini · {t}",syncing:"Menyemak…",saving:"Menyimpan ke GitHub…",saved:"✓ Disimpan. Semua orang akan nampak dalam ~1 minit",syncFail:"Offline: papar data tersimpan",saveFail:"Gagal simpan: {e}",loading:"Memuatkan trip…",
-  justNow:"baru tadi",minAgo:"{n} min lalu",
-  edit:"✎ Edit",done:"✓ Siap",save:"Simpan",cancel:"Batal",addMore:"+ Tambah",addAct:"+ Aktiviti",addTravel:"+ Perjalanan",addSection:"+ Seksyen",editDay:"✎ Edit maklumat hari",
-  adminTitle:"Admin: edit & sync",adminOff:"Untuk edit trip terus dalam app, masukkan token GitHub (sekali sahaja, disimpan dalam telefon ni).",adminSteps:"Buat token: GitHub → Settings → Developer settings → Fine-grained tokens → Repository access: hanya repo 'chengdu' → Permissions: Contents = Read and write.",
-  tokenPh:"github_pat_…",tokenSave:"Aktifkan admin",tokenBad:"Token tak sah atau tiada akses tulis ke repo.",adminOn:"✅ Mod admin aktif. Butang ✎ Edit ada di setiap tab.",adminOut:"Buang token dari telefon ni",makeToken:"Buat token di GitHub ↗",
-  f_icon:"Ikon",f_ms:"Teks (BM)",f_en:"Text (English)",f_date:"Tarikh",f_info:"Flight",f_from:"Dari",f_to:"Ke",f_dep:"Berlepas",f_arr:"Tiba",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
-  f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Jenis",t_stop:"Aktiviti",t_move:"Perjalanan",t_section:"Seksyen",f_time:"Masa",f_map:"Carian peta (nama Cina paling tepat)",f_city:"Bandar",f_opt:"Tanda sebagai pilihan",
-  f_city2:"Kawasan",f_pace:"Rentak",f_mapRoute:"Laluan dalam peta",none:"Tiada",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"RM pelajar (pilihan)",f_budget:"Bajet RM (termasuk flight)",editBudget:"✎ Edit bajet",f_weather:"Cuaca",f_sheet:"Link Google Sheet perbelanjaan",cat_halal:"🍽️ Makan halal",halalToday:"Makan halal hari ni",area_chengdu:"Chengdu",area_siguniang:"Siguniang",area_bipenggou:"Bipenggou",area_xiling:"Xiling",area_dujiangyan:"Dujiangyan",area_tfu:"Airport TFU",src:"Sumber",f_area:"Kawasan",f_name:"Nama",f_src:"Pautan sumber (pilihan)",seeAll:"Lihat semua tempat halal →",expTitle:"Perbelanjaan group",expBy:"oleh {by}",expOpen:"↗ Buka sheet",expLoading:"Memuatkan dari Google Sheet…",expFail:"Tak dapat baca sheet dalam app. Tekan \"Buka sheet\" untuk tengok.",expEmpty:"Belum ada rekod.",expTotal:"Jumlah",expTable:"Jadual",expUpdated:"Dari Google Sheet · {t}"},
- en:{tabTrip:"Trip",tabPlan:"Itinerary",tabCost:"Costs",tabPack:"Pack",tabApps:"Apps",daysToGo:"Days to go",days:"{n} days",nights:"{n} nights",checkpoints:"Checkpoints",weather:"Weather",perPax:"Per person",
-  routeMap:"Route map",all:"All",dlMap:"⬇ Download map",openMap:"↗ Open full size",mustRemember:"Must remember",flights:"Flights",
-  pace_easy:"Easy pace",pace_moderate:"Moderate pace",pace_busy:"Busy pace",optional:"optional",map:"📍 Map",
-  costTitle:"Ground cost per person",transport:"Transport",hotel:"Hotel",fees:"Entrance fees",total:"Total",student:"I'm a student (student prices)",buffer:"Safe budget (+5%)",
-  packed:"items packed",packNote:"This list is saved on your own phone.",addItem:"Add item",phItem:"e.g. Foot warmers",add:"Add",shareWa:"Share to WhatsApp",reset:"Reset",confirm:"Sure?",
-  waHead:"My Chengdu trip packing list",waLeft:"Not packed yet",
-  installApp:"Install as an app",installTxt:"iPhone: open in Safari → Share → Add to Home Screen. Android: Chrome menu ⋮ → Install app.",
-  cat_hotels:"Hotels",cat_food:"Food",cat_maps:"Maps",cat_transport:"Transport",cat_essentials:"Essentials",
-  bc_documents:"Documents",bc_clothing:"Cold-weather clothing",bc_toiletries:"Toiletries",bc_electronics:"Electronics",bc_medication:"Medication",bc_food:"Food & drink",bc_other:"Other",
-  day:"Day",dayMap:"Today's route",leaveTitle:"Annual leave (AL)",leaveSum:"{n} days of AL",halfAm:"½ AM",fullDay:"Full",weekend:"Weekend",alTag:"AL",alHalf:"AL ½",
-  budgetTitle:"Budget RM{b} (incl. flight)",ground:"Ground cost",flightCost:"Flight ticket (enter yours)",leftLbl:"Left for food, snow games & shopping",overLbl:"Over budget",
-  syncOk:"✓ Up to date · {t}",syncing:"Checking…",saving:"Saving to GitHub…",saved:"✓ Saved. Everyone will see it within ~1 minute",syncFail:"Offline: showing saved data",saveFail:"Save failed: {e}",loading:"Loading trip…",
-  justNow:"just now",minAgo:"{n} min ago",
-  edit:"✎ Edit",done:"✓ Done",save:"Save",cancel:"Cancel",addMore:"+ Add",addAct:"+ Activity",addTravel:"+ Travel",addSection:"+ Section",editDay:"✎ Edit day details",
-  adminTitle:"Admin: edit & sync",adminOff:"To edit the trip inside the app, enter a GitHub token (once; it's saved on this phone only).",adminSteps:"Create a token: GitHub → Settings → Developer settings → Fine-grained tokens → Repository access: only the 'chengdu' repo → Permissions: Contents = Read and write.",
-  tokenPh:"github_pat_…",tokenSave:"Turn on admin",tokenBad:"Invalid token, or it has no write access to the repo.",adminOn:"✅ Admin mode is on. Every tab has an ✎ Edit button.",adminOut:"Remove token from this phone",makeToken:"Create a token on GitHub ↗",
-  f_icon:"Icon",f_ms:"Teks (BM)",f_en:"Text (English)",f_date:"Date",f_info:"Flight",f_from:"From",f_to:"To",f_dep:"Departs",f_arr:"Arrives",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
-  f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Type",t_stop:"Activity",t_move:"Travel",t_section:"Section",f_time:"Time",f_map:"Map search (Chinese name works best)",f_city:"City",f_opt:"Mark as optional",
-  f_city2:"Area",f_pace:"Pace",f_mapRoute:"Route on map",none:"None",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"Student RM (optional)",f_budget:"Budget RM (incl. flight)",editBudget:"✎ Edit budget",f_weather:"Weather",f_sheet:"Expenses Google Sheet link",cat_halal:"🍽️ Halal food",halalToday:"Halal food today",area_chengdu:"Chengdu",area_siguniang:"Siguniang",area_bipenggou:"Bipenggou",area_xiling:"Xiling",area_dujiangyan:"Dujiangyan",area_tfu:"TFU Airport",src:"Source",f_area:"Area",f_name:"Name",f_src:"Source link (optional)",seeAll:"See all halal places →",expTitle:"Group expenses",expBy:"by {by}",expOpen:"↗ Open sheet",expLoading:"Loading from Google Sheet…",expFail:"Couldn't read the sheet in the app. Tap \"Open sheet\" to view it.",expEmpty:"No entries yet.",expTotal:"Total",expTable:"Table",expUpdated:"From Google Sheet · {t}"}
-};
-const t=(k,v)=>{let s=(I[L]&&I[L][k])??I.ms[k]??k;if(v)for(const x in v)s=s.replace("{"+x+"}",v[x]);return s};
-const tx=o=>o==null?"":typeof o==="string"?o:(L==="en"&&o.en)?o.en:(o.ms||o.en||"");
-const D=s=>new Date(s+"T00:00:00Z");
-const fmt=(s,o)=>{const d=D(s);return isNaN(d)?"":new Intl.DateTimeFormat(L==="ms"?"ms-MY":"en-GB",{timeZone:"UTC",...o}).format(d)};
-const mapUrl=(k,c)=>T.maps==="amap"?`https://uri.amap.com/search?keyword=${encodeURIComponent(k)}${c?`&city=${encodeURIComponent(c)}`:""}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(k+" "+(c||""))}`;
-const DAYCOL={d2:"#D64933",d3:"#E8912D",d4:"#2F7FC1",d5:"#2E9A6A"};
+const rm=n=>"RM"+(Math.round(Number(n||0)*100)/100).toLocaleString("en",{maximumFractionDigits:2});
 const getP=(o,p)=>p.split(".").reduce((a,k)=>a==null?a:a[k],o);
 const setP=(o,p,v)=>{const ks=p.split(".");let a=o;ks.slice(0,-1).forEach(k=>{if(a[k]==null||typeof a[k]!=="object")a[k]={};a=a[k]});a[ks[ks.length-1]]=v};
 
-/* ===== GitHub sync ===== */
+let L=store.get("sc-lang","ms");
+let T=store.get("sc-data",null);
+let etag=store.get("sc-etag",""),lastSync=store.get("sc-synced",0),apiBlockedUntil=store.get("sc-apiblock",0);
+let token=store.get("sc-token",""),editMode=false,editing=null,newId=null,saving=0,syncState="loading";
+let view="home",moneyTab=store.get("sc-mtab","budget"),moreTab=store.get("sc-otab","pack"),appCat="hotels",mapDay="",curDay=-1;
+
+/* ================= words ================= */
+const I={
+ms:{tabHome:"Utama",tabPlan:"Jadual",tabFood:"Makan",tabMoney:"Duit",tabMore:"Lagi",
+ daysLeft:"hari lagi",onTrip:"Hari {n} trip",tripDone:"Trip dah habis",altTitle:"Laluan trip",altNote:"Ketinggian anggaran",
+ upNext:"Seterusnya",nothingNext:"Tiada aktiviti seterusnya hari ni",firstFlight:"Flight pergi",
+ qPack:"Barang siap",qFood:"Tempat halal",qMoney:"Baki bajet",
+ leave:"Cuti tahunan",leaveSum:"{n} hari AL diambil",halfAm:"½ pagi",fullDay:"Penuh",weekend:"Cuti",
+ routeMap:"Peta laluan",all:"Semua",dlMap:"Muat turun peta",remember:"Jangan lupa",flights:"Penerbangan",
+ day:"Hari",pace_easy:"Santai",pace_moderate:"Sederhana",pace_busy:"Padat",optional:"pilihan",map:"Peta",src:"Sumber",
+ dayMap:"Laluan hari ni",halalToday:"Makan halal hari ni",seeFood:"Semua tempat halal",
+ foodTitle:"Makan halal",foodSub:"Disusun ikut tempat yang korang pergi. Tekan Peta untuk buka di Amap.",
+ area_chengdu:"Chengdu",area_siguniang:"Siguniang",area_bipenggou:"Bipenggou",area_xiling:"Xiling",area_dujiangyan:"Dujiangyan",area_tfu:"Airport TFU",
+ mBudget:"Bajet",mSplit:"Split bill",mRecord:"Rekod Aiman",
+ budgetOf:"daripada bajet RM{b}",ground:"Kos darat",flight:"Tiket flight",flightPh:"Isi harga tiket kau",left:"Baki untuk makan, permainan salji & belanja",over:"Lebih bajet sebanyak",
+ groundTitle:"Kos darat seorang",transport:"Pengangkutan",hotel:"Hotel",fees:"Tiket masuk",student:"Saya pelajar (harga pelajar)",buffer:"Simpan lebih 5%: kira-kira {v}",editBudget:"Edit bajet",
+ quick:"Kira cepat",quickSub:"Bahagi satu bil sama rata. Tak disimpan.",amount:"Jumlah",people:"Orang",each:"Seorang bayar",
+ groupSplit:"Bil group",groupSub:"Siapa bayar apa, dan siapa hutang siapa. Disimpan untuk semua.",
+ members:"Ahli",addPerson:"Tambah nama",personPh:"Nama",noItems:"Belum ada bil. Admin boleh tambah bil pertama.",
+ paidBy:"{p} bayar",forAll:"untuk semua",forSome:"untuk {n} orang",balances:"Baki setiap orang",settle:"Cara langsaikan",allSettled:"Semua dah langsai.",
+ pays:"bayar",to:"kepada",shareSettle:"Hantar ke WhatsApp",addBill:"Tambah bil",rate:"Kadar: ¥1 = RM{r}",viewOnlySplit:"Nak tambah bil? Minta admin (atau Aiman) rekod dalam app.",
+ f_item:"Bil untuk apa",f_amount:"Jumlah",f_cur:"Matawang",f_paidBy:"Dibayar oleh",f_among:"Dikongsi oleh",f_date:"Tarikh",f_rate:"Kadar ¥1 = RM",
+ waSettle:"Langsai bil trip Chengdu",
+ expBy:"oleh {by}",expOpen:"Buka sheet",expLoading:"Memuatkan dari Google Sheet…",expFail:"Tak dapat baca sheet. Buka terus untuk tengok.",expTotal:"Jumlah",expTable:"Jadual",expUpdated:"Dari Google Sheet, dikemas kini {t}",expEmpty:"Belum ada rekod.",
+ oPack:"Barang",oApps:"Apps",oSet:"Tetapan",
+ packed:"siap dikemas",packNote:"Senarai ni disimpan dalam telefon kau sendiri.",addItem:"Tambah",phItem:"Tambah barang",shareWa:"Hantar progress ke WhatsApp",reset:"Set semula senarai",confirm:"Pasti?",
+ waHead:"Senarai barang trip Chengdu saya",waLeft:"Belum dikemas",
+ cat_hotels:"Hotel",cat_food:"Makanan",cat_maps:"Peta",cat_transport:"Pengangkutan",cat_essentials:"Keperluan",
+ bc_documents:"Dokumen",bc_clothing:"Pakaian sejuk",bc_toiletries:"Kelengkapan diri",bc_electronics:"Elektronik",bc_medication:"Ubat",bc_food:"Makanan & minuman",bc_other:"Lain-lain",
+ adminTitle:"Edit trip",adminOff:"Admin boleh edit jadual, bajet, bil dan tempat makan terus dalam app. Masukkan token GitHub sekali; ia disimpan dalam peranti ni sahaja.",
+ adminSteps:"Cara buat token: GitHub → Settings → Developer settings → Fine-grained tokens. Pilih repo Chengdu sahaja, dan set Contents kepada Read and write.",
+ makeToken:"Buat token di GitHub",tokenPh:"github_pat_…",tokenSave:"Aktifkan edit",tokenBad:"Token tak sah, atau tiada akses tulis ke repo Chengdu.",adminOn:"Edit aktif dalam peranti ni. Tekan Edit di setiap tab.",adminOut:"Buang token",
+ installTitle:"Pasang di telefon",installTxt:"iPhone: buka dalam Safari, tekan Share, pilih Add to Home Screen. Android: menu Chrome, pilih Install app.",
+ refresh:"Muat semula data",
+ syncOk:"Terkini · {t}",syncing:"Menyemak data terbaru…",saving:"Menyimpan…",saved:"Disimpan. Semua orang nampak dalam seminit.",syncFail:"Tiada sambungan. Papar data terakhir ({t}).",saveFail:"Tak dapat simpan ({e}). Cuba lagi.",loading:"Memuatkan trip…",
+ justNow:"baru tadi",minAgo:"{n} min lalu",hrAgo:"{n} jam lalu",
+ edit:"Edit",done:"Siap",save:"Simpan",cancel:"Batal",addMore:"Tambah",addAct:"Aktiviti",addTravel:"Perjalanan",addSection:"Tajuk",editDay:"Edit maklumat hari",
+ f_icon:"Ikon",f_ms:"Teks (BM)",f_en:"Text (English)",f_info:"Flight",f_from:"Dari",f_to:"Ke",f_dep:"Berlepas",f_arr:"Tiba",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
+ f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Jenis",t_stop:"Aktiviti",t_move:"Perjalanan",t_section:"Tajuk",f_time:"Masa",f_map:"Carian peta (nama Cina paling tepat)",f_city:"Bandar",f_opt:"Pilihan sahaja",
+ f_city2:"Kawasan",f_pace:"Rentak",f_mapRoute:"Laluan dalam peta",none:"Tiada",f_cost:"Item (BM)",f_costEn:"Item (English)",f_rm:"RM",f_student:"RM pelajar (pilihan)",f_budget:"Bajet RM (termasuk flight)",f_weather:"Cuaca",f_sheet:"Link Google Sheet",
+ f_area:"Kawasan",f_name:"Nama",f_src:"Pautan sumber (pilihan)"},
+en:{tabHome:"Home",tabPlan:"Itinerary",tabFood:"Food",tabMoney:"Money",tabMore:"More",
+ daysLeft:"days to go",onTrip:"Day {n} of the trip",tripDone:"Trip finished",altTitle:"Trip route",altNote:"Approximate altitude",
+ upNext:"Up next",nothingNext:"Nothing else planned today",firstFlight:"Outbound flight",
+ qPack:"Packed",qFood:"Halal places",qMoney:"Budget left",
+ leave:"Annual leave",leaveSum:"{n} days of AL",halfAm:"½ AM",fullDay:"Full",weekend:"Off",
+ routeMap:"Route map",all:"All",dlMap:"Download map",remember:"Must remember",flights:"Flights",
+ day:"Day",pace_easy:"Easy",pace_moderate:"Moderate",pace_busy:"Busy",optional:"optional",map:"Map",src:"Source",
+ dayMap:"Today's route",halalToday:"Halal food today",seeFood:"All halal places",
+ foodTitle:"Halal food",foodSub:"Grouped by the places you're visiting. Tap Map to open in Amap.",
+ area_chengdu:"Chengdu",area_siguniang:"Siguniang",area_bipenggou:"Bipenggou",area_xiling:"Xiling",area_dujiangyan:"Dujiangyan",area_tfu:"TFU Airport",
+ mBudget:"Budget",mSplit:"Split bill",mRecord:"Aiman's record",
+ budgetOf:"of the RM{b} budget",ground:"Ground cost",flight:"Flight ticket",flightPh:"Enter your ticket price",left:"Left for food, snow games & shopping",over:"Over budget by",
+ groundTitle:"Ground cost per person",transport:"Transport",hotel:"Hotel",fees:"Entrance fees",student:"I'm a student (student prices)",buffer:"Keep 5% extra: about {v}",editBudget:"Edit budget",
+ quick:"Quick split",quickSub:"Split one bill evenly. Not saved.",amount:"Amount",people:"People",each:"Each pays",
+ groupSplit:"Group bills",groupSub:"Who paid for what, and who owes whom. Saved for everyone.",
+ members:"Members",addPerson:"Add name",personPh:"Name",noItems:"No bills yet. An admin can add the first one.",
+ paidBy:"{p} paid",forAll:"for everyone",forSome:"for {n} people",balances:"Balance per person",settle:"How to settle",allSettled:"Everyone is settled.",
+ pays:"pays",to:"to",shareSettle:"Send to WhatsApp",addBill:"Add bill",rate:"Rate: ¥1 = RM{r}",viewOnlySplit:"Want to add a bill? Ask an admin (or Aiman) to record it in the app.",
+ f_item:"What's it for",f_amount:"Amount",f_cur:"Currency",f_paidBy:"Paid by",f_among:"Shared by",f_date:"Date",f_rate:"Rate ¥1 = RM",
+ waSettle:"Chengdu trip bill settlement",
+ expBy:"by {by}",expOpen:"Open sheet",expLoading:"Loading from Google Sheet…",expFail:"Couldn't read the sheet. Open it to view.",expTotal:"Total",expTable:"Table",expUpdated:"From Google Sheet, updated {t}",expEmpty:"No entries yet.",
+ oPack:"Packing",oApps:"Apps",oSet:"Settings",
+ packed:"packed",packNote:"This list is saved on your own phone.",addItem:"Add",phItem:"Add an item",shareWa:"Send progress to WhatsApp",reset:"Reset list",confirm:"Sure?",
+ waHead:"My Chengdu trip packing list",waLeft:"Not packed yet",
+ cat_hotels:"Hotels",cat_food:"Food",cat_maps:"Maps",cat_transport:"Transport",cat_essentials:"Essentials",
+ bc_documents:"Documents",bc_clothing:"Cold-weather clothing",bc_toiletries:"Toiletries",bc_electronics:"Electronics",bc_medication:"Medication",bc_food:"Food & drink",bc_other:"Other",
+ adminTitle:"Edit the trip",adminOff:"Admins can edit the itinerary, budget, bills and food places inside the app. Enter a GitHub token once; it's saved on this device only.",
+ adminSteps:"To create one: GitHub → Settings → Developer settings → Fine-grained tokens. Choose only the Chengdu repo and set Contents to Read and write.",
+ makeToken:"Create a token on GitHub",tokenPh:"github_pat_…",tokenSave:"Turn on editing",tokenBad:"Invalid token, or no write access to the Chengdu repo.",adminOn:"Editing is on for this device. Tap Edit on any tab.",adminOut:"Remove token",
+ installTitle:"Install on your phone",installTxt:"iPhone: open in Safari, tap Share, choose Add to Home Screen. Android: Chrome menu, choose Install app.",
+ refresh:"Reload data",
+ syncOk:"Up to date · {t}",syncing:"Checking for updates…",saving:"Saving…",saved:"Saved. Everyone will see it within a minute.",syncFail:"No connection. Showing the last data ({t}).",saveFail:"Couldn't save ({e}). Try again.",loading:"Loading trip…",
+ justNow:"just now",minAgo:"{n} min ago",hrAgo:"{n} h ago",
+ edit:"Edit",done:"Done",save:"Save",cancel:"Cancel",addMore:"Add",addAct:"Activity",addTravel:"Travel",addSection:"Heading",editDay:"Edit day details",
+ f_icon:"Icon",f_ms:"Teks (BM)",f_en:"Text (English)",f_info:"Flight",f_from:"From",f_to:"To",f_dep:"Departs",f_arr:"Arrives",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
+ f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Type",t_stop:"Activity",t_move:"Travel",t_section:"Heading",f_time:"Time",f_map:"Map search (Chinese name works best)",f_city:"City",f_opt:"Optional",
+ f_city2:"Area",f_pace:"Pace",f_mapRoute:"Route on map",none:"None",f_cost:"Item (BM)",f_costEn:"Item (English)",f_rm:"RM",f_student:"Student RM (optional)",f_budget:"Budget RM (incl. flight)",f_weather:"Weather",f_sheet:"Google Sheet link",
+ f_area:"Area",f_name:"Name",f_src:"Source link (optional)"}
+};
+const t=(k,v)=>{let s=(I[L]&&I[L][k])??I.ms[k]??k;if(v)for(const x in v)s=s.split("{"+x+"}").join(v[x]);return s};
+const tx=o=>o==null?"":typeof o==="string"?o:(L==="en"&&o.en)?o.en:(o.ms||o.en||"");
+const D=s=>new Date(s+"T00:00:00Z");
+const todayISO=()=>{const n=new Date();return new Date(n.getTime()-n.getTimezoneOffset()*60000).toISOString().slice(0,10)};
+const fmt=(s,o)=>{const d=D(s);return isNaN(d)?"":new Intl.DateTimeFormat(L==="ms"?"ms-MY":"en-GB",{timeZone:"UTC",...o}).format(d)};
+const ago=ts=>{if(!ts)return"";const m=Math.round((Date.now()-ts)/60000);return m<1?t("justNow"):m<60?t("minAgo",{n:m}):t("hrAgo",{n:Math.round(m/60)})};
+const mapUrl=(k,c)=>T.maps==="amap"?`https://uri.amap.com/search?keyword=${encodeURIComponent(k)}${c?`&city=${encodeURIComponent(c)}`:""}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(k+" "+(c||""))}`;
+const DAYCOL={d2:"#D64933",d3:"#E8912D",d4:"#2F7FC1",d5:"#2E9A6A"};
+const AREAS=["chengdu","siguniang","bipenggou","xiling","dujiangyan","tfu"];
+const MAP_HTML=$("#mapTpl").innerHTML;
+
+/* ================= sync with GitHub ================= */
 const b64dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,"")),c=>c.charCodeAt(0)));
 const b64enc=s=>{const b=new TextEncoder().encode(s);let r="";for(let i=0;i<b.length;i+=0x8000)r+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(r)};
-const ghHeaders=(auth)=>({Accept:"application/vnd.github+json",...(auth&&token?{Authorization:"Bearer "+token}:{})});
+const ghH=()=>({Accept:"application/vnd.github+json",...(token?{Authorization:"Bearer "+token}:{})});
 function setSync(s){syncState=s;const el=$("#sync");if(!el)return;
-  const ago=lastSync?Math.round((Date.now()-lastSync)/60000):null;const ts=ago==null?"":ago<1?t("justNow"):t("minAgo",{n:ago});
-  el.textContent=s==="ok"?t("syncOk",{t:ts}):s==="err"?t("syncFail"):s==="saving"?t("saving"):s==="saved"?t("saved"):s.startsWith("fail:")?t("saveFail",{e:s.slice(5)}):s==="loading"?t("loading"):t("syncing");
+  const map={ok:t("syncOk",{t:ago(lastSync)}),err:t("syncFail",{t:ago(lastSync)||"–"}),saving:t("saving"),saved:t("saved"),loading:t("loading"),syncing:t("syncing")};
+  el.querySelector("span").textContent=s.startsWith("fail:")?t("saveFail",{e:s.slice(5)}):(map[s]||"");
   el.className="sync "+(s==="ok"||s==="saved"?"ok":s==="err"||s.startsWith("fail")?"bad":"")}
-function applyData(d){T=d;store.set("sc-data",T);if(!editing)renderAll();loadExp()}
+function gotData(d){lastSync=Date.now();store.set("sc-synced",lastSync);
+  const changed=JSON.stringify(d)!==JSON.stringify(T);T=d;store.set("sc-data",T);
+  if(changed&&!editing)renderAll();loadExp();setSync("ok")}
+/* 1) GitHub API (freshest)  2) raw.githubusercontent.com  3) this site's data.json */
 async function pull(){
   if(saving)return;
-  try{
-    const h=ghHeaders(true);if(etag&&T)h["If-None-Match"]=etag;
-    const r=await fetch(API+"?ref="+REPO.branch,{headers:h,cache:"no-store"});
-    if(r.status===304){lastSync=Date.now();store.set("sc-synced",lastSync);setSync("ok");return}
-    if(!r.ok)throw new Error(r.status);
-    const j=await r.json();const d=JSON.parse(b64dec(j.content));
-    etag=r.headers.get("ETag")||"";store.set("sc-etag",etag);lastSync=Date.now();store.set("sc-synced",lastSync);
-    if(saving)return;applyData(d);setSync("ok");
-  }catch(e){
-    if(!T){try{const r=await fetch("data.json?v="+Date.now(),{cache:"no-store"});if(r.ok){applyData(await r.json());setSync("ok");return}}catch(x){}}
-    setSync(T?"err":"loading");
+  if(token||Date.now()>apiBlockedUntil){
+    try{
+      const h=ghH();if(etag&&T)h["If-None-Match"]=etag;
+      const r=await fetch(API+"?ref="+REPO.branch,{headers:h,cache:"no-store"});
+      if(r.status===304){lastSync=Date.now();store.set("sc-synced",lastSync);setSync("ok");return}
+      if(r.ok){const j=await r.json();etag=r.headers.get("ETag")||"";store.set("sc-etag",etag);if(!saving)gotData(JSON.parse(b64dec(j.content)));return}
+      if(r.status===403||r.status===429){apiBlockedUntil=Date.now()+15*60000;store.set("sc-apiblock",apiBlockedUntil)}
+    }catch(e){}
   }
+  for(const u of [RAW+"?t="+Date.now(),"data.json?t="+Date.now()]){
+    try{const r=await fetch(u,{cache:"no-store"});if(r.ok){const d=await r.json();if(d&&d.days){if(!saving)gotData(d);return}}}catch(e){}
+  }
+  setSync(T?"err":"loading");
 }
-/* commit(mut): apply mut to local data now, then to the freshest remote copy and push it */
 let commitQ=Promise.resolve();
 function commit(mut,msg){
   mut(T);store.set("sc-data",T);renderAll();
   if(!token)return;
   saving++;setSync("saving");
   commitQ=commitQ.then(async()=>{
-    for(let attempt=0;attempt<3;attempt++){
-      const g=await fetch(API+"?ref="+REPO.branch+"&t="+Date.now(),{headers:ghHeaders(true),cache:"no-store"});
-      if(!g.ok)throw new Error("HTTP "+g.status);
+    for(let i=0;i<3;i++){
+      const g=await fetch(API+"?ref="+REPO.branch+"&t="+Date.now(),{headers:ghH(),cache:"no-store"});
+      if(!g.ok)throw new Error(g.status===401||g.status===403?"token":"HTTP "+g.status);
       const j=await g.json();const remote=JSON.parse(b64dec(j.content));mut(remote);
-      const p=await fetch(API,{method:"PUT",headers:{...ghHeaders(true),"Content-Type":"application/json"},body:JSON.stringify({message:msg||"Update trip via app",content:b64enc(JSON.stringify(remote,null,2)+"\n"),sha:j.sha,branch:REPO.branch})});
-      if(p.status===409||p.status===422){continue}
+      const p=await fetch(API,{method:"PUT",headers:{...ghH(),"Content-Type":"application/json"},body:JSON.stringify({message:msg||"Update trip via app",content:b64enc(JSON.stringify(remote,null,2)+"\n"),sha:j.sha,branch:REPO.branch})});
+      if(p.status===409||p.status===422)continue;
       if(!p.ok)throw new Error(p.status===401||p.status===403?"token":"HTTP "+p.status);
       etag="";store.set("sc-etag","");T=remote;store.set("sc-data",T);return;
     }
     throw new Error("conflict");
-  }).then(()=>{saving--;setSync("saved");if(!editing)renderAll()},e=>{saving--;setSync("fail:"+e.message)});
+  }).then(()=>{saving--;lastSync=Date.now();setSync("saved");if(!editing)renderAll()},e=>{saving--;setSync("fail:"+e.message)});
 }
 
-/* ===== routing ===== */
-const VIEWS=["trip","plan","cost","pack","apps"];
-function show(v){if(!VIEWS.includes(v))v="trip";document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="v-"+v));document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.v===v))}
+/* ================= routing ================= */
+const VIEWS=["home","plan","food","money","more"];
+function show(v){if(!VIEWS.includes(v))v="home";view=v;document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="v-"+v));document.querySelectorAll("#tabs button").forEach(b=>{const on=b.dataset.v===v;b.classList.toggle("on",on);b.setAttribute("aria-current",on?"page":"false")})}
 $("#tabs").onclick=e=>{const b=e.target.closest("button");if(b){location.hash=b.dataset.v;scrollTo(0,0)}};
-addEventListener("hashchange",()=>show(location.hash.slice(1)));
+addEventListener("hashchange",()=>{show(location.hash.slice(1));});
+function go(v){location.hash=v;try{scrollTo(0,0)}catch(e){}}
 
-/* ===== edit helpers ===== */
+/* ================= edit helpers ================= */
 const editBtn=()=>token?`<div class="toolbar"><button class="ebtn${editMode?" on":""}" type="button" data-a="mode">${editMode?t("done"):t("edit")}</button></div>`:"";
-const ctl=(list,id)=>editMode?`<span class="ctl" data-list="${list}" data-id="${esc(id)}"><button type="button" data-a="up">↑</button><button type="button" data-a="dn">↓</button><button type="button" data-a="ed">✎</button><button type="button" data-a="rm">×</button></span>`:"";
-const addBtn=(list,label,extra="")=>editMode&&!editing?`<button class="addbtn" type="button" data-a="add" data-list="${list}"${extra}>${esc(label||t("addMore"))}</button>`:"";
+const ctl=(list,id)=>editMode?`<span class="ctl" data-list="${list}" data-id="${esc(id)}"><button type="button" data-a="up" aria-label="Up">↑</button><button type="button" data-a="dn" aria-label="Down">↓</button><button type="button" data-a="ed">${esc(t("edit"))}</button><button type="button" data-a="rm" aria-label="Delete">×</button></span>`:"";
+const addBtn=(list,label,extra="")=>editMode&&!editing?`<button class="addbtn" type="button" data-a="add" data-list="${list}"${extra}>+ ${esc(label||t("addMore"))}</button>`:"";
 function field(f,o){const v=getP(o,f.k);const lab=`<label class="fl">${esc(t(f.l))}</label>`;
   if(f.sel)return lab+`<select name="${f.k}">${f.sel.map(([a,b])=>`<option value="${esc(a)}"${String(v??"")===a?" selected":""}>${esc(b)}</option>`).join("")}</select>`;
+  if(f.multi)return lab+`<div class="who">${f.multi.map(([a,b])=>`<label class="person"><input type="checkbox" name="${f.k}" value="${esc(a)}"${!v||!v.length||v.includes(a)?" checked":""}> ${esc(b)}</label>`).join("")}</div>`;
   if(f.ta)return lab+`<textarea name="${f.k}" rows="2" maxlength="600">${esc(v||"")}</textarea>`;
   if(f.ck)return `<label class="ck"><input type="checkbox" name="${f.k}"${v?" checked":""}> ${esc(t(f.l))}</label>`;
-  return lab+`<input name="${f.k}" type="${f.type||"text"}" value="${esc(v??"")}" maxlength="200"${f.type==="number"?' inputmode="decimal"':""}>`}
+  return lab+`<input name="${f.k}" type="${f.type||"text"}" value="${esc(v??"")}" maxlength="200"${f.type==="number"?' inputmode="decimal" step="any"':""}>`}
 function formHTML(fields,o,form,attrs=""){let h="",buf=[],row=null;const fl=()=>{if(buf.length){h+=`<div class="frow">${buf.map(x=>`<div>${x}</div>`).join("")}</div>`;buf=[]}};
   fields.forEach(f=>{if(f.row){if(row!==f.row)fl();row=f.row;buf.push(field(f,o))}else{fl();row=null;h+=field(f,o)}});fl();
-  return `<form class="card edit" data-form="${form}"${attrs}>${h}<div class="frow" style="margin-top:4px"><button class="btn">${esc(t("save"))}</button><button class="btn ghost" type="button" data-a="cancel">${esc(t("cancel"))}</button></div></form>`}
-function readForm(f,fields,o){const fd=new FormData(f);fields.forEach(x=>{let v=x.ck?!!fd.get(x.k):String(fd.get(x.k)??"").trim();if(x.type==="number")v=v===""?(x.opt?undefined:0):Number(v);if(v===undefined){const ks=x.k.split(".");let a=o;ks.slice(0,-1).forEach(k=>a=a&&a[k]);if(a)delete a[ks[ks.length-1]]}else setP(o,x.k,v)});return o}
+  return `<form class="edit" data-form="${form}"${attrs}>${h}<div class="actions"><button class="btn pine">${esc(t("save"))}</button><button class="btn ghost" type="button" data-a="cancel">${esc(t("cancel"))}</button></div></form>`}
+function readForm(f,fields,o){const fd=new FormData(f);fields.forEach(x=>{
+  if(x.multi){const all=x.multi.map(m=>m[0]);const got=fd.getAll(x.k);setP(o,x.k,got.length===all.length?[]:got);return}
+  let v=x.ck?!!fd.get(x.k):String(fd.get(x.k)??"").trim();if(x.type==="number")v=v===""?(x.opt?undefined:0):Number(v);
+  if(v===undefined){const ks=x.k.split(".");let a=o;ks.slice(0,-1).forEach(k=>a=a&&a[k]);if(a)delete a[ks[ks.length-1]]}else setP(o,x.k,v)});return o}
 const PACES=()=>[["easy",t("pace_easy")],["moderate",t("pace_moderate")],["busy",t("pace_busy")]];
-const AREAS=["chengdu","siguniang","bipenggou","xiling","dujiangyan","tfu"];
 const SCHEMA={
- reminders:()=>[{k:"ic",l:"f_icon"},{k:"ms",l:"f_ms",ta:1},{k:"en",l:"f_en",ta:1}],
+ reminders:()=>[{k:"ms",l:"f_ms",ta:1},{k:"en",l:"f_en",ta:1}],
  flights:()=>[{k:"date",l:"f_date",type:"date",row:1},{k:"info",l:"f_info",row:1},{k:"from",l:"f_from",row:2},{k:"fromT",l:"f_dep",row:2},{k:"to",l:"f_to",row:3},{k:"toT",l:"f_arr",row:3},{k:"note.ms",l:"f_noteMs"},{k:"note.en",l:"f_noteEn"}],
- cost:(fee)=>[{k:"ms",l:"f_item"},{k:"en",l:"f_itemEn"},{k:"rm",l:"f_rm",type:"number",row:1},...(fee?[{k:"student",l:"f_student",type:"number",opt:1,row:1}]:[])],
+ cost:(fee)=>[{k:"ms",l:"f_cost"},{k:"en",l:"f_costEn"},{k:"rm",l:"f_rm",type:"number",row:1},...(fee?[{k:"student",l:"f_student",type:"number",opt:1,row:1}]:[])],
  stop:()=>[{k:"kind",l:"f_type",sel:[["stop",t("t_stop")],["move",t("t_move")],["section",t("t_section")]],row:1},{k:"t",l:"f_time",row:1},{k:"h.ms",l:"f_hMs"},{k:"h.en",l:"f_hEn"},{k:"p.ms",l:"f_pMs",ta:1},{k:"p.en",l:"f_pEn",ta:1},{k:"map",l:"f_map",row:2},{k:"city",l:"f_city",row:2},{k:"opt",l:"f_opt",ck:1}],
  day:()=>[{k:"title.ms",l:"f_hMs"},{k:"title.en",l:"f_hEn"},{k:"date",l:"f_date",type:"date",row:1},{k:"pace",l:"f_pace",sel:PACES(),row:1},{k:"city",l:"f_city2",row:2},{k:"map",l:"f_mapRoute",sel:[["",t("none")],["d2","Hari 2"],["d3","Hari 3"],["d4","Hari 4"],["d5","Hari 5"]],row:2}],
- halal:()=>[{k:"area",l:"f_area",sel:AREAS.map(a=>[a,t("area_"+a)])},{k:"name",l:"f_name"},{k:"ms",l:"f_ms",ta:1},{k:"en",l:"f_en",ta:1},{k:"map",l:"f_map",row:1},{k:"city",l:"f_city",row:1},{k:"src",l:"f_src"}],
  budget:()=>[{k:"budget",l:"f_budget",type:"number",row:1},{k:"weather",l:"f_weather",row:1},{k:"expenses.url",l:"f_sheet"}],
+ halal:()=>[{k:"area",l:"f_area",sel:AREAS.map(a=>[a,t("area_"+a)])},{k:"name",l:"f_name"},{k:"ms",l:"f_ms",ta:1},{k:"en",l:"f_en",ta:1},{k:"map",l:"f_map",row:1},{k:"city",l:"f_city",row:1},{k:"src",l:"f_src"}],
+ bill:()=>{const P=(T.split&&T.split.people)||[];return[{k:"what",l:"f_item"},{k:"amount",l:"f_amount",type:"number",row:1},{k:"cur",l:"f_cur",sel:[["RM","RM"],["CNY","¥ CNY"]],row:1},{k:"date",l:"f_date",type:"date",row:2},{k:"paidBy",l:"f_paidBy",sel:P.map(p=>[p.id,p.name]),row:2},{k:"among",l:"f_among",multi:P.map(p=>[p.id,p.name])}]},
 };
-/* list path → array inside a data object */
-function listOf(d,list){if(list.startsWith("stops:")){const day=d.days.find(x=>x.id===list.slice(6));return day?day.stops:null}if(list.startsWith("costs."))return d.costs[list.slice(6)];return d[list]}
-const schemaOf=list=>list.startsWith("stops:")?SCHEMA.stop():list.startsWith("costs.")?SCHEMA.cost(list==="costs.fees"):SCHEMA[list]();
-const blankOf=(list,kind)=>list.startsWith("stops:")?{kind:kind||"stop",t:"",h:{ms:"",en:""},p:{ms:"",en:""}}:list.startsWith("costs.")?{ms:"",en:"",rm:0}:list==="halal"?{area:appArea||"chengdu",name:"",ms:"",en:"",map:"",city:"",src:""}:list==="flights"?{date:"",info:"",from:"",fromT:"",to:"",toT:"",note:{ms:"",en:""}}:{ic:"📌",ms:"",en:""};
+function listOf(d,list){if(list.startsWith("stops:")){const day=d.days.find(x=>x.id===list.slice(6));return day?day.stops:null}if(list.startsWith("costs."))return d.costs[list.slice(6)];if(list==="bills"){d.split=d.split||{rate:0.61,people:[],items:[]};return d.split.items}return d[list]}
+const schemaOf=list=>list.startsWith("stops:")?SCHEMA.stop():list.startsWith("costs.")?SCHEMA.cost(list==="costs.fees"):list==="bills"?SCHEMA.bill():SCHEMA[list]();
+function blankOf(list,kind){
+  if(list.startsWith("stops:"))return{kind:kind||"stop",t:"",h:{ms:"",en:""},p:{ms:"",en:""}};
+  if(list.startsWith("costs."))return{ms:"",en:"",rm:0};
+  if(list==="flights")return{date:"",info:"",from:"",fromT:"",to:"",toT:"",note:{ms:"",en:""}};
+  if(list==="halal")return{area:"chengdu",name:"",ms:"",en:"",map:"",city:"",src:""};
+  if(list==="bills"){const P=T.split.people;return{what:"",amount:0,cur:"CNY",date:todayISO()>=T.start&&todayISO()<=T.end?todayISO():T.start,paidBy:P[0]?P[0].id:"",among:[]}}
+  return{ms:"",en:""}}
 const isEd=(list,id)=>editing&&editing.list===list&&editing.id===id;
 function dropNew(){if(!newId||!editing)return;const a=listOf(T,editing.list);if(a){const i=a.findIndex(x=>x.id===newId);if(i>=0)a.splice(i,1)}newId=null}
 function cancelEdit(){dropNew();editing=null;renderAll()}
+const listForm=(list,o)=>formHTML(schemaOf(list),o,"list",` data-list="${list}" data-id="${esc(o.id)}"`);
 
 document.addEventListener("click",e=>{
-  const b=e.target.closest("button[data-a]");if(!b||b.closest("#packCats")||b.closest("#addForm"))return;const a=b.dataset.a;
+  const b=e.target.closest("button[data-a]");if(!b)return;const a=b.dataset.a;
   if(a==="mode"){dropNew();editing=null;editMode=!editMode;renderAll();return}
   if(a==="cancel"){cancelEdit();return}
   if(a==="add"){dropNew();const list=b.dataset.list;const arr=listOf(T,list);if(!arr)return;const o={id:"n"+uid(),...blankOf(list,b.dataset.kind)};arr.push(o);newId=o.id;editing={list,id:o.id};renderAll();return}
   if(a==="eday"){dropNew();editing={list:"day",id:b.dataset.id};renderAll();return}
   if(a==="ebudget"){dropNew();editing={list:"budget",id:"b"};renderAll();return}
+  if(a==="erate"){dropNew();editing={list:"rate",id:"r"};renderAll();return}
   const c=b.closest("[data-list]");if(!c||!["up","dn","ed","rm"].includes(a))return;
   const list=c.dataset.list,id=c.dataset.id,arr=listOf(T,list);if(!arr)return;const i=arr.findIndex(x=>x.id===id);if(i<0)return;
   if(a==="ed"){dropNew();editing={list,id};renderAll();return}
@@ -452,100 +534,193 @@ document.addEventListener("click",e=>{
 document.addEventListener("submit",e=>{
   const f=e.target;if(!f.dataset.form)return;e.preventDefault();
   if(f.dataset.form==="day"){const id=f.dataset.id,fields=SCHEMA.day();const draft=readForm(f,fields,clone(T.days.find(x=>x.id===id)||{}));editing=null;
-    commit(d=>{const day=d.days.find(x=>x.id===id);if(day)readFormValues(day,fields,draft)},"Edit day");return}
-  if(f.dataset.form==="budget"){const fields=SCHEMA.budget();const draft=readForm(f,fields,{budget:T.budget,weather:T.weather,expenses:clone(T.expenses||{})});editing=null;commit(d=>{d.budget=draft.budget;d.weather=draft.weather;d.expenses={...(d.expenses||{}),url:draft.expenses.url}},"Edit budget");loadExp(true);return}
+    commit(d=>{const day=d.days.find(x=>x.id===id);if(day)fields.forEach(x=>setP(day,x.k,getP(draft,x.k)))},"Edit day");return}
+  if(f.dataset.form==="budget"){const fields=SCHEMA.budget();const draft=readForm(f,fields,{budget:T.budget,weather:T.weather,expenses:clone(T.expenses||{})});editing=null;
+    commit(d=>{d.budget=draft.budget;d.weather=draft.weather;d.expenses={...(d.expenses||{}),url:draft.expenses.url}},"Edit budget");expUrlLoaded="";loadExp();return}
+  if(f.dataset.form==="rate"){const v=Number(new FormData(f).get("rate"))||T.split.rate;editing=null;commit(d=>{d.split.rate=v},"Edit rate");return}
   const list=f.dataset.list,id=f.dataset.id,fields=schemaOf(list);const cur=(listOf(T,list)||[]).find(x=>x.id===id);if(!cur)return;
-  const draft=readForm(f,fields,clone(cur));const titleKey=fields.find(x=>!x.sel&&!x.ck&&x.k!=="ic"&&x.k!=="date");
-  if(titleKey&&!getP(draft,titleKey.k)&&!(draft.h&&(draft.h.ms||draft.h.en))&&!draft.ms&&!draft.from){const el=f.elements[titleKey.k];el&&el.focus();return}
-  if(draft.h&&!draft.h.ms&&draft.h.en)draft.h.ms=draft.h.en;
+  const draft=readForm(f,fields,clone(cur));
+  const need=list==="bills"?"what":list==="halal"?"name":list==="flights"?"from":list.startsWith("costs.")?"ms":list.startsWith("stops:")?null:"ms";
+  if(need&&!getP(draft,need)){const el=f.elements.namedItem(need);el&&el.focus&&el.focus();return}
+  if(list.startsWith("stops:")){if(!draft.h.ms&&!draft.h.en){f.elements["h.ms"].focus();return}if(!draft.h.ms)draft.h.ms=draft.h.en}
+  if(list==="bills"&&!(draft.amount>0)){f.elements.amount.focus();return}
   const isNew=id===newId;newId=null;editing=null;
   commit(d=>{const x=listOf(d,list);if(!x)return;const k=x.findIndex(y=>y.id===id);if(k>=0)x[k]=clone(draft);else if(isNew)x.push(clone(draft))},isNew?"Add item":"Edit item");
 });
-function readFormValues(target,fields,src){fields.forEach(f=>{const v=getP(src,f.k);if(v===undefined){const ks=f.k.split(".");let a=target;ks.slice(0,-1).forEach(k=>a=a&&a[k]);if(a)delete a[ks[ks.length-1]]}else setP(target,f.k,v)})}
 
-/* ===== top / trip tab ===== */
-function renderTop(){
-  document.documentElement.lang=L;
-  document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
-  document.querySelectorAll("[data-i18n-ph]").forEach(e=>e.placeholder=t(e.dataset.i18nPh));
-  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
-  $("#hName").textContent=T.emoji+" "+tx(T.name);$("#hRoute").textContent=fmt(T.start,{day:"numeric",month:"short"})+" – "+fmt(T.end,{day:"numeric",month:"short",year:"numeric"});
-  const n=Math.round((D(T.end)-D(T.start))/864e5);const togo=Math.ceil((D(T.start)-D(new Date().toISOString().slice(0,10)))/864e5);
-  $("#tripTools").innerHTML=editBtn();
-  $("#hero").innerHTML=`<div class="row"><div><div class="muted" style="font-size:13px">${esc(t("daysToGo"))}</div><div class="big">${togo>0?togo:"🎉"}</div></div><div style="text-align:right"><div style="font-weight:700">${esc(t("days",{n:n+1}))} · ${esc(t("nights",{n}))}</div><div class="muted" style="font-size:12px;max-width:200px">${esc(T.route)}</div></div></div>
-   <div class="stats"><div><b>3</b><span>${esc(t("checkpoints"))}</span></div><div><b>~RM${total(false)}</b><span>${esc(t("perPax"))}</span></div><div><b>${esc(T.weather)}</b><span>${esc(t("weather"))}</span></div></div>`;
+/* ================= HOME ================= */
+function altSVG(){
+  if(!T.days.some(d=>d.alt))return"";
+  const days=T.days,n=days.length,W=340,H=150,top=34,bot=110,max=3600;
+  const x=i=>18+i*(W-36)/Math.max(1,n-1),y=a=>bot-(Math.min(a||0,max)/max)*(bot-top);
+  const today=todayISO();
+  let pts=days.map((d,i)=>[x(i),y(d.alt)]);
+  let path=`M${pts[0][0]},${bot} `+pts.map((p,i)=>{if(i===0)return`L${p[0]},${p[1]}`;const q=pts[i-1],mx=(q[0]+p[0])/2;return`C${mx},${q[1]} ${mx},${p[1]} ${p[0]},${p[1]}`}).join(" ")+` L${pts[n-1][0]},${bot} Z`;
+  const line=path.replace(/^M[^L]+L/,"M").replace(/ L[\d.]+,[\d.]+ Z$/,"");
+  const g=days.map((d,i)=>{const [px,py]=pts[i];const isT=d.date===today;const peak=(d.alt||0)>=2000;
+    return `<g class="pt" data-day="${i}" tabindex="0" role="button" aria-label="${esc(t("day"))} ${i+1} ${esc(d.place||"")}">
+      ${peak?`<text x="${px}" y="${py-12}" text-anchor="middle" font-size="11" fill="#5E6E70">${(d.alt||0).toLocaleString("en")}m</text>`:""}
+      <circle cx="${px}" cy="${py}" r="${isT?7:5}" fill="${isT?"#E0A030":"#fff"}" stroke="#1F5E4B" stroke-width="2.5"/>
+      <rect x="${px-20}" y="${py-20}" width="40" height="${bot-py+46}" fill="transparent"/>
+      <text x="${px}" y="${bot+18}" text-anchor="middle" font-size="12" font-weight="700" fill="${isT?"#1F5E4B":"#18282D"}">${esc(fmt(d.date,{day:"numeric"}))}</text>
+      <text x="${px}" y="${bot+33}" text-anchor="middle" font-size="10.5" fill="#5E6E70">${esc((d.place||"").slice(0,10))}</text></g>`}).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("altTitle"))}"><path d="${path}" fill="#D3E3E9"/><path d="${line}" fill="none" stroke="#1F5E4B" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="10" x2="${W-10}" y1="${bot}" y2="${bot}" stroke="#B7C3BF" stroke-width="1"/>${g}</svg>`;
+}
+function upNextHTML(){
+  const today=todayISO();
+  if(today<T.start){const f=T.flights[0];return f?`<div class="upnext"><div class="k">${esc(t("firstFlight"))} · ${esc(fmt(f.date,{weekday:"long",day:"numeric",month:"short"}))}</div><div class="v">${esc(f.from)} ${esc(f.fromT)} → ${esc(f.to)} ${esc(f.toT)}</div><div class="k">${esc(f.info)}</div></div>`:""}
+  const d=T.days.find(x=>x.date===today);if(!d)return"";
+  const now=new Date(),hm=String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
+  const nx=d.stops.find(s=>s.kind==="stop"&&/^\d\d:\d\d/.test(s.t||"")&&s.t.slice(0,5)>=hm);
+  return `<div class="upnext"><div class="k">${esc(t("upNext"))}</div><div class="v">${nx?esc(nx.t.slice(0,5)+"  "+tx(nx.h)):esc(t("nothingNext"))}</div></div>`;
+}
+function renderHome(){
+  const today=todayISO(),togo=Math.ceil((D(T.start)-D(today))/864e5),di=T.days.findIndex(d=>d.date===today);
+  const count=togo>0?`${togo}<small>${esc(t("daysLeft"))}</small>`:di>=0?esc(t("onTrip",{n:di+1})):esc(t("tripDone"));
   const LV={};(T.leave||[]).forEach(l=>LV[l.date]=l);const ld=[];for(let x=D(T.start);x<=D(T.end);x.setUTCDate(x.getUTCDate()+1))ld.push(x.toISOString().slice(0,10));
   const nAL=(T.leave||[]).reduce((s,l)=>s+(l.half?0.5:1),0);
-  $("#leaveCard").innerHTML=`<b>${esc(t("leaveSum",{n:nAL}))}</b><div class="leave">${ld.map(dt=>{const l=LV[dt];const wd=D(dt).getUTCDay();return `<div class="${l?(l.half?"half":"al"):""}">${esc(fmt(dt,{weekday:"short"}))}<b>${esc(fmt(dt,{day:"numeric"}))}</b>${esc(l?(l.half?t("halfAm"):t("fullDay")):(wd===0||wd===6?t("weekend"):""))}</div>`}).join("")}</div>`;
-  $("#remList").innerHTML=T.reminders.map(r=>isEd("reminders",r.id)?formHTML(SCHEMA.reminders(),r,"list",` data-list="reminders" data-id="${esc(r.id)}"`):`<div class="remind"><div class="ic">${esc(r.ic)}</div><div class="bd"><p>${esc(tx(r))}</p>${ctl("reminders",r.id)}</div></div>`).join("")+addBtn("reminders");
-  $("#flightList").innerHTML=T.flights.map(f=>isEd("flights",f.id)?formHTML(SCHEMA.flights(),f,"list",` data-list="flights" data-id="${esc(f.id)}"`):`<div class="leg">${f.date?`<div class="dt">${esc(fmt(f.date,{weekday:"short",day:"numeric",month:"short"}))}</div>`:""}<div class="g"><div><div class="code">${esc(f.from)}</div><div class="t">${esc(f.fromT)}</div></div><div class="mid">${esc(f.info)}<i></i>✈</div><div class="r"><div class="code">${esc(f.to)}</div><div class="t">${esc(f.toT)}</div></div></div>${tx(f.note)?`<div class="transit">${esc(tx(f.note))}</div>`:""}${ctl("flights",f.id)}</div>`).join("")+addBtn("flights");
+  const bag=getBag(),packed=bag.filter(i=>i.d).length;
+  const halalN=(T.halal||[]).filter(h=>h.map).length;
+  const left=(T.budget||0)-groundTotal(student)-(Number(store.get("sc-flight",0))||0);
+  let h=`<div class="alt"><div class="head"><div class="count">${count}</div><div class="small">${esc(T.weather||"")}</div></div>${altSVG()}<div class="alt-note">${esc(t("altNote"))}</div></div>
+   ${upNextHTML()}
+   <div class="next"><a href="#more" data-otab="pack"><b>${packed}/${bag.length}</b><span>${esc(t("qPack"))}</span></a><a href="#food"><b>${halalN}</b><span>${esc(t("qFood"))}</span></a><a href="#money" data-mtab="budget"><b>${left<0?"−":""}${rm(Math.abs(left))}</b><span>${esc(t("qMoney"))}</span></a></div>
+   <h2 class="sec">${esc(t("leave"))}</h2><p class="sub">${esc(t("leaveSum",{n:nAL}))}</p>
+   <div class="leave">${ld.map(dt=>{const l=LV[dt];const wd=D(dt).getUTCDay();return `<div class="${l?(l.half?"half":"al"):""}">${esc(fmt(dt,{weekday:"short"}))}<b>${esc(fmt(dt,{day:"numeric"}))}</b>${esc(l?(l.half?t("halfAm"):t("fullDay")):(wd===0||wd===6?t("weekend"):""))}</div>`}).join("")}</div>
+   <h2 class="sec">${esc(t("routeMap"))}</h2><div class="mapwrap" id="bigMap">${MAP_HTML}</div><div class="chips" id="mapChips"></div>
+   <p style="margin-top:8px"><a class="linkb" href="map.png" download="peta-trip-chengdu.png">${esc(t("dlMap"))}</a></p>
+   ${editBtn()}<h2 class="sec">${esc(t("remember"))}</h2><div class="rows">${T.reminders.map((r,i)=>isEd("reminders",r.id)?listForm("reminders",r):`<div class="row rem"><span class="n">${i+1}</span><div><p>${esc(tx(r))}</p>${ctl("reminders",r.id)}</div></div>`).join("")}</div>${addBtn("reminders")}
+   <h2 class="sec">${esc(t("flights"))}</h2><div class="rows">${T.flights.map(f=>isEd("flights",f.id)?listForm("flights",f):`<div class="leg">${f.date?`<div class="d">${esc(fmt(f.date,{weekday:"long",day:"numeric",month:"short"}))}</div>`:""}<div class="g"><div><div class="code">${esc(f.from)}</div><div class="t">${esc(f.fromT)}</div></div><div class="mid">${esc(f.info)}</div><div class="r"><div class="code">${esc(f.to)}</div><div class="t">${esc(f.toT)}</div></div></div>${tx(f.note)?`<div class="note">${esc(tx(f.note))}</div>`:""}${ctl("flights",f.id)}</div>`).join("")}</div>${addBtn("flights")}`;
+  $("#v-home").innerHTML=h;
+  renderChips();
 }
-
-/* ===== map ===== */
-let mapDay="";
-function renderChips(){
-  const days=T.days.filter(d=>d.map);
-  $("#mapChips").innerHTML=`<button type="button" data-d="" class="${mapDay?"":"on"}">${esc(t("all"))}</button>`+days.map(d=>{const i=T.days.indexOf(d)+1;return `<button type="button" data-d="${esc(d.map)}" class="${mapDay===d.map?"on":""}"><i style="background:${DAYCOL[d.map]||"#999"}"></i>${esc(t("day"))} ${i} · ${esc(fmt(d.date,{day:"numeric",month:"short"}))}</button>`}).join("");
-  highlight($("#bigMap"),mapDay);
-}
+function renderChips(){const el=$("#mapChips");if(!el)return;
+  el.innerHTML=`<button type="button" class="chip${mapDay?"":" on"}" data-d="">${esc(t("all"))}</button>`+T.days.filter(d=>d.map).map(d=>`<button type="button" class="chip${mapDay===d.map?" on":""}" data-d="${esc(d.map)}"><i style="background:${DAYCOL[d.map]||"#999"}"></i>${esc(t("day"))} ${T.days.indexOf(d)+1}</button>`).join("");
+  highlight($("#bigMap"),mapDay)}
 function highlight(w,d){if(!w)return;w.classList.toggle("dim",!!d);w.querySelectorAll(".route").forEach(g=>g.classList.toggle("on",g.dataset.day===d))}
-$("#mapChips").onclick=e=>{const b=e.target.closest("button");if(!b)return;mapDay=b.dataset.d;renderChips()};
+$("#v-home").addEventListener("click",e=>{
+  const c=e.target.closest("#mapChips button");if(c){mapDay=c.dataset.d;renderChips();return}
+  const p=e.target.closest(".pt");if(p){curDay=+p.dataset.day;go("plan");renderDays();return}
+  const a=e.target.closest("a[data-otab]");if(a){moreTab=a.dataset.otab;store.set("sc-otab",moreTab);renderMore()}
+  const m=e.target.closest("a[data-mtab]");if(m){moneyTab=m.dataset.mtab;store.set("sc-mtab",moneyTab);renderMoney()}
+});
+$("#v-home").addEventListener("keydown",e=>{const p=e.target.closest(".pt");if(p&&(e.key==="Enter"||e.key===" ")){e.preventDefault();curDay=+p.dataset.day;go("plan");renderDays()}});
 
-/* ===== itinerary ===== */
-let curDay=-1;
+/* ================= PLAN ================= */
 function stopHTML(s,list){
-  if(isEd(list,s.id))return formHTML(SCHEMA.stop(),s,"list",` data-list="${list}" data-id="${esc(s.id)}"`);
+  if(isEd(list,s.id))return listForm(list,s);
   const c=ctl(list,s.id);
-  if(s.kind==="move")return `<div class="move"><span>🚐 ${esc(tx(s.h))}</span>${c}</div>`;
-  if(s.kind==="section")return `<div class="optlabel"><span>🏔️ ${esc(tx(s.h))}</span>${c}</div>`;
-  const acts=[];if(s.map)acts.push(`<a class="chip" href="${esc(mapUrl(s.map,s.city))}" target="_blank" rel="noopener">${esc(t("map"))}</a>`);
-  (s.links||[]).forEach(l=>{if(okUrl(l.u))acts.push(`<a class="chip" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.l)} ↗</a>`)});
-  const time=[s.t,s.opt?t("optional"):""].filter(Boolean).join(" · ");
-  return `<div class="stop${s.opt?" opt":""}">${time?`<div class="time">${esc(time)}</div>`:""}<h3>${esc(tx(s.h))}</h3>${tx(s.p)?`<p>${esc(tx(s.p))}</p>`:""}${acts.length?`<div class="acts">${acts.join("")}</div>`:""}${c}</div>`;
+  if(s.kind==="move")return `<div class="mv"><span>↓</span><span>${esc(tx(s.h))}${c}</span></div>`;
+  if(s.kind==="section")return `<div class="secth">${esc(tx(s.h))}${c}</div>`;
+  const acts=[];if(s.map)acts.push(`<a class="chip link" href="${esc(mapUrl(s.map,s.city))}" target="_blank" rel="noopener">${esc(t("map"))}</a>`);
+  (s.links||[]).forEach(l=>{if(okUrl(l.u))acts.push(`<a class="chip link" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.l)}</a>`)});
+  return `<div class="st${s.opt?" opt":""}"><div class="time">${esc(s.t||"")}${s.opt?`<div class="small">${esc(t("optional"))}</div>`:""}</div><div><h3>${esc(tx(s.h))}</h3>${tx(s.p)?`<p>${esc(tx(s.p))}</p>`:""}${acts.length?`<div class="acts">${acts.join("")}</div>`:""}${c}</div></div>`;
 }
+function halalItem(h){
+  if(isEd("halal",h.id))return listForm("halal",h);
+  const acts=[];if(h.map)acts.push(`<a class="chip link" href="${esc(mapUrl(h.map,h.city))}" target="_blank" rel="noopener">${esc(t("map"))}</a>`);
+  if(okUrl(h.src))acts.push(`<a class="chip link" href="${esc(h.src)}" target="_blank" rel="noopener">${esc(t("src"))}</a>`);
+  return `<div class="hal${h.map?"":" none"}"><h3>${esc(h.name)}</h3><p>${esc(tx(h))}</p>${acts.length?`<div class="acts">${acts.join("")}</div>`:""}${ctl("halal",h.id)}</div>`}
 function renderDays(){
-  if(curDay<0){curDay=Math.max(0,T.days.findIndex(d=>d.date>=new Date().toISOString().slice(0,10)))}
+  const today=todayISO();
+  if(curDay<0){const i=T.days.findIndex(d=>d.date>=today);curDay=i<0?0:i}
   curDay=Math.min(curDay,T.days.length-1);
-  $("#days").innerHTML=T.days.map((d,i)=>`<button class="daychip${i===curDay?" on":""}" type="button" data-i="${i}"><small>${esc(fmt(d.date,{weekday:"short"}))}</small><b>${esc(fmt(d.date,{day:"numeric"}))}</b></button>`).join("");
-  const d=T.days[curDay];const list="stops:"+d.id;
-  let h=editBtn();
+  $("#days").innerHTML=T.days.map((d,i)=>`<button class="dc${i===curDay?" on":""}${d.date===today?" today":""}" type="button" data-i="${i}" aria-label="${esc(t("day"))} ${i+1}"><small>${esc(fmt(d.date,{weekday:"short"}))}</small><b>${esc(fmt(d.date,{day:"numeric"}))}</b></button>`).join("");
+  const d=T.days[curDay],list="stops:"+d.id;let h=editBtn();
   if(editing&&editing.list==="day"&&editing.id===d.id)h+=formHTML(SCHEMA.day(),d,"day",` data-id="${esc(d.id)}"`);
   else{const lv=(T.leave||[]).find(x=>x.date===d.date);
-    h+=`<div class="dayhead"><div><div class="muted">${esc(t("day"))} ${curDay+1} · ${esc(fmt(d.date,{weekday:"long",day:"numeric",month:"short"}))} · ${esc(d.city)}</div><h2>${esc(tx(d.title))}${lv?`<span class="altag">${esc(lv.half?t("alHalf"):t("alTag"))}</span>`:""}</h2></div><span class="pace ${esc(d.pace)}">${esc(t("pace_"+d.pace))}</span></div>`;
-    if(editMode&&!editing)h+=`<button class="linkb" type="button" data-a="eday" data-id="${esc(d.id)}">${esc(t("editDay"))}</button>`}
-  if(d.map)h+=`<div class="label" style="margin-top:0">${esc(t("dayMap"))}</div><div class="minimap mapwrap" id="miniMap">${$("#bigMap").innerHTML}</div>`;
-  h+=`<div class="tl${editMode?" em":""}">${d.stops.map(s=>stopHTML(s,list)).join("")}</div>`;
-  const fa=(d.food||[]).flatMap(a=>(T.halal||[]).filter(x=>x.area===a));
-  if(fa.length)h+=`<div class="label">🍽️ ${esc(t("halalToday"))}</div><div class="card">${fa.map(x=>{const keep=editing;return halalItem(x)}).join("")}<a class="linkb" href="#apps" data-gohalal="1" style="margin:6px 0 0">${esc(t("seeAll"))}</a></div>`;
+    h+=`<div class="dayhead"><div class="meta">${esc(t("day"))} ${curDay+1}, ${esc(fmt(d.date,{weekday:"long",day:"numeric",month:"long"}))}</div><h2>${esc(tx(d.title))}</h2><div style="margin-top:8px"><span class="tag ${esc(d.pace)}">${esc(t("pace_"+d.pace))}</span>${lv?`<span class="tag">${lv.half?"AL ½":"AL"}</span>`:""}<span class="small">${esc(d.city)}</span></div></div>`;
+    if(editMode&&!editing)h+=`<p style="margin-top:10px"><button class="linkb" type="button" data-a="eday" data-id="${esc(d.id)}">${esc(t("editDay"))}</button></p>`}
+  if(d.map)h+=`<div class="minimap mapwrap" id="miniMap" aria-label="${esc(t("dayMap"))}">${MAP_HTML}</div>`;
+  h+=`<div class="tl">${d.stops.map(s=>stopHTML(s,list)).join("")}</div>`;
   if(editMode&&!editing)h+=`<div class="addrow">${addBtn(list,t("addAct"),' data-kind="stop"')}${addBtn(list,t("addTravel"),' data-kind="move"')}${addBtn(list,t("addSection"),' data-kind="section"')}</div>`;
+  const fa=(d.food||[]).flatMap(a=>(T.halal||[]).filter(x=>x.area===a));
+  if(fa.length)h+=`<h2 class="sec">${esc(t("halalToday"))}</h2><div class="rows">${fa.map(halalItem).join("")}</div><p style="margin-top:10px"><a class="linkb" href="#food">${esc(t("seeFood"))}</a></p>`;
   $("#dayBody").innerHTML=h;if(d.map)highlight($("#miniMap"),d.map);
 }
-$("#days").onclick=e=>{const b=e.target.closest(".daychip");if(!b)return;dropNew();editing=null;curDay=+b.dataset.i;renderDays()};
+$("#days").onclick=e=>{const b=e.target.closest(".dc");if(!b)return;dropNew();editing=null;curDay=+b.dataset.i;renderDays()};
 
-/* ===== costs ===== */
+/* ================= FOOD ================= */
+function renderFood(){
+  let h=editBtn()+`<h2 class="sec">${esc(t("foodTitle"))}</h2><p class="sub" style="margin-bottom:14px">${esc(t("foodSub"))}</p>`;
+  if(T.halalTips)h+=`<div class="tip">${esc(tx(T.halalTips))}</div>`;
+  AREAS.forEach(a=>{const items=(T.halal||[]).filter(x=>x.area===a);if(!items.length)return;h+=`<h2 class="sec">${esc(t("area_"+a))}</h2><div class="rows">${items.map(halalItem).join("")}</div>`});
+  h+=addBtn("halal");
+  $("#v-food").innerHTML=h;
+}
+
+/* ================= MONEY ================= */
 let student=store.get("sc-student",false);
 const price=x=>student&&x.student?x.student:x.rm;
 const sum=a=>a.reduce((s,x)=>s+(Number(x.rm)||0),0);
-function total(st){const c=T.costs;return sum(c.transport)+sum(c.hotel)+c.fees.reduce((s,x)=>s+Number(st&&x.student?x.student:x.rm||0),0)}
-function renderCost(){
+function groundTotal(st){const c=T.costs;return sum(c.transport)+sum(c.hotel)+c.fees.reduce((s,x)=>s+Number(st&&x.student?x.student:x.rm||0),0)}
+function budgetHTML(){
   const c=T.costs,tr=sum(c.transport),ho=sum(c.hotel),fe=c.fees.reduce((s,x)=>s+Number(price(x)||0),0),tot=tr+ho+fe;
-  const fl=Number(store.get("sc-flight",0))||0,left=(T.budget||0)-tot-fl;
-  const grp=(k,key)=>{const list="costs."+key,arr=c[key];return `<div class="label">${esc(t(k))} · RM${arr.reduce((s,x)=>s+Number(price(x)||0),0)}</div><div class="card">${arr.map(x=>isEd(list,x.id)?formHTML(schemaOf(list),x,"list",` data-list="${list}" data-id="${esc(x.id)}"`):`<div class="crow"><span>${esc(tx(x))}${x.student?` <span class="muted">(${L==="en"?"student":"pelajar"} RM${x.student})</span>`:""}</span><span class="cr"><b>RM${price(x)}</b>${ctl(list,x.id)}</span></div>`).join("")}${addBtn(list)}</div>`};
-  const pct=v=>(tot?v/tot*100:0).toFixed(1)+"%";
-  const budgetCard=editing&&editing.list==="budget"?formHTML(SCHEMA.budget(),{budget:T.budget,weather:T.weather,expenses:T.expenses||{}},"budget"):`<div class="card"><h2>${esc(t("budgetTitle",{b:Number(T.budget||0).toLocaleString("en")}))}</h2><div class="budget"><div><span>${esc(t("ground"))}</span><b>RM${tot}</b></div><div><span>${esc(t("flightCost"))}</span><input id="flIn" type="number" inputmode="numeric" min="0" placeholder="RM" value="${fl||""}"></div></div><div class="left${left<0?" neg":""}"><span class="muted">${esc(left<0?t("overLbl"):t("leftLbl"))}</span><br><b>RM${Math.abs(left).toLocaleString("en")}</b></div>${editMode&&!editing?`<button class="linkb" type="button" data-a="ebudget" style="margin:8px 0 0">${esc(t("editBudget"))}</button>`:""}</div>`;
-  $("#costBody").innerHTML=editBtn()+budgetCard+expHTML()+`<div class="card"><h2>${esc(t("costTitle"))}</h2>
-    <div class="ctot"><span>${esc(t("total"))}</span><b>RM${tot}</b></div>
-    <div class="muted" style="text-align:right">${esc(t("buffer"))}: ~RM${Math.ceil(tot*1.05/10)*10}</div>
-    <div class="bars"><i style="width:${pct(tr)};background:#2B5E8C"></i><i style="width:${pct(ho)};background:#E8912D"></i><i style="width:${pct(fe)};background:#2E9A6A"></i></div>
-    <div class="legend"><span><i style="background:#2B5E8C"></i>${esc(t("transport"))} RM${tr}</span><span><i style="background:#E8912D"></i>${esc(t("hotel"))} RM${ho}</span><span><i style="background:#2E9A6A"></i>${esc(t("fees"))} RM${fe}</span></div>
-    <label class="ck"><input type="checkbox" id="stu"${student?" checked":""}> ${esc(t("student"))}</label></div>
-    ${grp("transport","transport")}${grp("hotel","hotel")}${grp("fees","fees")}
-    <p class="muted" style="padding:0 2px">${esc(tx(c.notIncluded))}</p>`;
-  const fi=$("#flIn");if(fi)fi.onchange=e=>{store.set("sc-flight",Math.max(0,Number(e.target.value)||0));renderCost()};
-  $("#stu").onchange=e=>{student=e.target.checked;store.set("sc-student",student);renderCost()};
+  const fl=Number(store.get("sc-flight",0))||0,left=(T.budget||0)-tot-fl,used=tot+fl;
+  const pct=v=>(T.budget?Math.min(100,v/T.budget*100):0).toFixed(1)+"%";
+  const top=editing&&editing.list==="budget"?formHTML(SCHEMA.budget(),{budget:T.budget,weather:T.weather,expenses:T.expenses||{}},"budget"):
+   `<div class="panel"><div class="big">${rm(used)}</div><div class="sub">${esc(t("budgetOf",{b:Number(T.budget||0).toLocaleString("en")}))}</div>
+    <div class="bars"><i style="width:${pct(tot)};background:var(--pine)"></i><i style="width:${pct(fl)};background:var(--saffron)"></i></div>
+    <div class="legend"><span><i style="background:var(--pine)"></i>${esc(t("ground"))} ${rm(tot)}</span><span><i style="background:var(--saffron)"></i>${esc(t("flight"))} ${rm(fl)}</span></div>
+    <label class="fl small" style="display:block;margin:14px 0 4px">${esc(t("flight"))} (RM)</label><input class="inp" id="flIn" type="number" inputmode="decimal" min="0" placeholder="${esc(t("flightPh"))}" value="${fl||""}">
+    <div class="left${left<0?" neg":""}"><div class="small">${esc(left<0?t("over"):t("left"))}</div><b>${rm(Math.abs(left))}</b></div>
+    <label class="ck"><input type="checkbox" id="stu"${student?" checked":""}> ${esc(t("student"))}</label>
+    ${editMode&&!editing?`<p style="margin-top:12px"><button class="linkb" type="button" data-a="ebudget">${esc(t("editBudget"))}</button></p>`:""}</div>`;
+  const grp=(k,key)=>{const list="costs."+key,arr=c[key];return `<h2 class="sec">${esc(t(k))} · ${rm(arr.reduce((s,x)=>s+Number(price(x)||0),0))}</h2><div class="rows">${arr.map(x=>isEd(list,x.id)?listForm(list,x):`<div class="kv"><span>${esc(tx(x))}${x.student?` <span class="small">(${L==="en"?"student":"pelajar"} ${rm(x.student)})</span>`:""}</span><span class="cr"><b>${rm(price(x))}</b></span></div>${ctl(list,x.id)}`).join("")}</div>${addBtn(list)}`};
+  return top+`<h2 class="sec">${esc(t("groundTitle"))}</h2><p class="sub">${esc(t("buffer",{v:rm(Math.ceil(tot*1.05/10)*10)}))}</p>`+grp("transport","transport")+grp("hotel","hotel")+grp("fees","fees")+`<p class="small" style="margin-top:12px">${esc(tx(c.notIncluded))}</p>`;
 }
+/* split maths: everything converted to RM */
+function splitCalc(){
+  const S=T.split||{rate:0.61,people:[],items:[]},P=S.people,bal={};P.forEach(p=>bal[p.id]=0);
+  S.items.forEach(it=>{const amt=Number(it.amount||0)*(it.cur==="CNY"?Number(S.rate||0.61):1);const among=(it.among&&it.among.length?it.among:P.map(p=>p.id)).filter(id=>id in bal);if(!among.length||!(it.paidBy in bal))return;
+    const share=amt/among.length;bal[it.paidBy]+=amt;among.forEach(id=>bal[id]-=share)});
+  const cred=P.map(p=>({id:p.id,v:bal[p.id]})).filter(x=>x.v>0.009).sort((a,b)=>b.v-a.v),debt=P.map(p=>({id:p.id,v:-bal[p.id]})).filter(x=>x.v>0.009).sort((a,b)=>b.v-a.v);
+  const tr=[];let i=0,j=0;while(i<debt.length&&j<cred.length){const v=Math.min(debt[i].v,cred[j].v);tr.push({from:debt[i].id,to:cred[j].id,v});debt[i].v-=v;cred[j].v-=v;if(debt[i].v<0.01)i++;if(cred[j].v<0.01)j++}
+  return{bal,tr}}
+const pname=id=>{const p=(T.split.people||[]).find(x=>x.id===id);return p?p.name:"?"};
+let qAmt=store.get("sc-qamt",""),qCur=store.get("sc-qcur","CNY"),qN=store.get("sc-qn",4);
+function splitHTML(){
+  T.split=T.split||{rate:0.61,people:[],items:[]};const S=T.split,rate=Number(S.rate||0.61);
+  const per=qAmt&&qN>0?Number(qAmt)/qN:0;
+  let h=`<div class="panel"><h2 class="sec" style="margin-top:0">${esc(t("quick"))}</h2><p class="sub">${esc(t("quickSub"))}</p>
+    <div class="grid2" style="margin-top:12px"><div><label class="fl small">${esc(t("amount"))}</label><div class="frow"><input class="inp" id="qAmt" type="number" inputmode="decimal" min="0" value="${esc(qAmt)}"><select class="inp" id="qCur" style="flex:0 0 76px"><option value="CNY"${qCur==="CNY"?" selected":""}>¥</option><option value="RM"${qCur==="RM"?" selected":""}>RM</option></select></div></div>
+    <div><label class="fl small">${esc(t("people"))}</label><input class="inp" id="qN" type="number" inputmode="numeric" min="1" value="${esc(qN)}"></div></div>
+    <div class="left" style="margin-top:12px"><div class="small">${esc(t("each"))}</div><b id="qOut">${per?(qCur==="CNY"?`¥${(Math.round(per*100)/100).toLocaleString("en")} <span class="small">≈ ${rm(per*rate)}</span>`:rm(per)):"–"}</b></div></div>`;
+  const {bal,tr}=splitCalc();
+  h+=editBtn()+`<h2 class="sec">${esc(t("groupSplit"))}</h2><p class="sub">${esc(t("groupSub"))}</p>`;
+  h+=`<div class="who" style="margin-top:10px">${S.people.map(p=>`<span class="person">${esc(p.name)}${editMode?`<button type="button" data-rmp="${esc(p.id)}" aria-label="Remove">×</button>`:""}</span>`).join("")}</div>`;
+  if(editMode&&!editing)h+=`<form class="addline" id="addPerson"><input class="inp" name="n" maxlength="30" placeholder="${esc(t("personPh"))}"><button class="btn ghost">${esc(t("addPerson"))}</button></form>`;
+  h+=`<p class="small" style="margin-top:10px">${esc(t("rate",{r:rate}))}${editMode&&!editing?` · <button class="linkb" type="button" data-a="erate">${esc(t("edit"))}</button>`:""}</p>`;
+  if(editing&&editing.list==="rate")h+=`<form class="edit" data-form="rate"><label class="fl">${esc(t("f_rate"))}</label><input name="rate" type="number" step="any" inputmode="decimal" value="${rate}"><div class="actions"><button class="btn pine">${esc(t("save"))}</button><button class="btn ghost" type="button" data-a="cancel">${esc(t("cancel"))}</button></div></form>`;
+  h+=`<div class="rows" style="margin-top:12px">${S.items.length?S.items.map(it=>isEd("bills",it.id)?listForm("bills",it):`<div class="exp-item"><div><h3>${esc(it.what||it.item)}</h3><p>${esc(t("paidBy",{p:pname(it.paidBy)}))}, ${esc(it.among&&it.among.length?t("forSome",{n:it.among.length}):t("forAll"))}${it.date?" · "+esc(fmt(it.date,{day:"numeric",month:"short"})):""}</p>${ctl("bills",it.id)}</div><div class="amt">${it.cur==="CNY"?"¥"+Number(it.amount).toLocaleString("en"):rm(it.amount)}${it.cur==="CNY"?`<small>≈ ${rm(it.amount*rate)}</small>`:""}</div></div>`).join(""):`<p class="empty">${esc(token?t("noItems"):t("viewOnlySplit"))}</p>`}</div>`;
+  if(S.people.length)h+=addBtn("bills",t("addBill"));
+  if(S.items.length){
+    h+=`<h2 class="sec">${esc(t("balances"))}</h2><div class="rows">${S.people.map(p=>{const v=bal[p.id]||0;return `<div class="bal"><span>${esc(p.name)}</span><span class="${v>0.009?"pos":v<-0.009?"neg":""}">${v>0.009?"+":v<-0.009?"−":""}${rm(Math.abs(v))}</span></div>`}).join("")}</div>`;
+    h+=`<h2 class="sec">${esc(t("settle"))}</h2><div class="rows">${tr.length?tr.map(x=>`<div class="settle"><b>${esc(pname(x.from))}</b> ${esc(t("pays"))} <b>${esc(pname(x.to))}</b> ${rm(x.v)}</div>`).join(""):`<p class="empty">${esc(t("allSettled"))}</p>`}</div>`;
+    if(tr.length){const msg=t("waSettle")+"\n\n"+tr.map(x=>`• ${pname(x.from)} ${t("pays")} ${pname(x.to)} ${rm(x.v)}`).join("\n");h+=`<div class="actions"><a class="btn wa" href="https://wa.me/?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">${esc(t("shareSettle"))}</a></div>`}
+  }
+  return h;
+}
+function renderMoney(){
+  const tabs=[["budget","mBudget"],["split","mSplit"],["record","mRecord"]];
+  let h=`<div class="seg" role="tablist">${tabs.map(([k,l])=>`<button type="button" role="tab" data-m="${k}" class="${moneyTab===k?"on":""}" aria-selected="${moneyTab===k}">${esc(t(l))}</button>`).join("")}</div>`;
+  h+=moneyTab==="budget"?editBtn()+budgetHTML():moneyTab==="split"?splitHTML():expHTML();
+  $("#v-money").innerHTML=h;
+  const fi=$("#flIn");if(fi)fi.onchange=e=>{store.set("sc-flight",Math.max(0,Number(e.target.value)||0));renderMoney()};
+  const st=$("#stu");if(st)st.onchange=e=>{student=e.target.checked;store.set("sc-student",student);renderMoney()};
+  const q=()=>{qAmt=$("#qAmt").value;qCur=$("#qCur").value;qN=Math.max(1,Number($("#qN").value)||1);store.set("sc-qamt",qAmt);store.set("sc-qcur",qCur);store.set("sc-qn",qN);
+    const rate=Number(T.split.rate||0.61),per=qAmt?Number(qAmt)/qN:0;$("#qOut").innerHTML=per?(qCur==="CNY"?`¥${(Math.round(per*100)/100).toLocaleString("en")} <span class="small">≈ ${rm(per*rate)}</span>`:rm(per)):"–"};
+  ["#qAmt","#qCur","#qN"].forEach(s=>{const el=$(s);if(el)el.oninput=q});
+  const ap=$("#addPerson");if(ap)ap.onsubmit=e=>{e.preventDefault();const n=ap.elements.n.value.trim();if(!n)return;const id="p"+uid();commit(d=>{d.split=d.split||{rate:0.61,people:[],items:[]};d.split.people.push({id,name:n})},"Add person")};
+}
+$("#v-money").addEventListener("click",e=>{
+  const s=e.target.closest("[data-m]");if(s){dropNew();editing=null;moneyTab=s.dataset.m;store.set("sc-mtab",moneyTab);renderMoney();return}
+  const r=e.target.closest("[data-rmp]");if(r){const id=r.dataset.rmp;if(T.split.items.some(it=>it.paidBy===id||(it.among||[]).includes(id))){if(!r.dataset.arm){r.dataset.arm=1;r.textContent="?";return}}
+    commit(d=>{d.split.people=d.split.people.filter(p=>p.id!==id);d.split.items.forEach(it=>{if(it.among)it.among=it.among.filter(x=>x!==id)})},"Remove person")}
+});
 
-/* ===== expenses (Google Sheet) ===== */
+/* Aiman's Google Sheet */
 let exp=store.get("sc-exp",null),expState="",expAt=store.get("sc-exp-at",0),expUrlLoaded="";
 const sheetId=u=>{const m=String(u||"").match(/\/spreadsheets\/d\/([a-zA-Z0-9_-]+)/);return m?m[1]:""};
 function parseCSV(txt){const rows=[];let row=[],f="",q=false;for(let i=0;i<txt.length;i++){const c=txt[i];
@@ -553,91 +728,86 @@ function parseCSV(txt){const rows=[];let row=[],f="",q=false;for(let i=0;i<txt.l
   else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"||c==="\r"){if(c==="\r"&&txt[i+1]==="\n")i++;row.push(f);rows.push(row);row=[];f=""}else f+=c}
   if(f!==""||row.length){row.push(f);rows.push(row)}return rows}
 const num=v=>{const n=parseFloat(String(v).replace(/[^0-9.\-]/g,""));return isNaN(n)?0:n};
-/* find every "Date | Item | Rm" header block and read rows under it */
 function readTables(rows){const out=[];
   rows.forEach((r,ri)=>r.forEach((c,ci)=>{
     if(/^date$/i.test(c.trim())&&/^item$/i.test((r[ci+1]||"").trim())&&/^rm$/i.test((r[ci+2]||"").trim())){
-      let title="";for(let k=ri-1;k>=0&&!title;k--){const above=rows[k];title=[above[ci],above[ci+1],above[ci+2]].map(x=>(x||"").trim()).filter(Boolean).join(" ")}
-      const items=[];for(let k=ri+1;k<rows.length;k++){const x=rows[k];const dt=(x[ci]||"").trim(),it=(x[ci+1]||"").trim(),rm=(x[ci+2]||"").trim();
-        if(/^date$/i.test(dt))break;if(!dt&&!it&&!rm)continue;if(/^(total|jumlah)/i.test(dt)||/^(total|jumlah)/i.test(it))continue;items.push({dt,it,rm:num(rm)})}
-      out.push({title,items})}}));
-  return out}
+      let title="";for(let k=ri-1;k>=0&&!title;k--){const a=rows[k];title=[a[ci],a[ci+1],a[ci+2]].map(x=>(x||"").trim()).filter(Boolean).join(" ")}
+      const items=[];for(let k=ri+1;k<rows.length;k++){const x=rows[k];const dt=(x[ci]||"").trim(),it=(x[ci+1]||"").trim(),v=(x[ci+2]||"").trim();
+        if(/^date$/i.test(dt))break;if(!dt&&!it&&!v)continue;if(/^(total|jumlah)/i.test(dt)||/^(total|jumlah)/i.test(it))continue;items.push({dt,it,rm:num(v)})}
+      out.push({title,items})}}));return out}
 async function loadExp(force){
   const u=T&&T.expenses&&T.expenses.url,id=sheetId(u);if(!id)return;
   if(!force&&expUrlLoaded===u&&Date.now()-expAt<60000)return;expUrlLoaded=u;
-  if(!exp){expState="loading";renderCostSoon()}
   try{const r=await fetch(`https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&headers=0&t=${Date.now()}`,{cache:"no-store"});
     if(!r.ok)throw new Error(r.status);const txt=await r.text();if(/^\s*</.test(txt))throw new Error("html");
     exp={url:u,tables:readTables(parseCSV(txt))};expAt=Date.now();store.set("sc-exp",exp);store.set("sc-exp-at",expAt);expState="ok"}
   catch(e){expState=exp?"stale":"fail"}
-  renderCostSoon()}
-let rcT=null;const renderCostSoon=()=>{clearTimeout(rcT);rcT=setTimeout(()=>{if(!editing)renderCost()},50)};
+  if(view==="money"&&moneyTab==="record"&&!editing)renderMoney()}
 function expHTML(){
-  const E=T.expenses;if(!E||!E.url)return"";const ok=okUrl(E.url);
-  const ago=expAt?Math.max(0,Math.round((Date.now()-expAt)/60000)):null;
-  let body="";
-  if(exp&&exp.url===E.url&&exp.tables.length){body=exp.tables.map((tb,i)=>{const tot=tb.items.reduce((s,x)=>s+x.rm,0);
-    return `<div class="exp"><div class="exph"><b>${esc(tb.title||t("expTable")+" "+(i+1))}</b><span>${esc(t("expTotal"))} <b>RM${tot.toLocaleString("en",{maximumFractionDigits:2})}</b></span></div>${tb.items.length?tb.items.map(x=>`<div class="crow"><span><span class="muted">${esc(x.dt)}</span> ${esc(x.it)}</span><b>RM${x.rm.toLocaleString("en",{maximumFractionDigits:2})}</b></div>`).join(""):`<p class="muted">${esc(t("expEmpty"))}</p>`}</div>`}).join("");
-    body+=`<p class="muted" style="font-size:11.5px;margin-top:6px">${esc(t("expUpdated",{t:ago==null?"":ago<1?t("justNow"):t("minAgo",{n:ago})}))}</p>`}
-  else body=`<p class="muted">${esc(expState==="fail"?t("expFail"):t("expLoading"))}</p>`;
-  return `<div class="label">${esc(t("expTitle"))}</div><div class="card"><div class="exph"><div><b>📊 ${esc(E.title||"Expenses Tracker")}</b>${E.by?`<div class="muted" style="font-size:12px">${esc(t("expBy",{by:E.by}))}</div>`:""}</div>${ok?`<a class="btn ghost" href="${esc(E.url)}" target="_blank" rel="noopener" style="padding:6px 10px;font-size:12.5px">${esc(t("expOpen"))}</a>`:""}</div>${body}</div>`;
-}
+  const E=T.expenses;if(!E||!E.url)return`<p class="empty">–</p>`;
+  let h=`<h2 class="sec" style="margin-top:0">${esc(E.title||"Expenses Tracker")}</h2>${E.by?`<p class="sub">${esc(t("expBy",{by:E.by}))}</p>`:""}<div class="actions"><a class="btn ghost sm" href="${esc(E.url)}" target="_blank" rel="noopener">${esc(t("expOpen"))}</a></div>`;
+  if(exp&&exp.url===E.url&&exp.tables.length){
+    h+=exp.tables.map((tb,i)=>{const tot=tb.items.reduce((s,x)=>s+x.rm,0);return `<h2 class="sec">${esc(tb.title||t("expTable")+" "+(i+1))}</h2><div class="rows">${tb.items.length?tb.items.map(x=>`<div class="kv"><span><span class="small">${esc(x.dt)}</span> ${esc(x.it)}</span><b>${rm(x.rm)}</b></div>`).join(""):`<p class="empty">${esc(t("expEmpty"))}</p>`}<div class="kv"><span><b>${esc(t("expTotal"))}</b></span><b>${rm(tot)}</b></div></div>`}).join("");
+    h+=`<p class="small" style="margin-top:12px">${esc(t("expUpdated",{t:ago(expAt)}))}</p>`}
+  else h+=`<p class="empty">${esc(expState==="fail"?t("expFail"):t("expLoading"))}</p>`;
+  return h}
 
-/* ===== packing (local per phone) ===== */
-let bag=store.get("sc-bag",null);
+/* ================= MORE: packing, apps, settings ================= */
 const CATS=()=>Object.keys(T.packing);
 const defBag=()=>{const a=[];CATS().forEach(c=>T.packing[c].forEach(([ms,en])=>a.push({id:uid(),c,n:{ms,en},d:false})));return a};
-function saveBag(){store.set("sc-bag",bag);renderBag()}
-function renderBag(){
-  if(!bag){bag=defBag();store.set("sc-bag",bag)}
-  const done=bag.filter(i=>i.d).length,tot=bag.length,pct=tot?Math.round(done/tot*100):0;
-  $("#progTxt").textContent=`${done} / ${tot}`;$("#progBar").style.width=pct+"%";$("#ring").style.setProperty("--p",pct);$("#ringTxt").textContent=pct+"%";
-  $("#packCats").innerHTML=CATS().filter(c=>bag.some(i=>i.c===c)).map(c=>{const it=bag.filter(i=>i.c===c);return `<div class="cat"><div class="ch"><b>${esc(t("bc_"+c))}</b><span>${it.filter(i=>i.d).length}/${it.length}</span></div><div class="list">${it.map(i=>`<div class="item${i.d?" done":""}" data-id="${i.id}"><span class="cb${i.d?" on":""}" data-p="tog"></span><span class="nm" data-p="tog">${esc(tx(i.n))}</span><button class="x" type="button" data-p="del" aria-label="Remove">×</button></div>`).join("")}</div></div>`}).join("");
+function getBag(){let b=store.get("sc-bag",null);if(!b){b=defBag();store.set("sc-bag",b)}return b}
+function packHTML(){
+  const bag=getBag(),done=bag.filter(i=>i.d).length,tot=bag.length,pct=tot?Math.round(done/tot*100):0;
   const left=bag.filter(i=>!i.d).map(i=>"• "+tx(i.n));
-  $("#waShare").href="https://wa.me/?text="+encodeURIComponent(`${t("waHead")} (${done}/${tot}) ✅\n\n${t("waLeft")}:\n${left.join("\n")||"-"}`);
-  const sel=$("#addCat"),v=sel.value;sel.innerHTML=CATS().map(c=>`<option value="${c}">${esc(t("bc_"+c))}</option>`).join("");if(v)sel.value=v;
-}
-$("#packCats").onclick=e=>{const a=e.target.closest("[data-p]");if(!a)return;const id=a.closest(".item").dataset.id;if(a.dataset.p==="tog"){const i=bag.find(x=>x.id===id);if(i)i.d=!i.d}else bag=bag.filter(x=>x.id!==id);saveBag()};
-$("#addForm").onsubmit=e=>{e.preventDefault();const n=$("#addName").value.trim();if(!n)return;bag.push({id:uid(),c:$("#addCat").value,n,d:false});$("#addName").value="";saveBag()};
-$("#resetBtn").onclick=e=>{const b=e.currentTarget;if(b.dataset.arm){bag=defBag();saveBag();delete b.dataset.arm;b.textContent=t("reset");return}b.dataset.arm=1;b.textContent=t("confirm");setTimeout(()=>{delete b.dataset.arm;b.textContent=t("reset")},2500)};
-
-/* ===== halal ===== */
-let appArea="";
-function halalItem(h){
-  if(isEd("halal",h.id))return formHTML(SCHEMA.halal(),h,"list",` data-list="halal" data-id="${esc(h.id)}"`);
-  const acts=[];if(h.map)acts.push(`<a class="chip" href="${esc(mapUrl(h.map,h.city))}" target="_blank" rel="noopener">${esc(t("map"))}</a>`);
-  if(okUrl(h.src))acts.push(`<a class="chip" href="${esc(h.src)}" target="_blank" rel="noopener">${esc(t("src"))} ↗</a>`);
-  const none=!h.map;
-  return `<div class="hal${none?" none":""}"><div class="hi">${none?"⚠️":"🕌"}</div><div class="bd"><h3>${esc(h.name)}</h3><p>${esc(tx(h))}</p>${acts.length?`<div class="acts">${acts.join("")}</div>`:""}${ctl("halal",h.id)}</div></div>`}
-function halalAreaHTML(area){const items=(T.halal||[]).filter(h=>h.area===area);return items.length?`<div class="label">${esc(t("area_"+area))}</div><div class="card">${items.map(halalItem).join("")}</div>`:""}
-
-/* ===== apps + admin ===== */
-const ACATS=["halal","hotels","food","maps","transport","essentials"];let appCat="halal";
+  const wa="https://wa.me/?text="+encodeURIComponent(`${t("waHead")} (${done}/${tot})\n\n${t("waLeft")}:\n${left.join("\n")||"-"}`);
+  return `<div class="prog"><div class="pct">${pct}%</div><div style="flex:1"><div><b>${done}/${tot}</b> ${esc(t("packed"))}</div><div class="bar"><i style="width:${pct}%"></i></div></div></div><p class="small" style="margin-top:8px">${esc(t("packNote"))}</p>
+   <div id="packCats">${CATS().filter(c=>bag.some(i=>i.c===c)).map(c=>{const it=bag.filter(i=>i.c===c);return `<div class="cat"><h3>${esc(t("bc_"+c))}<span>${it.filter(i=>i.d).length}/${it.length}</span></h3>${it.map(i=>`<div class="item${i.d?" done":""}" data-id="${i.id}"><span class="cb${i.d?" on":""}" data-p="tog" role="checkbox" aria-checked="${i.d}" tabindex="0"></span><span class="nm" data-p="tog">${esc(tx(i.n))}</span><button class="x" type="button" data-p="del" aria-label="Remove">×</button></div>`).join("")}</div>`}).join("")}</div>
+   <form class="addline" id="addForm"><input class="inp" id="addName" maxlength="60" placeholder="${esc(t("phItem"))}"><select class="inp" id="addCat">${CATS().map(c=>`<option value="${c}">${esc(t("bc_"+c))}</option>`).join("")}</select><button class="btn">${esc(t("addItem"))}</button></form>
+   <div class="actions"><a class="btn wa" href="${wa}" target="_blank" rel="noopener">${esc(t("shareWa"))}</a><button class="btn ghost" type="button" id="resetBtn">${esc(t("reset"))}</button></div>`}
 const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
-function renderApps(){
-  $("#appSeg").innerHTML=ACATS.map(c=>`<button type="button" data-k="${c}" class="${c===appCat?"on":""}">${esc(t("cat_"+c))}</button>`).join("");
-  if(appCat==="halal"){$("#appList").style.display="none";$("#halalBox").innerHTML=editBtn()+(T.halalTips?`<div class="card tipcard">💡 ${esc(tx(T.halalTips))}</div>`:"")+AREAS.map(halalAreaHTML).join("")+addBtn("halal");}
-  else{$("#appList").style.display="";$("#halalBox").innerHTML=""}
-  $("#appList").innerHTML=T.apps.filter(a=>a.cat===appCat).map(a=>`<div class="appi"><div class="lg" style="background:hsl(${hue(a.name)} 45% 42%)">${esc(a.name[0])}</div><div><h3>${esc(a.name)}</h3><p>${esc(tx(a))}</p><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.url.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,""))} ↗</a></div></div>`).join("");
-  $("#adminCard").innerHTML=`<h2>${esc(t("adminTitle"))}</h2>`+(token?`<p class="muted">${esc(t("adminOn"))}</p><button class="btn ghost" type="button" id="tokOut" style="margin-top:10px">${esc(t("adminOut"))}</button>`
-    :`<p class="muted">${esc(t("adminOff"))}</p><p class="muted" style="margin-top:6px;font-size:12px">${esc(t("adminSteps"))}</p><a class="linkb" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">${esc(t("makeToken"))}</a><form class="add" id="tokForm"><input id="tokIn" type="password" autocomplete="off" placeholder="${esc(t("tokenPh"))}"><button class="btn">${esc(t("tokenSave"))}</button></form><p class="err" id="tokErr"></p>`);
+function appsHTML(){const cats=["hotels","food","maps","transport","essentials"];
+  return `<div class="chips" style="padding-top:0">${cats.map(c=>`<button type="button" class="chip${c===appCat?" on":""}" data-ac="${c}">${esc(t("cat_"+c))}</button>`).join("")}</div><div class="rows" style="margin-top:8px">${T.apps.filter(a=>a.cat===appCat).map(a=>`<div class="appi"><div class="lg" style="background:hsl(${hue(a.name)} 35% 38%)">${esc(a.name[0])}</div><div><h3>${esc(a.name)}</h3><p>${esc(tx(a))}</p><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.url.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,""))}</a></div></div>`).join("")}</div>`}
+function settingsHTML(){
+  return `<h2 class="sec" style="margin-top:0">${esc(t("adminTitle"))}</h2>`+(token?`<p class="sub">${esc(t("adminOn"))}</p><div class="actions"><button class="btn ghost" type="button" id="tokOut">${esc(t("adminOut"))}</button></div>`
+    :`<p class="sub">${esc(t("adminOff"))}</p><p class="small" style="margin-top:8px">${esc(t("adminSteps"))}</p><p style="margin-top:8px"><a class="linkb" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">${esc(t("makeToken"))}</a></p><form class="addline" id="tokForm"><input class="inp" id="tokIn" type="password" autocomplete="off" placeholder="${esc(t("tokenPh"))}"><button class="btn">${esc(t("tokenSave"))}</button></form><p class="err" id="tokErr"></p>`)+
+   `<h2 class="sec">${esc(t("installTitle"))}</h2><p class="sub">${esc(t("installTxt"))}</p>
+   <div class="actions"><button class="btn ghost" type="button" id="refreshBtn">${esc(t("refresh"))}</button></div>`}
+function renderMore(){
+  const tabs=[["pack","oPack"],["apps","oApps"],["set","oSet"]];
+  $("#v-more").innerHTML=`<div class="seg" role="tablist">${tabs.map(([k,l])=>`<button type="button" role="tab" data-o="${k}" class="${moreTab===k?"on":""}" aria-selected="${moreTab===k}">${esc(t(l))}</button>`).join("")}</div>`+(moreTab==="pack"?packHTML():moreTab==="apps"?appsHTML():settingsHTML());
+  const af=$("#addForm");if(af)af.onsubmit=e=>{e.preventDefault();const n=$("#addName").value.trim();if(!n)return;const b=getBag();b.push({id:uid(),c:$("#addCat").value,n,d:false});store.set("sc-bag",b);renderMore();$("#addName")&&$("#addName").focus()};
+  const rb=$("#resetBtn");if(rb)rb.onclick=()=>{if(rb.dataset.arm){store.set("sc-bag",defBag());renderMore();return}rb.dataset.arm=1;rb.textContent=t("confirm");rb.classList.add("arm")};
   const tf=$("#tokForm");if(tf)tf.onsubmit=async e=>{e.preventDefault();const v=$("#tokIn").value.trim();if(!v)return;
     try{const r=await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}`,{headers:{Accept:"application/vnd.github+json",Authorization:"Bearer "+v}});const j=r.ok?await r.json():null;
       if(j&&j.permissions&&j.permissions.push){token=v;store.set("sc-token",v);editMode=true;renderAll();pull()}else $("#tokErr").textContent=t("tokenBad")}catch(x){$("#tokErr").textContent=t("tokenBad")}};
   const to=$("#tokOut");if(to)to.onclick=()=>{token="";store.del("sc-token");editMode=false;editing=null;renderAll()};
+  const rf=$("#refreshBtn");if(rf)rf.onclick=()=>{etag="";store.set("sc-etag","");apiBlockedUntil=0;store.set("sc-apiblock",0);setSync("syncing");pull();loadExp(true)};
 }
-$("#appSeg").onclick=e=>{const b=e.target.closest("button");if(b){dropNew();editing=null;appCat=b.dataset.k;renderApps()}};
-document.addEventListener("click",e=>{if(e.target.closest("[data-gohalal]")){appCat="halal";renderApps()}});
+$("#v-more").addEventListener("click",e=>{
+  const o=e.target.closest("[data-o]");if(o){moreTab=o.dataset.o;store.set("sc-otab",moreTab);renderMore();return}
+  const ac=e.target.closest("[data-ac]");if(ac){appCat=ac.dataset.ac;renderMore();return}
+  const p=e.target.closest("[data-p]");if(p){const id=p.closest(".item").dataset.id;let b=getBag();if(p.dataset.p==="tog"){const i=b.find(x=>x.id===id);if(i)i.d=!i.d}else b=b.filter(x=>x.id!==id);store.set("sc-bag",b);renderMore()}
+});
+$("#v-more").addEventListener("keydown",e=>{const p=e.target.closest(".cb");if(p&&(e.key===" "||e.key==="Enter")){e.preventDefault();p.click()}});
 
-function renderAll(){if(!T)return;renderTop();renderChips();renderDays();renderCost();renderBag();renderApps();setSync(syncState||"syncing")}
+/* ================= boot ================= */
+function renderTop(){
+  document.documentElement.lang=L;
+  document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
+  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+  $("#hName").textContent=tx(T.name);
+  $("#hWhen").textContent=fmt(T.start,{day:"numeric",month:"short"})+" – "+fmt(T.end,{day:"numeric",month:"short",year:"numeric"});
+}
+function renderAll(){if(!T)return;renderTop();renderHome();renderDays();renderFood();renderMoney();renderMore();setSync(syncState)}
 $("#lang").onclick=e=>{const b=e.target.closest("button");if(!b)return;L=b.dataset.l;store.set("sc-lang",L);renderAll()};
+document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
 show(location.hash.slice(1));
-if(T)renderAll();else setSync("loading");
+if(T&&!T.halal){etag="";store.set("sc-etag","")}
+if(T)renderAll();setSync(T?"syncing":"loading");
 pull();loadExp();
-setInterval(()=>{if(document.visibilityState==="visible")loadExp()},60000);
-setInterval(()=>{if(document.visibilityState==="visible"&&!editing)pull()},60000);
+setInterval(()=>{if(document.visibilityState==="visible"&&!editing){pull();loadExp()}},60000);
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")pull()});
-setInterval(()=>{if(syncState==="ok")setSync("ok")},30000);
+setInterval(()=>{if(syncState==="ok"||syncState==="err")setSync(syncState)},30000);
 if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 </script>
 </body>

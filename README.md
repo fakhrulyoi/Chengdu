@@ -23,7 +23,12 @@ GitHub → Settings → Developer settings → Personal access tokens → **Fine
 Untuk co-admin, buat token berasingan untuk dia, atau tambah dia sebagai collaborator di repo ni dan dia buat token sendiri. **Jangan kongsi token dalam group chat.**
 
 ## Makan halal
-Tab **Apps → 🍽️ Makan halal** senaraikan tempat halal ikut kawasan (Chengdu, Siguniang, Bipenggou, Xiling, Dujiangyan, TFU), dengan pautan peta dan sumber. Setiap hari dalam Jadual pun tunjuk tempat halal untuk kawasan hari tu. Admin boleh tambah atau edit dalam app.
+Tab **Makan** senaraikan tempat halal ikut kawasan (Chengdu, Siguniang, Bipenggou, Xiling, Dujiangyan, TFU), dengan pautan peta dan sumber. Setiap hari dalam Jadual pun tunjuk tempat halal untuk kawasan hari tu. Admin boleh tambah atau edit dalam app.
+
+## Split bill
+Tab **Duit → Split bill**:
+- **Kira cepat:** bahagi satu bil sama rata (¥ atau RM). Tak disimpan.
+- **Bil group:** admin rekod siapa bayar apa, dan untuk siapa. App kira baki setiap orang dan cara langsai yang paling sedikit pindahan duit, dan boleh hantar terus ke WhatsApp. Kadar ¥→RM boleh diedit.
 
 ## Perbelanjaan group
 Tab **Kos** papar terus data dari Google Sheet *Expenses Tracker* (oleh CA Muhammad Aiman). Sheet mesti dikongsi sebagai **Anyone with the link → Viewer** supaya app boleh baca. Link sheet boleh ditukar dalam app (Kos → ✎ Edit bajet).
