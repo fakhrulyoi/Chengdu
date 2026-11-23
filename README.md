@@ -22,6 +22,9 @@ GitHub → Settings → Developer settings → Personal access tokens → **Fine
 
 Untuk co-admin, buat token berasingan untuk dia, atau tambah dia sebagai collaborator di repo ni dan dia buat token sendiri. **Jangan kongsi token dalam group chat.**
 
+## Perbelanjaan group
+Tab **Kos** papar terus data dari Google Sheet *Expenses Tracker* (oleh CA Muhammad Aiman). Sheet mesti dikongsi sebagai **Anyone with the link → Viewer** supaya app boleh baca. Link sheet boleh ditukar dalam app (Kos → ✎ Edit bajet).
+
 ## Nota
 - Senarai barang disimpan dalam telefon setiap orang. Guna butang **Kongsi ke WhatsApp** untuk tunjuk progress.
 - Peta (`map.svg` / `map.png`) ialah imej tetap. Kalau tempat atau laluan berubah, peta perlu dijana semula.

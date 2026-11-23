@@ -1029,5 +1029,10 @@
       "en": "Download Chinese for offline use.",
       "id": "a25"
     }
-  ]
+  ],
+  "expenses": {
+    "url": "https://docs.google.com/spreadsheets/d/1-40Gj4tMFFMjDaWg3-fWSPVn81xYNLZ9ZWzq45ZG1s0/edit?usp=drivesdk",
+    "title": "Expenses Tracker",
+    "by": "CA Muhammad Aiman, Finance Executive"
+  }
 }

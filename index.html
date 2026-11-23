@@ -157,6 +157,9 @@ form.edit .ck input{width:auto;margin:0}
 .addbtn{border:1px dashed #C3C8C2;background:none;border-radius:10px;padding:9px 4px;font-weight:600;font-size:13px;cursor:pointer;color:var(--accent);width:100%;margin-top:8px}
 .addrow{display:flex;gap:6px}.addrow .addbtn{flex:1}
 .linkb{border:none;background:none;color:var(--accent);font-weight:700;font-size:12.5px;cursor:pointer;margin:-6px 2px 10px;padding:0;display:inline-block;text-decoration:none}
+.exph{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.exp{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.exp .exph span{font-size:12.5px;color:var(--mute)}
 .err{color:var(--pepper);font-size:13px;margin-top:6px;min-height:1em}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:5}
 nav.tabs .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 8px calc(8px + env(safe-area-inset-bottom))}
@@ -315,7 +318,7 @@ const I={
   tokenPh:"github_pat_…",tokenSave:"Aktifkan admin",tokenBad:"Token tak sah atau tiada akses tulis ke repo.",adminOn:"✅ Mod admin aktif. Butang ✎ Edit ada di setiap tab.",adminOut:"Buang token dari telefon ni",makeToken:"Buat token di GitHub ↗",
   f_icon:"Ikon",f_ms:"Teks (BM)",f_en:"Text (English)",f_date:"Tarikh",f_info:"Flight",f_from:"Dari",f_to:"Ke",f_dep:"Berlepas",f_arr:"Tiba",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
   f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Jenis",t_stop:"Aktiviti",t_move:"Perjalanan",t_section:"Seksyen",f_time:"Masa",f_map:"Carian peta (nama Cina paling tepat)",f_city:"Bandar",f_opt:"Tanda sebagai pilihan",
-  f_city2:"Kawasan",f_pace:"Rentak",f_mapRoute:"Laluan dalam peta",none:"Tiada",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"RM pelajar (pilihan)",f_budget:"Bajet RM (termasuk flight)",editBudget:"✎ Edit bajet",f_weather:"Cuaca"},
+  f_city2:"Kawasan",f_pace:"Rentak",f_mapRoute:"Laluan dalam peta",none:"Tiada",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"RM pelajar (pilihan)",f_budget:"Bajet RM (termasuk flight)",editBudget:"✎ Edit bajet",f_weather:"Cuaca",f_sheet:"Link Google Sheet perbelanjaan",expTitle:"Perbelanjaan group",expBy:"oleh {by}",expOpen:"↗ Buka sheet",expLoading:"Memuatkan dari Google Sheet…",expFail:"Tak dapat baca sheet dalam app. Tekan \"Buka sheet\" untuk tengok.",expEmpty:"Belum ada rekod.",expTotal:"Jumlah",expTable:"Jadual",expUpdated:"Dari Google Sheet · {t}"},
  en:{tabTrip:"Trip",tabPlan:"Itinerary",tabCost:"Costs",tabPack:"Pack",tabApps:"Apps",daysToGo:"Days to go",days:"{n} days",nights:"{n} nights",checkpoints:"Checkpoints",weather:"Weather",perPax:"Per person",
   routeMap:"Route map",all:"All",dlMap:"⬇ Download map",openMap:"↗ Open full size",mustRemember:"Must remember",flights:"Flights",
   pace_easy:"Easy pace",pace_moderate:"Moderate pace",pace_busy:"Busy pace",optional:"optional",map:"📍 Map",
@@ -334,7 +337,7 @@ const I={
   tokenPh:"github_pat_…",tokenSave:"Turn on admin",tokenBad:"Invalid token, or it has no write access to the repo.",adminOn:"✅ Admin mode is on. Every tab has an ✎ Edit button.",adminOut:"Remove token from this phone",makeToken:"Create a token on GitHub ↗",
   f_icon:"Icon",f_ms:"Teks (BM)",f_en:"Text (English)",f_date:"Date",f_info:"Flight",f_from:"From",f_to:"To",f_dep:"Departs",f_arr:"Arrives",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
   f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Type",t_stop:"Activity",t_move:"Travel",t_section:"Section",f_time:"Time",f_map:"Map search (Chinese name works best)",f_city:"City",f_opt:"Mark as optional",
-  f_city2:"Area",f_pace:"Pace",f_mapRoute:"Route on map",none:"None",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"Student RM (optional)",f_budget:"Budget RM (incl. flight)",editBudget:"✎ Edit budget",f_weather:"Weather"}
+  f_city2:"Area",f_pace:"Pace",f_mapRoute:"Route on map",none:"None",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"Student RM (optional)",f_budget:"Budget RM (incl. flight)",editBudget:"✎ Edit budget",f_weather:"Weather",f_sheet:"Expenses Google Sheet link",expTitle:"Group expenses",expBy:"by {by}",expOpen:"↗ Open sheet",expLoading:"Loading from Google Sheet…",expFail:"Couldn't read the sheet in the app. Tap \"Open sheet\" to view it.",expEmpty:"No entries yet.",expTotal:"Total",expTable:"Table",expUpdated:"From Google Sheet · {t}"}
 };
 const t=(k,v)=>{let s=(I[L]&&I[L][k])??I.ms[k]??k;if(v)for(const x in v)s=s.replace("{"+x+"}",v[x]);return s};
 const tx=o=>o==null?"":typeof o==="string"?o:(L==="en"&&o.en)?o.en:(o.ms||o.en||"");
@@ -353,7 +356,7 @@ function setSync(s){syncState=s;const el=$("#sync");if(!el)return;
   const ago=lastSync?Math.round((Date.now()-lastSync)/60000):null;const ts=ago==null?"":ago<1?t("justNow"):t("minAgo",{n:ago});
   el.textContent=s==="ok"?t("syncOk",{t:ts}):s==="err"?t("syncFail"):s==="saving"?t("saving"):s==="saved"?t("saved"):s.startsWith("fail:")?t("saveFail",{e:s.slice(5)}):s==="loading"?t("loading"):t("syncing");
   el.className="sync "+(s==="ok"||s==="saved"?"ok":s==="err"||s.startsWith("fail")?"bad":"")}
-function applyData(d){T=d;store.set("sc-data",T);if(!editing)renderAll()}
+function applyData(d){T=d;store.set("sc-data",T);if(!editing)renderAll();loadExp()}
 async function pull(){
   if(saving)return;
   try{
@@ -415,7 +418,7 @@ const SCHEMA={
  cost:(fee)=>[{k:"ms",l:"f_item"},{k:"en",l:"f_itemEn"},{k:"rm",l:"f_rm",type:"number",row:1},...(fee?[{k:"student",l:"f_student",type:"number",opt:1,row:1}]:[])],
  stop:()=>[{k:"kind",l:"f_type",sel:[["stop",t("t_stop")],["move",t("t_move")],["section",t("t_section")]],row:1},{k:"t",l:"f_time",row:1},{k:"h.ms",l:"f_hMs"},{k:"h.en",l:"f_hEn"},{k:"p.ms",l:"f_pMs",ta:1},{k:"p.en",l:"f_pEn",ta:1},{k:"map",l:"f_map",row:2},{k:"city",l:"f_city",row:2},{k:"opt",l:"f_opt",ck:1}],
  day:()=>[{k:"title.ms",l:"f_hMs"},{k:"title.en",l:"f_hEn"},{k:"date",l:"f_date",type:"date",row:1},{k:"pace",l:"f_pace",sel:PACES(),row:1},{k:"city",l:"f_city2",row:2},{k:"map",l:"f_mapRoute",sel:[["",t("none")],["d2","Hari 2"],["d3","Hari 3"],["d4","Hari 4"],["d5","Hari 5"]],row:2}],
- budget:()=>[{k:"budget",l:"f_budget",type:"number",row:1},{k:"weather",l:"f_weather",row:1}],
+ budget:()=>[{k:"budget",l:"f_budget",type:"number",row:1},{k:"weather",l:"f_weather",row:1},{k:"expenses.url",l:"f_sheet"}],
 };
 /* list path → array inside a data object */
 function listOf(d,list){if(list.startsWith("stops:")){const day=d.days.find(x=>x.id===list.slice(6));return day?day.stops:null}if(list.startsWith("costs."))return d.costs[list.slice(6)];return d[list]}
@@ -444,7 +447,7 @@ document.addEventListener("submit",e=>{
   const f=e.target;if(!f.dataset.form)return;e.preventDefault();
   if(f.dataset.form==="day"){const id=f.dataset.id,fields=SCHEMA.day();const draft=readForm(f,fields,clone(T.days.find(x=>x.id===id)||{}));editing=null;
     commit(d=>{const day=d.days.find(x=>x.id===id);if(day)readFormValues(day,fields,draft)},"Edit day");return}
-  if(f.dataset.form==="budget"){const fields=SCHEMA.budget();const draft=readForm(f,fields,{budget:T.budget,weather:T.weather});editing=null;commit(d=>{d.budget=draft.budget;d.weather=draft.weather},"Edit budget");return}
+  if(f.dataset.form==="budget"){const fields=SCHEMA.budget();const draft=readForm(f,fields,{budget:T.budget,weather:T.weather,expenses:clone(T.expenses||{})});editing=null;commit(d=>{d.budget=draft.budget;d.weather=draft.weather;d.expenses={...(d.expenses||{}),url:draft.expenses.url}},"Edit budget");loadExp(true);return}
   const list=f.dataset.list,id=f.dataset.id,fields=schemaOf(list);const cur=(listOf(T,list)||[]).find(x=>x.id===id);if(!cur)return;
   const draft=readForm(f,fields,clone(cur));const titleKey=fields.find(x=>!x.sel&&!x.ck&&x.k!=="ic"&&x.k!=="date");
   if(titleKey&&!getP(draft,titleKey.k)&&!(draft.h&&(draft.h.ms||draft.h.en))&&!draft.ms&&!draft.from){const el=f.elements[titleKey.k];el&&el.focus();return}
@@ -521,8 +524,8 @@ function renderCost(){
   const fl=Number(store.get("sc-flight",0))||0,left=(T.budget||0)-tot-fl;
   const grp=(k,key)=>{const list="costs."+key,arr=c[key];return `<div class="label">${esc(t(k))} · RM${arr.reduce((s,x)=>s+Number(price(x)||0),0)}</div><div class="card">${arr.map(x=>isEd(list,x.id)?formHTML(schemaOf(list),x,"list",` data-list="${list}" data-id="${esc(x.id)}"`):`<div class="crow"><span>${esc(tx(x))}${x.student?` <span class="muted">(${L==="en"?"student":"pelajar"} RM${x.student})</span>`:""}</span><span class="cr"><b>RM${price(x)}</b>${ctl(list,x.id)}</span></div>`).join("")}${addBtn(list)}</div>`};
   const pct=v=>(tot?v/tot*100:0).toFixed(1)+"%";
-  const budgetCard=editing&&editing.list==="budget"?formHTML(SCHEMA.budget(),{budget:T.budget,weather:T.weather},"budget"):`<div class="card"><h2>${esc(t("budgetTitle",{b:Number(T.budget||0).toLocaleString("en")}))}</h2><div class="budget"><div><span>${esc(t("ground"))}</span><b>RM${tot}</b></div><div><span>${esc(t("flightCost"))}</span><input id="flIn" type="number" inputmode="numeric" min="0" placeholder="RM" value="${fl||""}"></div></div><div class="left${left<0?" neg":""}"><span class="muted">${esc(left<0?t("overLbl"):t("leftLbl"))}</span><br><b>RM${Math.abs(left).toLocaleString("en")}</b></div>${editMode&&!editing?`<button class="linkb" type="button" data-a="ebudget" style="margin:8px 0 0">${esc(t("editBudget"))}</button>`:""}</div>`;
-  $("#costBody").innerHTML=editBtn()+budgetCard+`<div class="card"><h2>${esc(t("costTitle"))}</h2>
+  const budgetCard=editing&&editing.list==="budget"?formHTML(SCHEMA.budget(),{budget:T.budget,weather:T.weather,expenses:T.expenses||{}},"budget"):`<div class="card"><h2>${esc(t("budgetTitle",{b:Number(T.budget||0).toLocaleString("en")}))}</h2><div class="budget"><div><span>${esc(t("ground"))}</span><b>RM${tot}</b></div><div><span>${esc(t("flightCost"))}</span><input id="flIn" type="number" inputmode="numeric" min="0" placeholder="RM" value="${fl||""}"></div></div><div class="left${left<0?" neg":""}"><span class="muted">${esc(left<0?t("overLbl"):t("leftLbl"))}</span><br><b>RM${Math.abs(left).toLocaleString("en")}</b></div>${editMode&&!editing?`<button class="linkb" type="button" data-a="ebudget" style="margin:8px 0 0">${esc(t("editBudget"))}</button>`:""}</div>`;
+  $("#costBody").innerHTML=editBtn()+budgetCard+expHTML()+`<div class="card"><h2>${esc(t("costTitle"))}</h2>
     <div class="ctot"><span>${esc(t("total"))}</span><b>RM${tot}</b></div>
     <div class="muted" style="text-align:right">${esc(t("buffer"))}: ~RM${Math.ceil(tot*1.05/10)*10}</div>
     <div class="bars"><i style="width:${pct(tr)};background:#2B5E8C"></i><i style="width:${pct(ho)};background:#E8912D"></i><i style="width:${pct(fe)};background:#2E9A6A"></i></div>
@@ -532,6 +535,44 @@ function renderCost(){
     <p class="muted" style="padding:0 2px">${esc(tx(c.notIncluded))}</p>`;
   const fi=$("#flIn");if(fi)fi.onchange=e=>{store.set("sc-flight",Math.max(0,Number(e.target.value)||0));renderCost()};
   $("#stu").onchange=e=>{student=e.target.checked;store.set("sc-student",student);renderCost()};
+}
+
+/* ===== expenses (Google Sheet) ===== */
+let exp=store.get("sc-exp",null),expState="",expAt=store.get("sc-exp-at",0),expUrlLoaded="";
+const sheetId=u=>{const m=String(u||"").match(/\/spreadsheets\/d\/([a-zA-Z0-9_-]+)/);return m?m[1]:""};
+function parseCSV(txt){const rows=[];let row=[],f="",q=false;for(let i=0;i<txt.length;i++){const c=txt[i];
+  if(q){if(c==='"'){if(txt[i+1]==='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c==='"')q=true;else if(c===","){row.push(f);f=""}else if(c==="\n"||c==="\r"){if(c==="\r"&&txt[i+1]==="\n")i++;row.push(f);rows.push(row);row=[];f=""}else f+=c}
+  if(f!==""||row.length){row.push(f);rows.push(row)}return rows}
+const num=v=>{const n=parseFloat(String(v).replace(/[^0-9.\-]/g,""));return isNaN(n)?0:n};
+/* find every "Date | Item | Rm" header block and read rows under it */
+function readTables(rows){const out=[];
+  rows.forEach((r,ri)=>r.forEach((c,ci)=>{
+    if(/^date$/i.test(c.trim())&&/^item$/i.test((r[ci+1]||"").trim())&&/^rm$/i.test((r[ci+2]||"").trim())){
+      let title="";for(let k=ri-1;k>=0&&!title;k--){const above=rows[k];title=[above[ci],above[ci+1],above[ci+2]].map(x=>(x||"").trim()).filter(Boolean).join(" ")}
+      const items=[];for(let k=ri+1;k<rows.length;k++){const x=rows[k];const dt=(x[ci]||"").trim(),it=(x[ci+1]||"").trim(),rm=(x[ci+2]||"").trim();
+        if(/^date$/i.test(dt))break;if(!dt&&!it&&!rm)continue;if(/^(total|jumlah)/i.test(dt)||/^(total|jumlah)/i.test(it))continue;items.push({dt,it,rm:num(rm)})}
+      out.push({title,items})}}));
+  return out}
+async function loadExp(force){
+  const u=T&&T.expenses&&T.expenses.url,id=sheetId(u);if(!id)return;
+  if(!force&&expUrlLoaded===u&&Date.now()-expAt<60000)return;expUrlLoaded=u;
+  if(!exp){expState="loading";renderCostSoon()}
+  try{const r=await fetch(`https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&headers=0&t=${Date.now()}`,{cache:"no-store"});
+    if(!r.ok)throw new Error(r.status);const txt=await r.text();if(/^\s*</.test(txt))throw new Error("html");
+    exp={url:u,tables:readTables(parseCSV(txt))};expAt=Date.now();store.set("sc-exp",exp);store.set("sc-exp-at",expAt);expState="ok"}
+  catch(e){expState=exp?"stale":"fail"}
+  renderCostSoon()}
+let rcT=null;const renderCostSoon=()=>{clearTimeout(rcT);rcT=setTimeout(()=>{if(!editing)renderCost()},50)};
+function expHTML(){
+  const E=T.expenses;if(!E||!E.url)return"";const ok=okUrl(E.url);
+  const ago=expAt?Math.max(0,Math.round((Date.now()-expAt)/60000)):null;
+  let body="";
+  if(exp&&exp.url===E.url&&exp.tables.length){body=exp.tables.map((tb,i)=>{const tot=tb.items.reduce((s,x)=>s+x.rm,0);
+    return `<div class="exp"><div class="exph"><b>${esc(tb.title||t("expTable")+" "+(i+1))}</b><span>${esc(t("expTotal"))} <b>RM${tot.toLocaleString("en",{maximumFractionDigits:2})}</b></span></div>${tb.items.length?tb.items.map(x=>`<div class="crow"><span><span class="muted">${esc(x.dt)}</span> ${esc(x.it)}</span><b>RM${x.rm.toLocaleString("en",{maximumFractionDigits:2})}</b></div>`).join(""):`<p class="muted">${esc(t("expEmpty"))}</p>`}</div>`}).join("");
+    body+=`<p class="muted" style="font-size:11.5px;margin-top:6px">${esc(t("expUpdated",{t:ago==null?"":ago<1?t("justNow"):t("minAgo",{n:ago})}))}</p>`}
+  else body=`<p class="muted">${esc(expState==="fail"?t("expFail"):t("expLoading"))}</p>`;
+  return `<div class="label">${esc(t("expTitle"))}</div><div class="card"><div class="exph"><div><b>📊 ${esc(E.title||"Expenses Tracker")}</b>${E.by?`<div class="muted" style="font-size:12px">${esc(t("expBy",{by:E.by}))}</div>`:""}</div>${ok?`<a class="btn ghost" href="${esc(E.url)}" target="_blank" rel="noopener" style="padding:6px 10px;font-size:12.5px">${esc(t("expOpen"))}</a>`:""}</div>${body}</div>`;
 }
 
 /* ===== packing (local per phone) ===== */
@@ -571,7 +612,8 @@ function renderAll(){if(!T)return;renderTop();renderChips();renderDays();renderC
 $("#lang").onclick=e=>{const b=e.target.closest("button");if(!b)return;L=b.dataset.l;store.set("sc-lang",L);renderAll()};
 show(location.hash.slice(1));
 if(T)renderAll();else setSync("loading");
-pull();
+pull();loadExp();
+setInterval(()=>{if(document.visibilityState==="visible")loadExp()},60000);
 setInterval(()=>{if(document.visibilityState==="visible"&&!editing)pull()},60000);
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")pull()});
 setInterval(()=>{if(syncState==="ok")setSync("ok")},30000);
