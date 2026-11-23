@@ -240,7 +240,10 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270107"
+      "id": "d20270107",
+      "food": [
+        "tfu"
+      ]
     },
     {
       "date": "2027-01-08",
@@ -343,7 +346,10 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270108"
+      "id": "d20270108",
+      "food": [
+        "siguniang"
+      ]
     },
     {
       "date": "2027-01-09",
@@ -484,7 +490,11 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270109"
+      "id": "d20270109",
+      "food": [
+        "bipenggou",
+        "chengdu"
+      ]
     },
     {
       "date": "2027-01-10",
@@ -575,7 +585,11 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270110"
+      "id": "d20270110",
+      "food": [
+        "xiling",
+        "chengdu"
+      ]
     },
     {
       "date": "2027-01-11",
@@ -672,7 +686,10 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270111"
+      "id": "d20270111",
+      "food": [
+        "dujiangyan"
+      ]
     },
     {
       "date": "2027-01-12",
@@ -735,7 +752,10 @@
           "kind": "stop"
         }
       ],
-      "id": "d20270112"
+      "id": "d20270112",
+      "food": [
+        "chengdu"
+      ]
     },
     {
       "date": "2027-01-13",
@@ -1034,5 +1054,111 @@
     "url": "https://docs.google.com/spreadsheets/d/1-40Gj4tMFFMjDaWg3-fWSPVn81xYNLZ9ZWzq45ZG1s0/edit?usp=drivesdk",
     "title": "Expenses Tracker",
     "by": "CA Muhammad Aiman, Finance Executive"
+  },
+  "halal": [
+    {
+      "id": "h1",
+      "area": "chengdu",
+      "name": "Tianfanglou (天方楼)",
+      "map": "天方楼 皇城清真寺",
+      "city": "成都",
+      "ms": "Tingkat bawah Masjid Huangcheng. Masakan halal Sichuan & Xinjiang: big plate chicken (大盘鸡), sate kambing.",
+      "en": "Ground floor of Huangcheng Mosque. Halal Sichuan & Xinjiang food: big plate chicken (大盘鸡), lamb skewers.",
+      "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
+    },
+    {
+      "id": "h2",
+      "area": "chengdu",
+      "name": "Kawasan Masjid Huangcheng (皇城清真寺)",
+      "map": "皇城清真寺",
+      "city": "成都",
+      "ms": "Ada sekitar 7 restoran halal di sekeliling masjid: mi tarik, hotpot dan lauk Sichuan. Sesuai untuk free & easy Hari 4.",
+      "en": "About 7 halal restaurants around the mosque: hand-pulled noodles, hotpot and Sichuan dishes. Good for free & easy on Day 4.",
+      "src": "https://www.kosmo.com.my/2026/09/20/tak-puas-nikmati-keindahan-chengdu-makanan-halal-pun-mudah/"
+    },
+    {
+      "id": "h3",
+      "area": "chengdu",
+      "name": "Yuexiangcun (清真粤香村)",
+      "map": "清真粤香村 东城根南街",
+      "city": "成都",
+      "ms": "Masakan Sichuan halal yang terkenal dalam komuniti Muslim Chengdu. 66–68 Dongchenggen South St.",
+      "en": "Halal Sichuan cuisine, well known among Chengdu's Muslim community. 66–68 Dongchenggen South St.",
+      "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
+    },
+    {
+      "id": "h4",
+      "area": "chengdu",
+      "name": "Huangchengba Beef (皇城坝牛肉馆)",
+      "map": "皇城坝牛肉馆",
+      "city": "成都",
+      "ms": "Antara restoran halal paling sibuk di Chengdu. Hidangan daging lembu.",
+      "en": "One of the busiest halal restaurants in Chengdu. Beef dishes.",
+      "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
+    },
+    {
+      "id": "h5",
+      "area": "chengdu",
+      "name": "Hotpot halal: Niu Bu Bi (清真牛不比火锅)",
+      "map": "清真牛不比火锅",
+      "city": "成都",
+      "ms": "Pilihan untuk dinner mala hotpot Hari 3 (Yingmenkou). Status halal belum disahkan sumber, jadi tanya dulu.",
+      "en": "Option for the Day 3 mala hotpot dinner (Yingmenkou). The source hasn't verified halal status, so ask first.",
+      "src": "https://wildgreatwall.com/halal-restaurants-in-chengdu-china/"
+    },
+    {
+      "id": "h6",
+      "area": "siguniang",
+      "name": "Restoran halal dekat Masjid Siguniang (四姑娘山清真寺)",
+      "map": "四姑娘山清真寺",
+      "city": "小金县",
+      "ms": "Pekan Siguniang ada masjid. Pengembara Malaysia lapor ada satu restoran halal sahaja di pekan ni (nama tak disebut). Tanya penduduk: \"清真餐厅在哪里?\"",
+      "en": "Siguniang town has a mosque. A Malaysian traveller reported just one halal restaurant in town (not named). Ask locals: \"清真餐厅在哪里?\"",
+      "src": "https://www.kosmo.com.my/2026/09/20/tak-puas-nikmati-keindahan-chengdu-makanan-halal-pun-mudah/"
+    },
+    {
+      "id": "h7",
+      "area": "bipenggou",
+      "name": "Tiada restoran halal dijumpai",
+      "map": "",
+      "city": "",
+      "ms": "Kedai di Bipenggou kebanyakannya hotpot yak/Tibet (tak halal). Bawa RTE dan makan di food court Shanghaizi.",
+      "en": "Eateries at Bipenggou are mostly yak/Tibetan hotpot (not halal). Bring RTE and eat at the Shanghaizi food court.",
+      "src": ""
+    },
+    {
+      "id": "h8",
+      "area": "xiling",
+      "name": "Tiada restoran halal dijumpai",
+      "map": "",
+      "city": "",
+      "ms": "Restoran di Xiling dan pekan Dayi masakan biasa (banyak babi). Bawa RTE untuk tengah hari.",
+      "en": "Restaurants at Xiling and Dayi town serve regular food (lots of pork). Bring RTE for lunch.",
+      "src": ""
+    },
+    {
+      "id": "h9",
+      "area": "dujiangyan",
+      "name": "Jalan Selatan, Old Town (南街 · 灌县古城)",
+      "map": "灌县古城 南街 清真寺",
+      "city": "都江堰",
+      "ms": "Kawasan komuniti Hui dengan Masjid Nanjie dan kedai makan halal. Terkenal dengan daging lembu halal. Sesuai masa beli ole-ole Hari 5.",
+      "en": "Hui neighbourhood with Nanjie Mosque and halal eateries, famous for halal beef. Fits the Day 5 souvenir stop.",
+      "src": "https://www.meet99.com/jingdian-guanxiangucheng-122285.html"
+    },
+    {
+      "id": "h10",
+      "area": "tfu",
+      "name": "Tianfu Airport (TFU)",
+      "map": "",
+      "city": "",
+      "ms": "Ada laporan makanan halal di terminal, tapi flight tiba 22:40 dan banyak kedai dah tutup. Bawa snek untuk malam tu.",
+      "en": "Halal food is reported in the terminals, but you land at 22:40 when many outlets are closed. Bring snacks for that night.",
+      "src": "https://chinaairlinetravel.com/airport-guide/chengdu-tianfu/restaurants.html"
+    }
+  ],
+  "halalTips": {
+    "ms": "Cari papan tanda 清真 atau حلال. Dalam Dianping, cari \"清真\". Ada restoran \"halal\" di China yang jual arak, jadi pilih yang tiada arak dan tanya bila ragu.",
+    "en": "Look for the 清真 or حلال sign. On Dianping, search \"清真\". Some \"halal\" restaurants in China sell alcohol, so pick ones without it and ask when unsure."
   }
 }

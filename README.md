@@ -22,6 +22,9 @@ GitHub → Settings → Developer settings → Personal access tokens → **Fine
 
 Untuk co-admin, buat token berasingan untuk dia, atau tambah dia sebagai collaborator di repo ni dan dia buat token sendiri. **Jangan kongsi token dalam group chat.**
 
+## Makan halal
+Tab **Apps → 🍽️ Makan halal** senaraikan tempat halal ikut kawasan (Chengdu, Siguniang, Bipenggou, Xiling, Dujiangyan, TFU), dengan pautan peta dan sumber. Setiap hari dalam Jadual pun tunjuk tempat halal untuk kawasan hari tu. Admin boleh tambah atau edit dalam app.
+
 ## Perbelanjaan group
 Tab **Kos** papar terus data dari Google Sheet *Expenses Tracker* (oleh CA Muhammad Aiman). Sheet mesti dikongsi sebagai **Anyone with the link → Viewer** supaya app boleh baca. Link sheet boleh ditukar dalam app (Kos → ✎ Edit bajet).
 
