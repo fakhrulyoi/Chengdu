@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trip Chengdu · Jan 2027</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2B5E8C">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Trip Chengdu">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5F2;--card:#FFF;--ink:#1C2228;--mute:#68717A;--line:#E3E6E1;--accent:#2B5E8C;--accent-soft:#E2ECF5;--pepper:#C8412B;--pepper-soft:#FBE9E5;--amber:#B7791F;--amber-soft:#FBF1DF;--green:#2E9A6A;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--accent)}
+.app{max-width:520px;margin:0 auto;min-height:100vh;padding:calc(env(safe-area-inset-top) + 4px) 16px 100px}
+header.top{padding:14px 0 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.top small{display:block;font-size:12px;color:var(--mute)}
+.top h1{font-size:21px;font-weight:800;letter-spacing:-.02em}
+.lang{display:flex;background:var(--line);border-radius:99px;padding:3px;flex:none}
+.lang button{border:none;background:none;font-size:12px;font-weight:800;padding:4px 9px;border-radius:99px;cursor:pointer;color:var(--mute)}
+.lang button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+section.view{display:none}section.view.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-bottom:12px}
+.card h2{font-size:15px;font-weight:700;margin-bottom:8px}
+.label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:18px 2px 8px}
+.muted{color:var(--mute);font-size:13px}
+.hero{background:linear-gradient(135deg,#2B5E8C,#3E7FAF);color:#fff;border:none}
+.hero .big{font-size:40px;font-weight:800;line-height:1;letter-spacing:-.03em}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.hero .muted{color:rgba(255,255,255,.8)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.stats div{background:rgba(255,255,255,.14);border-radius:10px;padding:8px;min-width:0}
+.stats b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stats span{font-size:11px;color:rgba(255,255,255,.8)}
+.mapcard{padding:8px}
+.mapwrap svg{width:100%;height:auto;display:block;border-radius:12px}
+.mapwrap .route{transition:opacity .25s}
+.mapwrap.dim .route{opacity:.12}.mapwrap.dim .route.on{opacity:1}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 2px 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 11px;font-size:12.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px}
+.chips button i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dl{display:flex;gap:8px;margin-top:8px}
+.btn{border:none;background:var(--ink);color:#fff;border-radius:10px;padding:9px 14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:13.5px}
+.btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn.wa{background:#25D366}
+.remind{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.remind:first-child{border-top:none;padding-top:0}
+.remind .ic{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:15px;background:var(--accent-soft)}
+.remind p{font-size:13.5px}
+.leg{padding:10px 0;border-top:1px dashed var(--line)}.leg:first-child{border-top:none;padding-top:0}
+.leg .dt{font-size:11.5px;font-weight:700;color:var(--mute);margin-bottom:4px}
+.leg .g{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.leg .code{font-size:20px;font-weight:800}.leg .t{font-size:13px;color:var(--mute)}
+.leg .mid{text-align:center;font-size:11px;color:var(--mute);min-width:90px}.leg .mid i{display:block;height:1px;background:var(--line);margin:4px 0}
+.leg .r{text-align:right}
+.transit{font-size:12px;background:var(--bg);border-radius:8px;padding:6px 10px;margin-top:8px}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 16px 10px;margin:0 -16px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.daychip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:8px 12px;text-align:center;cursor:pointer;min-width:62px}
+.daychip small{display:block;font-size:11px;color:var(--mute);font-weight:600}
+.daychip b{font-size:16px}
+.daychip.on{background:var(--ink);border-color:var(--ink);color:#fff}.daychip.on small{color:rgba(255,255,255,.7)}
+.dayhead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin:4px 2px 12px}
+.dayhead h2{font-size:18px;font-weight:800;letter-spacing:-.01em}
+.pace{font-size:11px;font-weight:700;padding:4px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.pace.moderate{background:var(--amber-soft);color:var(--amber)}.pace.busy{background:var(--pepper-soft);color:var(--pepper)}
+.minimap{border-radius:12px;overflow:hidden;margin-bottom:12px;border:1px solid var(--line)}
+.tl{position:relative;padding-left:18px}
+.tl:before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.stop{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.stop:before{content:"";position:absolute;left:-17px;top:15px;width:10px;height:10px;border-radius:50%;background:var(--card);border:2px solid var(--accent)}
+.stop.opt:before{border-color:var(--amber)}
+.stop .time{font-size:12px;font-weight:700;color:var(--accent)}.stop.opt .time{color:var(--amber)}
+.stop h3{font-size:14.5px;font-weight:700;margin:1px 0 2px}
+.stop p{font-size:13px;color:var(--mute)}
+.acts{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+a.chip{font-size:12px;font-weight:600;border-radius:99px;padding:3px 9px;text-decoration:none;color:var(--accent);background:var(--accent-soft)}
+.move{font-size:12px;color:var(--mute);margin:-2px 0 8px 2px}
+.optlabel{font-size:12.5px;font-weight:800;color:var(--ink);margin:10px 0 8px 2px}
+.crow{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.crow:first-of-type{border-top:none}
+.crow b{white-space:nowrap}
+.ctot{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;padding-top:10px;border-top:2px solid var(--ink)}
+.ctot b{font-size:22px;font-weight:800}
+.bars{display:flex;height:12px;border-radius:9px;overflow:hidden;margin:12px 0 8px}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--mute)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.leave{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}
+.leave div{text-align:center;border-radius:10px;padding:6px 0;background:var(--bg);font-size:11px;color:var(--mute)}
+.leave div b{display:block;font-size:15px;color:var(--ink)}
+.leave .al{background:var(--accent);color:#fff}.leave .al b{color:#fff}
+.leave .half{background:linear-gradient(180deg,var(--accent) 55%,var(--accent-soft) 55%);color:var(--accent);font-weight:700}.leave .half b{color:#fff}
+.altag{font-size:10.5px;font-weight:800;padding:3px 7px;border-radius:99px;background:var(--accent);color:#fff;margin-left:6px;vertical-align:2px}
+.budget{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.budget div{background:var(--bg);border-radius:10px;padding:10px}
+.budget span{display:block;font-size:11.5px;color:var(--mute)}.budget b{font-size:17px}
+.budget input{width:100%;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-weight:700;font-size:16px;background:#fff;margin-top:2px}
+.left{margin-top:10px;padding:12px;border-radius:12px;background:var(--accent-soft)}.left.neg{background:var(--pepper-soft)}
+.left b{font-size:22px}
+.ck{font-size:13.5px;display:flex;gap:8px;align-items:center;margin-top:10px}
+.prog{display:flex;align-items:center;gap:12px}
+.ring{--p:0;width:56px;height:56px;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
+.ring span{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:12px;font-weight:800}
+.prog b{font-size:18px}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:9px;transition:width .3s}
+.cat{margin-bottom:12px}
+.cat .ch{display:flex;justify-content:space-between;align-items:center;padding:4px 2px 6px}
+.cat .ch b{font-size:13px;font-weight:700}.cat .ch span{font-size:12px;color:var(--mute)}
+.list{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-top:1px solid var(--line)}
+.item:first-child{border-top:none}
+.cb{flex:none;width:22px;height:22px;border-radius:7px;border:2px solid #C3C8C2;display:grid;place-items:center;cursor:pointer;background:#fff}
+.cb.on{background:var(--accent);border-color:var(--accent)}
+.cb.on:after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.item .nm{flex:1;font-size:14px;cursor:pointer}
+.item.done .nm{color:var(--mute);text-decoration:line-through}
+.x{flex:none;border:none;background:none;color:#B3B8B2;font-size:18px;cursor:pointer;width:24px}
+.add{display:flex;gap:6px;margin-top:8px}
+.add input,.add select{border:1px solid var(--line);border-radius:10px;padding:9px 10px;background:var(--card);min-width:0}
+.add input{flex:1}
+.seg{display:flex;gap:6px;overflow-x:auto;margin:0 -16px 12px;padding:0 16px;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{flex:none;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
+.seg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.appi{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+.appi:first-child{border-top:none;padding-top:2px}
+.appi .lg{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:800;color:#fff}
+.appi h3{font-size:14.5px;font-weight:700}.appi p{font-size:13px;color:var(--mute)}
+.appi a{font-size:12.5px;font-weight:600;text-decoration:none}
+.sync{font-size:12px;color:var(--mute);margin:-6px 2px 12px}.sync.ok{color:var(--green)}.sync.bad{color:var(--pepper)}
+.toolbar{display:flex;justify-content:flex-end;margin:-4px 0 10px}
+.ebtn{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.ebtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ctl{display:flex;gap:4px;margin-top:8px}
+.move .ctl,.optlabel .ctl,.cr .ctl{margin-top:0}
+.ctl button{border:1px solid var(--line);background:var(--bg);min-width:30px;height:28px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--mute);padding:0 6px}
+button.arm{background:var(--pepper)!important;border-color:var(--pepper)!important;color:#fff!important;font-weight:700}
+.move,.optlabel{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.cr{display:flex;align-items:center;gap:8px}
+.remind .bd{flex:1;min-width:0}
+.tl.em .stop{border-style:dashed}
+form.edit{margin:6px 0}
+form.edit input,form.edit textarea,form.edit select{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:6px;background:#fff;font-size:14px}
+form.edit .fl{font-size:11px;font-weight:700;color:var(--mute);margin:2px 0 3px;display:block}
+form.edit .ck input{width:auto;margin:0}
+.frow{display:flex;gap:6px}.frow>*{flex:1;min-width:0}
+.addbtn{border:1px dashed #C3C8C2;background:none;border-radius:10px;padding:9px 4px;font-weight:600;font-size:13px;cursor:pointer;color:var(--accent);width:100%;margin-top:8px}
+.addrow{display:flex;gap:6px}.addrow .addbtn{flex:1}
+.linkb{border:none;background:none;color:var(--accent);font-weight:700;font-size:12.5px;cursor:pointer;margin:-6px 2px 10px;padding:0;display:inline-block;text-decoration:none}
+.err{color:var(--pepper);font-size:13px;margin-top:6px;min-height:1em}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line);z-index:5}
+nav.tabs .in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);padding:6px 8px calc(8px + env(safe-area-inset-bottom))}
+nav.tabs button{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:600;color:var(--mute);padding:6px 0;cursor:pointer}
+nav.tabs svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs button.on{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div><small id="hRoute"></small><h1 id="hName"></h1></div>
+    <div class="lang" id="lang"><button data-l="ms" type="button">BM</button><button data-l="en" type="button">EN</button></div>
+  </header>
+  <div class="sync" id="sync"></div>
+
+  <section class="view" id="v-trip">
+    <div id="tripTools"></div>
+    <div class="card hero" id="hero"></div>
+    <div class="label" data-i18n="leaveTitle"></div>
+    <div class="card" id="leaveCard"></div>
+    <div class="label" data-i18n="routeMap"></div>
+    <div class="card mapcard">
+      <div class="mapwrap" id="bigMap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" font-family="Plus Jakarta Sans, DejaVu Sans, Noto Sans CJK SC, sans-serif">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#E9E4D6"/><stop offset=".55" stop-color="#F3EFE4"/><stop offset="1" stop-color="#EEF3EC"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-opacity=".18"/></filter></defs>
+<rect width="900" height="680" rx="22" fill="url(#bg)"/>
+<path d="M0,0 H430 C400,120 380,220 330,300 C300,360 250,420 230,520 C215,600 200,640 190,680 H0Z" fill="#E1D9C6" opacity=".75"/>
+<path d="M0,0 H260 C230,140 200,260 150,360 C120,430 90,560 70,680 H0Z" fill="#D7CDB6" opacity=".7"/>
+<path d="M440,40 C430,120 420,200 438,321 C470,420 560,470 640,520 C700,560 760,600 860,640" fill="none" stroke="#A9CBE0" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+<path d="M180,40 C200,140 230,220 274,302" fill="none" stroke="#A9CBE0" stroke-width="3" opacity=".7"/>
+<path d="M48,120 L70,86 L92,120Z" fill="#C9BFA9"/><path d="M62,98 L70,86 L78,98 L73,100 L68,96Z" fill="#fff"/>
+<path d="M91,250 L110,221 L129,250Z" fill="#C9BFA9"/><path d="M104,231 L110,221 L116,231 L112,233 L108,230Z" fill="#fff"/>
+<path d="M36,380 L60,344 L84,380Z" fill="#C9BFA9"/><path d="M52,356 L60,344 L68,356 L63,359 L58,355Z" fill="#fff"/>
+<path d="M100,420 L115,397 L130,420Z" fill="#C9BFA9"/><path d="M110,405 L115,397 L120,405 L117,406 L113,404Z" fill="#fff"/>
+<path d="M230,110 L250,79 L270,110Z" fill="#C9BFA9"/><path d="M243,89 L250,79 L257,89 L252,92 L248,88Z" fill="#fff"/>
+<path d="M283,220 L300,194 L317,220Z" fill="#C9BFA9"/><path d="M294,203 L300,194 L306,203 L302,205 L298,202Z" fill="#fff"/>
+<path d="M180,560 L200,529 L220,560Z" fill="#C9BFA9"/><path d="M193,539 L200,529 L207,539 L202,542 L198,538Z" fill="#fff"/>
+<path d="M123,520 L140,494 L157,520Z" fill="#C9BFA9"/><path d="M134,503 L140,494 L146,503 L142,505 L138,502Z" fill="#fff"/>
+<path d="M316,380 L330,359 L344,380Z" fill="#C9BFA9"/><path d="M325,366 L330,359 L335,366 L332,368 L329,365Z" fill="#fff"/>
+<path d="M61,600 L80,571 L99,600Z" fill="#C9BFA9"/><path d="M74,581 L80,571 L86,581 L82,583 L78,580Z" fill="#fff"/>
+<path d="M345,90 L360,67 L375,90Z" fill="#C9BFA9"/><path d="M355,75 L360,67 L365,75 L362,76 L358,74Z" fill="#fff"/>
+<path d="M213,330 L230,304 L247,330Z" fill="#C9BFA9"/><path d="M224,313 L230,304 L236,313 L232,315 L228,312Z" fill="#fff"/>
+<path d="M245,600 L260,577 L275,600Z" fill="#C9BFA9"/><path d="M255,585 L260,577 L265,585 L262,586 L258,584Z" fill="#fff"/>
+<text x="700" y="380" font-size="13" fill="#8E9A86" font-style="italic" text-anchor="middle">Dataran Chengdu</text>
+<text x="120" y="660" font-size="13" fill="#9C8F74" font-style="italic">Pergunungan Sichuan Barat (sejuk, bersalji)</text>
+<g class="route" data-day="d2"><path d="M744,571 Q607,445 523,384 Q439,322 370,316 Q301,311 226,311 L152,311" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M744,571 Q607,445 523,384 Q439,322 370,316 Q301,311 226,311 L152,311" fill="none" stroke="#D64933" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="route" data-day="d3"><path d="M152,311 Q150,230 184,194 L219,159" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M152,311 Q150,230 184,194 L219,159" fill="none" stroke="#E8912D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="route" data-day="d3"><path d="M219,159 Q413,177 426,250 Q439,322 523,384 L607,445" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M219,159 Q413,177 426,250 Q439,322 523,384 L607,445" fill="none" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 8"/></g>
+<g class="route" data-day="d4"><path d="M607,445 Q470,470 370,458 L271,445" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M607,445 Q470,470 370,458 L271,445" fill="none" stroke="#2F7FC1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="route" data-day="d5"><path d="M607,445 Q540,360 490,341 L439,322" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path d="M607,445 Q540,360 490,341 L439,322" fill="none" stroke="#2E9A6A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="route" data-day="d2" filter="url(#sh)"><rect x="624" y="527" width="151" height="24" rx="12" fill="#D64933"/><text x="700" y="544" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Van ~4j · 5am→9am</text></g>
+<g class="route" data-day="d3" filter="url(#sh)"><rect x="35" y="192" width="121" height="24" rx="12" fill="#E8912D"/><text x="95" y="209" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Van ~3j · 9am</text></g>
+<g class="route" data-day="d3" filter="url(#sh)"><rect x="254" y="183" width="151" height="24" rx="12" fill="#8A5CC4"/><text x="330" y="200" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Van ~4j · 4pm→8pm</text></g>
+<g class="route" data-day="d4" filter="url(#sh)"><rect x="351" y="507" width="159" height="24" rx="12" fill="#2F7FC1"/><text x="430" y="524" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Bas ~3j · 7am→10am</text></g>
+<g class="route" data-day="d5" filter="url(#sh)"><rect x="627" y="383" width="83" height="24" rx="12" fill="#2E9A6A"/><text x="668" y="400" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Tren ~1j</text></g>
+<circle cx="744" cy="571" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
+<text x="730" y="605" font-size="15" font-weight="800" fill="#1E2321" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Tianfu Airport (TFU) <tspan font-size="12" font-weight="600" fill="#6B716E">天府机场</tspan></text>
+<text x="730" y="622" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Tiba 22:40 · 7 Jan</text>
+<circle cx="607" cy="445" r="11" fill="#1E2321" stroke="#fff" stroke-width="3"/>
+<text x="623" y="451" font-size="17" font-weight="800" fill="#1E2321" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Chengdu <tspan font-size="12" font-weight="600" fill="#6B716E">成都</tspan></text>
+<text x="623" y="468" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Hotel 3 malam</text>
+<circle cx="439" cy="322" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
+<text x="453" y="290" font-size="15" font-weight="800" fill="#1E2321" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Dujiangyan <tspan font-size="12" font-weight="600" fill="#6B716E">都江堰</tspan></text>
+<text x="453" y="305" font-size="12" fill="#6B716E" text-anchor="start" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Panda Valley · Old Town</text>
+<circle cx="152" cy="311" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
+<text x="152" y="347" font-size="15" font-weight="800" fill="#1E2321" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Siguniang <tspan font-size="12" font-weight="600" fill="#6B716E">四姑娘山</tspan></text>
+<text x="152" y="364" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">~3,200m · Shuangqiao</text>
+<circle cx="219" cy="159" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
+<text x="203" y="153" font-size="15" font-weight="800" fill="#1E2321" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Bipenggou <tspan font-size="12" font-weight="600" fill="#6B716E">毕棚沟</tspan></text>
+<text x="203" y="170" font-size="12" fill="#6B716E" text-anchor="end" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Lembah salji</text>
+<circle cx="271" cy="445" r="8" fill="#1E2321" stroke="#fff" stroke-width="3"/>
+<text x="271" y="481" font-size="15" font-weight="800" fill="#1E2321" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Xiling Snow Mtn <tspan font-size="12" font-weight="600" fill="#6B716E">西岭雪山</tspan></text>
+<text x="271" y="498" font-size="12" fill="#6B716E" text-anchor="middle" paint-order="stroke" stroke="#F3EFE4" stroke-width="4">Ski · cable car</text>
+<text x="301" y="333" font-size="11" fill="#8a7f68" text-anchor="middle" font-style="italic">via Wolong · Balang</text>
+<g filter="url(#sh)"><rect x="560" y="28" width="312" height="196" rx="16" fill="#fff"/></g>
+<text x="580" y="58" font-size="18" font-weight="800" fill="#1E2321">Laluan Trip Chengdu</text>
+<text x="580" y="78" font-size="12" fill="#6B716E">7 – 12 Jan 2027 · peta ringkas, bukan ikut skala</text>
+<line x1="582" y1="104" x2="612" y2="104" stroke="#D64933" stroke-width="5" stroke-linecap="round"/><text x="622" y="108" font-size="13" fill="#1E2321">Hari 2: Airport → Siguniang</text>
+<line x1="582" y1="127" x2="612" y2="127" stroke="#E8912D" stroke-width="5" stroke-linecap="round"/><text x="622" y="131" font-size="13" fill="#1E2321">Hari 3: Siguniang → Bipenggou</text>
+<line x1="582" y1="150" x2="612" y2="150" stroke="#8A5CC4" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 5"/><text x="622" y="154" font-size="13" fill="#1E2321">Hari 3: Bipenggou → Chengdu</text>
+<line x1="582" y1="173" x2="612" y2="173" stroke="#2F7FC1" stroke-width="5" stroke-linecap="round"/><text x="622" y="177" font-size="13" fill="#1E2321">Hari 4: Chengdu ⇄ Xiling</text>
+<line x1="582" y1="196" x2="612" y2="196" stroke="#2E9A6A" stroke-width="5" stroke-linecap="round"/><text x="622" y="200" font-size="13" fill="#1E2321">Hari 5: Chengdu ⇄ Dujiangyan</text>
+<g transform="translate(846,620)"><circle r="20" fill="#fff" opacity=".85"/><path d="M0,-14 L5,2 L0,-2 L-5,2Z" fill="#1E2321"/><text y="15" font-size="10" font-weight="800" text-anchor="middle" fill="#1E2321">U</text></g>
+</svg></div>
+      <div class="chips" id="mapChips"></div>
+      <div class="dl"><a class="btn ghost" href="map.png" download="peta-trip-chengdu.png" data-i18n="dlMap"></a><a class="btn ghost" id="openMap" href="map.png" target="_blank" rel="noopener" data-i18n="openMap"></a></div>
+    </div>
+    <div class="label" data-i18n="mustRemember"></div>
+    <div class="card" id="remList"></div>
+    <div class="label" data-i18n="flights"></div>
+    <div class="card" id="flightList"></div>
+  </section>
+
+  <section class="view" id="v-plan"><div class="days" id="days"></div><div id="dayBody"></div></section>
+
+  <section class="view" id="v-cost"><div id="costBody"></div></section>
+
+  <section class="view" id="v-pack">
+    <div class="card prog">
+      <div class="ring" id="ring"><span id="ringTxt">0%</span></div>
+      <div style="flex:1"><b id="progTxt">0 / 0</b> <span class="muted" data-i18n="packed"></span><div class="bar"><i id="progBar" style="width:0"></i></div><div class="muted" style="margin-top:6px;font-size:12px" data-i18n="packNote"></div></div>
+    </div>
+    <div id="packCats"></div>
+    <div class="card">
+      <h2 data-i18n="addItem"></h2>
+      <form class="add" id="addForm"><input id="addName" maxlength="60" data-i18n-ph="phItem"><select id="addCat"></select><button class="btn" data-i18n="add"></button></form>
+      <div class="dl" style="margin-top:12px"><a class="btn wa" id="waShare" target="_blank" rel="noopener" data-i18n="shareWa"></a><button class="btn ghost" type="button" id="resetBtn" data-i18n="reset"></button></div>
+    </div>
+  </section>
+
+  <section class="view" id="v-apps"><div class="seg" id="appSeg"></div><div class="card" id="appList"></div>
+    <div class="card" id="adminCard"></div>
+    <div class="card"><h2 data-i18n="installApp"></h2><p class="muted" data-i18n="installTxt"></p></div>
+  </section>
+</div>
+
+<nav class="tabs"><div class="in" id="tabs">
+  <button data-v="trip" type="button"><svg viewBox="0 0 24 24"><path d="M3 20l6-14 4 8 3-5 5 11z"/></svg><span data-i18n="tabTrip"></span></button>
+  <button data-v="plan" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span data-i18n="tabPlan"></span></button>
+  <button data-v="cost" type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></svg><span data-i18n="tabCost"></span></button>
+  <button data-v="pack" type="button"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V4h6v3M9 12l2 2 4-4"/></svg><span data-i18n="tabPack"></span></button>
+  <button data-v="apps" type="button"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span data-i18n="tabApps"></span></button>
+</div></nav>
+
+<script>
+/* ===== config ===== */
+const REPO={owner:"fakhrulyoi",repo:"chengdu",branch:"main",path:"data.json"};
+const API=`https://api.github.com/repos/${REPO.owner}/${REPO.repo}/contents/${REPO.path}`;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+const uid=()=>Math.random().toString(36).slice(2,9);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const okUrl=u=>/^https?:\/\//i.test(u||"");
+let L=store.get("sc-lang","ms");
+let T=store.get("sc-data",null);
+let etag=store.get("sc-etag",""),lastSync=store.get("sc-synced",0);
+let token=store.get("sc-token",""),editMode=false,editing=null,newId=null,saving=0,syncState="";
+
+const I={
+ ms:{tabTrip:"Trip",tabPlan:"Jadual",tabCost:"Kos",tabPack:"Barang",tabApps:"Apps",daysToGo:"Hari lagi",days:"{n} hari",nights:"{n} malam",checkpoints:"Checkpoint",weather:"Cuaca",perPax:"Seorang",
+  routeMap:"Peta laluan",all:"Semua",dlMap:"⬇ Muat turun peta",openMap:"↗ Buka besar",mustRemember:"Jangan lupa",flights:"Penerbangan",
+  pace_easy:"Santai",pace_moderate:"Sederhana",pace_busy:"Padat",optional:"pilihan",map:"📍 Peta",
+  costTitle:"Kos darat seorang",transport:"Pengangkutan",hotel:"Hotel",fees:"Tiket masuk",total:"Jumlah",student:"Saya pelajar (harga pelajar)",buffer:"Bajet selamat (+5%)",
+  packed:"item siap dikemas",packNote:"Senarai ni disimpan dalam telefon kau sendiri.",addItem:"Tambah item",phItem:"cth. Pemanas kaki",add:"Tambah",shareWa:"Kongsi ke WhatsApp",reset:"Set semula",confirm:"Pasti?",
+  waHead:"Senarai barang trip Chengdu saya",waLeft:"Belum dikemas",
+  installApp:"Pasang sebagai app",installTxt:"iPhone: buka dalam Safari → Share → Add to Home Screen. Android: menu Chrome ⋮ → Install app.",
+  cat_hotels:"Hotel",cat_food:"Makanan",cat_maps:"Peta",cat_transport:"Pengangkutan",cat_essentials:"Keperluan",
+  bc_documents:"Dokumen",bc_clothing:"Pakaian sejuk",bc_toiletries:"Kelengkapan diri",bc_electronics:"Elektronik",bc_medication:"Ubat-ubatan",bc_food:"Makanan & minuman",bc_other:"Lain-lain",
+  day:"Hari",dayMap:"Laluan hari ni",leaveTitle:"Cuti tahunan (AL)",leaveSum:"{n} hari AL",halfAm:"½ pagi",fullDay:"Penuh",weekend:"Hujung minggu",alTag:"AL",alHalf:"AL ½",
+  budgetTitle:"Bajet RM{b} (termasuk flight)",ground:"Kos darat",flightCost:"Tiket flight (isi sendiri)",leftLbl:"Baki untuk makan, permainan salji & belanja",overLbl:"Lebih bajet",
+  syncOk:"✓ Terkini · {t}",syncing:"Menyemak…",saving:"Menyimpan ke GitHub…",saved:"✓ Disimpan. Semua orang akan nampak dalam ~1 minit",syncFail:"Offline: papar data tersimpan",saveFail:"Gagal simpan: {e}",loading:"Memuatkan trip…",
+  justNow:"baru tadi",minAgo:"{n} min lalu",
+  edit:"✎ Edit",done:"✓ Siap",save:"Simpan",cancel:"Batal",addMore:"+ Tambah",addAct:"+ Aktiviti",addTravel:"+ Perjalanan",addSection:"+ Seksyen",editDay:"✎ Edit maklumat hari",
+  adminTitle:"Admin: edit & sync",adminOff:"Untuk edit trip terus dalam app, masukkan token GitHub (sekali sahaja, disimpan dalam telefon ni).",adminSteps:"Buat token: GitHub → Settings → Developer settings → Fine-grained tokens → Repository access: hanya repo 'chengdu' → Permissions: Contents = Read and write.",
+  tokenPh:"github_pat_…",tokenSave:"Aktifkan admin",tokenBad:"Token tak sah atau tiada akses tulis ke repo.",adminOn:"✅ Mod admin aktif. Butang ✎ Edit ada di setiap tab.",adminOut:"Buang token dari telefon ni",makeToken:"Buat token di GitHub ↗",
+  f_icon:"Ikon",f_ms:"Teks (BM)",f_en:"Text (English)",f_date:"Tarikh",f_info:"Flight",f_from:"Dari",f_to:"Ke",f_dep:"Berlepas",f_arr:"Tiba",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
+  f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Jenis",t_stop:"Aktiviti",t_move:"Perjalanan",t_section:"Seksyen",f_time:"Masa",f_map:"Carian peta (nama Cina paling tepat)",f_city:"Bandar",f_opt:"Tanda sebagai pilihan",
+  f_city2:"Kawasan",f_pace:"Rentak",f_mapRoute:"Laluan dalam peta",none:"Tiada",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"RM pelajar (pilihan)",f_budget:"Bajet RM (termasuk flight)",editBudget:"✎ Edit bajet",f_weather:"Cuaca"},
+ en:{tabTrip:"Trip",tabPlan:"Itinerary",tabCost:"Costs",tabPack:"Pack",tabApps:"Apps",daysToGo:"Days to go",days:"{n} days",nights:"{n} nights",checkpoints:"Checkpoints",weather:"Weather",perPax:"Per person",
+  routeMap:"Route map",all:"All",dlMap:"⬇ Download map",openMap:"↗ Open full size",mustRemember:"Must remember",flights:"Flights",
+  pace_easy:"Easy pace",pace_moderate:"Moderate pace",pace_busy:"Busy pace",optional:"optional",map:"📍 Map",
+  costTitle:"Ground cost per person",transport:"Transport",hotel:"Hotel",fees:"Entrance fees",total:"Total",student:"I'm a student (student prices)",buffer:"Safe budget (+5%)",
+  packed:"items packed",packNote:"This list is saved on your own phone.",addItem:"Add item",phItem:"e.g. Foot warmers",add:"Add",shareWa:"Share to WhatsApp",reset:"Reset",confirm:"Sure?",
+  waHead:"My Chengdu trip packing list",waLeft:"Not packed yet",
+  installApp:"Install as an app",installTxt:"iPhone: open in Safari → Share → Add to Home Screen. Android: Chrome menu ⋮ → Install app.",
+  cat_hotels:"Hotels",cat_food:"Food",cat_maps:"Maps",cat_transport:"Transport",cat_essentials:"Essentials",
+  bc_documents:"Documents",bc_clothing:"Cold-weather clothing",bc_toiletries:"Toiletries",bc_electronics:"Electronics",bc_medication:"Medication",bc_food:"Food & drink",bc_other:"Other",
+  day:"Day",dayMap:"Today's route",leaveTitle:"Annual leave (AL)",leaveSum:"{n} days of AL",halfAm:"½ AM",fullDay:"Full",weekend:"Weekend",alTag:"AL",alHalf:"AL ½",
+  budgetTitle:"Budget RM{b} (incl. flight)",ground:"Ground cost",flightCost:"Flight ticket (enter yours)",leftLbl:"Left for food, snow games & shopping",overLbl:"Over budget",
+  syncOk:"✓ Up to date · {t}",syncing:"Checking…",saving:"Saving to GitHub…",saved:"✓ Saved. Everyone will see it within ~1 minute",syncFail:"Offline: showing saved data",saveFail:"Save failed: {e}",loading:"Loading trip…",
+  justNow:"just now",minAgo:"{n} min ago",
+  edit:"✎ Edit",done:"✓ Done",save:"Save",cancel:"Cancel",addMore:"+ Add",addAct:"+ Activity",addTravel:"+ Travel",addSection:"+ Section",editDay:"✎ Edit day details",
+  adminTitle:"Admin: edit & sync",adminOff:"To edit the trip inside the app, enter a GitHub token (once; it's saved on this phone only).",adminSteps:"Create a token: GitHub → Settings → Developer settings → Fine-grained tokens → Repository access: only the 'chengdu' repo → Permissions: Contents = Read and write.",
+  tokenPh:"github_pat_…",tokenSave:"Turn on admin",tokenBad:"Invalid token, or it has no write access to the repo.",adminOn:"✅ Admin mode is on. Every tab has an ✎ Edit button.",adminOut:"Remove token from this phone",makeToken:"Create a token on GitHub ↗",
+  f_icon:"Icon",f_ms:"Teks (BM)",f_en:"Text (English)",f_date:"Date",f_info:"Flight",f_from:"From",f_to:"To",f_dep:"Departs",f_arr:"Arrives",f_noteMs:"Nota (BM)",f_noteEn:"Note (English)",
+  f_hMs:"Tajuk (BM)",f_hEn:"Title (English)",f_pMs:"Butiran (BM)",f_pEn:"Details (English)",f_type:"Type",t_stop:"Activity",t_move:"Travel",t_section:"Section",f_time:"Time",f_map:"Map search (Chinese name works best)",f_city:"City",f_opt:"Mark as optional",
+  f_city2:"Area",f_pace:"Pace",f_mapRoute:"Route on map",none:"None",f_item:"Item (BM)",f_itemEn:"Item (English)",f_rm:"RM",f_student:"Student RM (optional)",f_budget:"Budget RM (incl. flight)",editBudget:"✎ Edit budget",f_weather:"Weather"}
+};
+const t=(k,v)=>{let s=(I[L]&&I[L][k])??I.ms[k]??k;if(v)for(const x in v)s=s.replace("{"+x+"}",v[x]);return s};
+const tx=o=>o==null?"":typeof o==="string"?o:(L==="en"&&o.en)?o.en:(o.ms||o.en||"");
+const D=s=>new Date(s+"T00:00:00Z");
+const fmt=(s,o)=>{const d=D(s);return isNaN(d)?"":new Intl.DateTimeFormat(L==="ms"?"ms-MY":"en-GB",{timeZone:"UTC",...o}).format(d)};
+const mapUrl=(k,c)=>T.maps==="amap"?`https://uri.amap.com/search?keyword=${encodeURIComponent(k)}${c?`&city=${encodeURIComponent(c)}`:""}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(k+" "+(c||""))}`;
+const DAYCOL={d2:"#D64933",d3:"#E8912D",d4:"#2F7FC1",d5:"#2E9A6A"};
+const getP=(o,p)=>p.split(".").reduce((a,k)=>a==null?a:a[k],o);
+const setP=(o,p,v)=>{const ks=p.split(".");let a=o;ks.slice(0,-1).forEach(k=>{if(a[k]==null||typeof a[k]!=="object")a[k]={};a=a[k]});a[ks[ks.length-1]]=v};
+
+/* ===== GitHub sync ===== */
+const b64dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,"")),c=>c.charCodeAt(0)));
+const b64enc=s=>{const b=new TextEncoder().encode(s);let r="";for(let i=0;i<b.length;i+=0x8000)r+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(r)};
+const ghHeaders=(auth)=>({Accept:"application/vnd.github+json",...(auth&&token?{Authorization:"Bearer "+token}:{})});
+function setSync(s){syncState=s;const el=$("#sync");if(!el)return;
+  const ago=lastSync?Math.round((Date.now()-lastSync)/60000):null;const ts=ago==null?"":ago<1?t("justNow"):t("minAgo",{n:ago});
+  el.textContent=s==="ok"?t("syncOk",{t:ts}):s==="err"?t("syncFail"):s==="saving"?t("saving"):s==="saved"?t("saved"):s.startsWith("fail:")?t("saveFail",{e:s.slice(5)}):s==="loading"?t("loading"):t("syncing");
+  el.className="sync "+(s==="ok"||s==="saved"?"ok":s==="err"||s.startsWith("fail")?"bad":"")}
+function applyData(d){T=d;store.set("sc-data",T);if(!editing)renderAll()}
+async function pull(){
+  if(saving)return;
+  try{
+    const h=ghHeaders(true);if(etag&&T)h["If-None-Match"]=etag;
+    const r=await fetch(API+"?ref="+REPO.branch,{headers:h,cache:"no-store"});
+    if(r.status===304){lastSync=Date.now();store.set("sc-synced",lastSync);setSync("ok");return}
+    if(!r.ok)throw new Error(r.status);
+    const j=await r.json();const d=JSON.parse(b64dec(j.content));
+    etag=r.headers.get("ETag")||"";store.set("sc-etag",etag);lastSync=Date.now();store.set("sc-synced",lastSync);
+    if(saving)return;applyData(d);setSync("ok");
+  }catch(e){
+    if(!T){try{const r=await fetch("data.json?v="+Date.now(),{cache:"no-store"});if(r.ok){applyData(await r.json());setSync("ok");return}}catch(x){}}
+    setSync(T?"err":"loading");
+  }
+}
+/* commit(mut): apply mut to local data now, then to the freshest remote copy and push it */
+let commitQ=Promise.resolve();
+function commit(mut,msg){
+  mut(T);store.set("sc-data",T);renderAll();
+  if(!token)return;
+  saving++;setSync("saving");
+  commitQ=commitQ.then(async()=>{
+    for(let attempt=0;attempt<3;attempt++){
+      const g=await fetch(API+"?ref="+REPO.branch+"&t="+Date.now(),{headers:ghHeaders(true),cache:"no-store"});
+      if(!g.ok)throw new Error("HTTP "+g.status);
+      const j=await g.json();const remote=JSON.parse(b64dec(j.content));mut(remote);
+      const p=await fetch(API,{method:"PUT",headers:{...ghHeaders(true),"Content-Type":"application/json"},body:JSON.stringify({message:msg||"Update trip via app",content:b64enc(JSON.stringify(remote,null,2)+"\n"),sha:j.sha,branch:REPO.branch})});
+      if(p.status===409||p.status===422){continue}
+      if(!p.ok)throw new Error(p.status===401||p.status===403?"token":"HTTP "+p.status);
+      etag="";store.set("sc-etag","");T=remote;store.set("sc-data",T);return;
+    }
+    throw new Error("conflict");
+  }).then(()=>{saving--;setSync("saved");if(!editing)renderAll()},e=>{saving--;setSync("fail:"+e.message)});
+}
+
+/* ===== routing ===== */
+const VIEWS=["trip","plan","cost","pack","apps"];
+function show(v){if(!VIEWS.includes(v))v="trip";document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("active",s.id==="v-"+v));document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.v===v))}
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(b){location.hash=b.dataset.v;scrollTo(0,0)}};
+addEventListener("hashchange",()=>show(location.hash.slice(1)));
+
+/* ===== edit helpers ===== */
+const editBtn=()=>token?`<div class="toolbar"><button class="ebtn${editMode?" on":""}" type="button" data-a="mode">${editMode?t("done"):t("edit")}</button></div>`:"";
+const ctl=(list,id)=>editMode?`<span class="ctl" data-list="${list}" data-id="${esc(id)}"><button type="button" data-a="up">↑</button><button type="button" data-a="dn">↓</button><button type="button" data-a="ed">✎</button><button type="button" data-a="rm">×</button></span>`:"";
+const addBtn=(list,label,extra="")=>editMode&&!editing?`<button class="addbtn" type="button" data-a="add" data-list="${list}"${extra}>${esc(label||t("addMore"))}</button>`:"";
+function field(f,o){const v=getP(o,f.k);const lab=`<label class="fl">${esc(t(f.l))}</label>`;
+  if(f.sel)return lab+`<select name="${f.k}">${f.sel.map(([a,b])=>`<option value="${esc(a)}"${String(v??"")===a?" selected":""}>${esc(b)}</option>`).join("")}</select>`;
+  if(f.ta)return lab+`<textarea name="${f.k}" rows="2" maxlength="600">${esc(v||"")}</textarea>`;
+  if(f.ck)return `<label class="ck"><input type="checkbox" name="${f.k}"${v?" checked":""}> ${esc(t(f.l))}</label>`;
+  return lab+`<input name="${f.k}" type="${f.type||"text"}" value="${esc(v??"")}" maxlength="200"${f.type==="number"?' inputmode="decimal"':""}>`}
+function formHTML(fields,o,form,attrs=""){let h="",buf=[],row=null;const fl=()=>{if(buf.length){h+=`<div class="frow">${buf.map(x=>`<div>${x}</div>`).join("")}</div>`;buf=[]}};
+  fields.forEach(f=>{if(f.row){if(row!==f.row)fl();row=f.row;buf.push(field(f,o))}else{fl();row=null;h+=field(f,o)}});fl();
+  return `<form class="card edit" data-form="${form}"${attrs}>${h}<div class="frow" style="margin-top:4px"><button class="btn">${esc(t("save"))}</button><button class="btn ghost" type="button" data-a="cancel">${esc(t("cancel"))}</button></div></form>`}
+function readForm(f,fields,o){const fd=new FormData(f);fields.forEach(x=>{let v=x.ck?!!fd.get(x.k):String(fd.get(x.k)??"").trim();if(x.type==="number")v=v===""?(x.opt?undefined:0):Number(v);if(v===undefined){const ks=x.k.split(".");let a=o;ks.slice(0,-1).forEach(k=>a=a&&a[k]);if(a)delete a[ks[ks.length-1]]}else setP(o,x.k,v)});return o}
+const PACES=()=>[["easy",t("pace_easy")],["moderate",t("pace_moderate")],["busy",t("pace_busy")]];
+const SCHEMA={
+ reminders:()=>[{k:"ic",l:"f_icon"},{k:"ms",l:"f_ms",ta:1},{k:"en",l:"f_en",ta:1}],
+ flights:()=>[{k:"date",l:"f_date",type:"date",row:1},{k:"info",l:"f_info",row:1},{k:"from",l:"f_from",row:2},{k:"fromT",l:"f_dep",row:2},{k:"to",l:"f_to",row:3},{k:"toT",l:"f_arr",row:3},{k:"note.ms",l:"f_noteMs"},{k:"note.en",l:"f_noteEn"}],
+ cost:(fee)=>[{k:"ms",l:"f_item"},{k:"en",l:"f_itemEn"},{k:"rm",l:"f_rm",type:"number",row:1},...(fee?[{k:"student",l:"f_student",type:"number",opt:1,row:1}]:[])],
+ stop:()=>[{k:"kind",l:"f_type",sel:[["stop",t("t_stop")],["move",t("t_move")],["section",t("t_section")]],row:1},{k:"t",l:"f_time",row:1},{k:"h.ms",l:"f_hMs"},{k:"h.en",l:"f_hEn"},{k:"p.ms",l:"f_pMs",ta:1},{k:"p.en",l:"f_pEn",ta:1},{k:"map",l:"f_map",row:2},{k:"city",l:"f_city",row:2},{k:"opt",l:"f_opt",ck:1}],
+ day:()=>[{k:"title.ms",l:"f_hMs"},{k:"title.en",l:"f_hEn"},{k:"date",l:"f_date",type:"date",row:1},{k:"pace",l:"f_pace",sel:PACES(),row:1},{k:"city",l:"f_city2",row:2},{k:"map",l:"f_mapRoute",sel:[["",t("none")],["d2","Hari 2"],["d3","Hari 3"],["d4","Hari 4"],["d5","Hari 5"]],row:2}],
+ budget:()=>[{k:"budget",l:"f_budget",type:"number",row:1},{k:"weather",l:"f_weather",row:1}],
+};
+/* list path → array inside a data object */
+function listOf(d,list){if(list.startsWith("stops:")){const day=d.days.find(x=>x.id===list.slice(6));return day?day.stops:null}if(list.startsWith("costs."))return d.costs[list.slice(6)];return d[list]}
+const schemaOf=list=>list.startsWith("stops:")?SCHEMA.stop():list.startsWith("costs.")?SCHEMA.cost(list==="costs.fees"):SCHEMA[list]();
+const blankOf=(list,kind)=>list.startsWith("stops:")?{kind:kind||"stop",t:"",h:{ms:"",en:""},p:{ms:"",en:""}}:list.startsWith("costs.")?{ms:"",en:"",rm:0}:list==="flights"?{date:"",info:"",from:"",fromT:"",to:"",toT:"",note:{ms:"",en:""}}:{ic:"📌",ms:"",en:""};
+const isEd=(list,id)=>editing&&editing.list===list&&editing.id===id;
+function dropNew(){if(!newId||!editing)return;const a=listOf(T,editing.list);if(a){const i=a.findIndex(x=>x.id===newId);if(i>=0)a.splice(i,1)}newId=null}
+function cancelEdit(){dropNew();editing=null;renderAll()}
+
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-a]");if(!b||b.closest("#packCats")||b.closest("#addForm"))return;const a=b.dataset.a;
+  if(a==="mode"){dropNew();editing=null;editMode=!editMode;renderAll();return}
+  if(a==="cancel"){cancelEdit();return}
+  if(a==="add"){dropNew();const list=b.dataset.list;const arr=listOf(T,list);if(!arr)return;const o={id:"n"+uid(),...blankOf(list,b.dataset.kind)};arr.push(o);newId=o.id;editing={list,id:o.id};renderAll();return}
+  if(a==="eday"){dropNew();editing={list:"day",id:b.dataset.id};renderAll();return}
+  if(a==="ebudget"){dropNew();editing={list:"budget",id:"b"};renderAll();return}
+  const c=b.closest("[data-list]");if(!c||!["up","dn","ed","rm"].includes(a))return;
+  const list=c.dataset.list,id=c.dataset.id,arr=listOf(T,list);if(!arr)return;const i=arr.findIndex(x=>x.id===id);if(i<0)return;
+  if(a==="ed"){dropNew();editing={list,id};renderAll();return}
+  if(a==="rm"){if(!b.dataset.arm){b.dataset.arm=1;b.textContent=t("confirm");b.classList.add("arm");setTimeout(()=>{if(b.isConnected){delete b.dataset.arm;b.textContent="×";b.classList.remove("arm")}},2500);return}
+    commit(d=>{const x=listOf(d,list);if(!x)return;const k=x.findIndex(y=>y.id===id);if(k>=0)x.splice(k,1)},"Remove item");return}
+  if(a==="up"||a==="dn"){const j=a==="up"?i-1:i+1;if(j<0||j>=arr.length)return;const other=arr[j].id;
+    commit(d=>{const x=listOf(d,list);if(!x)return;const p=x.findIndex(y=>y.id===id),q=x.findIndex(y=>y.id===other);if(p<0||q<0)return;[x[p],x[q]]=[x[q],x[p]]},"Reorder")}
+});
+document.addEventListener("submit",e=>{
+  const f=e.target;if(!f.dataset.form)return;e.preventDefault();
+  if(f.dataset.form==="day"){const id=f.dataset.id,fields=SCHEMA.day();const draft=readForm(f,fields,clone(T.days.find(x=>x.id===id)||{}));editing=null;
+    commit(d=>{const day=d.days.find(x=>x.id===id);if(day)readFormValues(day,fields,draft)},"Edit day");return}
+  if(f.dataset.form==="budget"){const fields=SCHEMA.budget();const draft=readForm(f,fields,{budget:T.budget,weather:T.weather});editing=null;commit(d=>{d.budget=draft.budget;d.weather=draft.weather},"Edit budget");return}
+  const list=f.dataset.list,id=f.dataset.id,fields=schemaOf(list);const cur=(listOf(T,list)||[]).find(x=>x.id===id);if(!cur)return;
+  const draft=readForm(f,fields,clone(cur));const titleKey=fields.find(x=>!x.sel&&!x.ck&&x.k!=="ic"&&x.k!=="date");
+  if(titleKey&&!getP(draft,titleKey.k)&&!(draft.h&&(draft.h.ms||draft.h.en))&&!draft.ms&&!draft.from){const el=f.elements[titleKey.k];el&&el.focus();return}
+  if(draft.h&&!draft.h.ms&&draft.h.en)draft.h.ms=draft.h.en;
+  const isNew=id===newId;newId=null;editing=null;
+  commit(d=>{const x=listOf(d,list);if(!x)return;const k=x.findIndex(y=>y.id===id);if(k>=0)x[k]=clone(draft);else if(isNew)x.push(clone(draft))},isNew?"Add item":"Edit item");
+});
+function readFormValues(target,fields,src){fields.forEach(f=>{const v=getP(src,f.k);if(v===undefined){const ks=f.k.split(".");let a=target;ks.slice(0,-1).forEach(k=>a=a&&a[k]);if(a)delete a[ks[ks.length-1]]}else setP(target,f.k,v)})}
+
+/* ===== top / trip tab ===== */
+function renderTop(){
+  document.documentElement.lang=L;
+  document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
+  document.querySelectorAll("[data-i18n-ph]").forEach(e=>e.placeholder=t(e.dataset.i18nPh));
+  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===L));
+  $("#hName").textContent=T.emoji+" "+tx(T.name);$("#hRoute").textContent=fmt(T.start,{day:"numeric",month:"short"})+" – "+fmt(T.end,{day:"numeric",month:"short",year:"numeric"});
+  const n=Math.round((D(T.end)-D(T.start))/864e5);const togo=Math.ceil((D(T.start)-D(new Date().toISOString().slice(0,10)))/864e5);
+  $("#tripTools").innerHTML=editBtn();
+  $("#hero").innerHTML=`<div class="row"><div><div class="muted" style="font-size:13px">${esc(t("daysToGo"))}</div><div class="big">${togo>0?togo:"🎉"}</div></div><div style="text-align:right"><div style="font-weight:700">${esc(t("days",{n:n+1}))} · ${esc(t("nights",{n}))}</div><div class="muted" style="font-size:12px;max-width:200px">${esc(T.route)}</div></div></div>
+   <div class="stats"><div><b>3</b><span>${esc(t("checkpoints"))}</span></div><div><b>~RM${total(false)}</b><span>${esc(t("perPax"))}</span></div><div><b>${esc(T.weather)}</b><span>${esc(t("weather"))}</span></div></div>`;
+  const LV={};(T.leave||[]).forEach(l=>LV[l.date]=l);const ld=[];for(let x=D(T.start);x<=D(T.end);x.setUTCDate(x.getUTCDate()+1))ld.push(x.toISOString().slice(0,10));
+  const nAL=(T.leave||[]).reduce((s,l)=>s+(l.half?0.5:1),0);
+  $("#leaveCard").innerHTML=`<b>${esc(t("leaveSum",{n:nAL}))}</b><div class="leave">${ld.map(dt=>{const l=LV[dt];const wd=D(dt).getUTCDay();return `<div class="${l?(l.half?"half":"al"):""}">${esc(fmt(dt,{weekday:"short"}))}<b>${esc(fmt(dt,{day:"numeric"}))}</b>${esc(l?(l.half?t("halfAm"):t("fullDay")):(wd===0||wd===6?t("weekend"):""))}</div>`}).join("")}</div>`;
+  $("#remList").innerHTML=T.reminders.map(r=>isEd("reminders",r.id)?formHTML(SCHEMA.reminders(),r,"list",` data-list="reminders" data-id="${esc(r.id)}"`):`<div class="remind"><div class="ic">${esc(r.ic)}</div><div class="bd"><p>${esc(tx(r))}</p>${ctl("reminders",r.id)}</div></div>`).join("")+addBtn("reminders");
+  $("#flightList").innerHTML=T.flights.map(f=>isEd("flights",f.id)?formHTML(SCHEMA.flights(),f,"list",` data-list="flights" data-id="${esc(f.id)}"`):`<div class="leg">${f.date?`<div class="dt">${esc(fmt(f.date,{weekday:"short",day:"numeric",month:"short"}))}</div>`:""}<div class="g"><div><div class="code">${esc(f.from)}</div><div class="t">${esc(f.fromT)}</div></div><div class="mid">${esc(f.info)}<i></i>✈</div><div class="r"><div class="code">${esc(f.to)}</div><div class="t">${esc(f.toT)}</div></div></div>${tx(f.note)?`<div class="transit">${esc(tx(f.note))}</div>`:""}${ctl("flights",f.id)}</div>`).join("")+addBtn("flights");
+}
+
+/* ===== map ===== */
+let mapDay="";
+function renderChips(){
+  const days=T.days.filter(d=>d.map);
+  $("#mapChips").innerHTML=`<button type="button" data-d="" class="${mapDay?"":"on"}">${esc(t("all"))}</button>`+days.map(d=>{const i=T.days.indexOf(d)+1;return `<button type="button" data-d="${esc(d.map)}" class="${mapDay===d.map?"on":""}"><i style="background:${DAYCOL[d.map]||"#999"}"></i>${esc(t("day"))} ${i} · ${esc(fmt(d.date,{day:"numeric",month:"short"}))}</button>`}).join("");
+  highlight($("#bigMap"),mapDay);
+}
+function highlight(w,d){if(!w)return;w.classList.toggle("dim",!!d);w.querySelectorAll(".route").forEach(g=>g.classList.toggle("on",g.dataset.day===d))}
+$("#mapChips").onclick=e=>{const b=e.target.closest("button");if(!b)return;mapDay=b.dataset.d;renderChips()};
+
+/* ===== itinerary ===== */
+let curDay=-1;
+function stopHTML(s,list){
+  if(isEd(list,s.id))return formHTML(SCHEMA.stop(),s,"list",` data-list="${list}" data-id="${esc(s.id)}"`);
+  const c=ctl(list,s.id);
+  if(s.kind==="move")return `<div class="move"><span>🚐 ${esc(tx(s.h))}</span>${c}</div>`;
+  if(s.kind==="section")return `<div class="optlabel"><span>🏔️ ${esc(tx(s.h))}</span>${c}</div>`;
+  const acts=[];if(s.map)acts.push(`<a class="chip" href="${esc(mapUrl(s.map,s.city))}" target="_blank" rel="noopener">${esc(t("map"))}</a>`);
+  (s.links||[]).forEach(l=>{if(okUrl(l.u))acts.push(`<a class="chip" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l.l)} ↗</a>`)});
+  const time=[s.t,s.opt?t("optional"):""].filter(Boolean).join(" · ");
+  return `<div class="stop${s.opt?" opt":""}">${time?`<div class="time">${esc(time)}</div>`:""}<h3>${esc(tx(s.h))}</h3>${tx(s.p)?`<p>${esc(tx(s.p))}</p>`:""}${acts.length?`<div class="acts">${acts.join("")}</div>`:""}${c}</div>`;
+}
+function renderDays(){
+  if(curDay<0){curDay=Math.max(0,T.days.findIndex(d=>d.date>=new Date().toISOString().slice(0,10)))}
+  curDay=Math.min(curDay,T.days.length-1);
+  $("#days").innerHTML=T.days.map((d,i)=>`<button class="daychip${i===curDay?" on":""}" type="button" data-i="${i}"><small>${esc(fmt(d.date,{weekday:"short"}))}</small><b>${esc(fmt(d.date,{day:"numeric"}))}</b></button>`).join("");
+  const d=T.days[curDay];const list="stops:"+d.id;
+  let h=editBtn();
+  if(editing&&editing.list==="day"&&editing.id===d.id)h+=formHTML(SCHEMA.day(),d,"day",` data-id="${esc(d.id)}"`);
+  else{const lv=(T.leave||[]).find(x=>x.date===d.date);
+    h+=`<div class="dayhead"><div><div class="muted">${esc(t("day"))} ${curDay+1} · ${esc(fmt(d.date,{weekday:"long",day:"numeric",month:"short"}))} · ${esc(d.city)}</div><h2>${esc(tx(d.title))}${lv?`<span class="altag">${esc(lv.half?t("alHalf"):t("alTag"))}</span>`:""}</h2></div><span class="pace ${esc(d.pace)}">${esc(t("pace_"+d.pace))}</span></div>`;
+    if(editMode&&!editing)h+=`<button class="linkb" type="button" data-a="eday" data-id="${esc(d.id)}">${esc(t("editDay"))}</button>`}
+  if(d.map)h+=`<div class="label" style="margin-top:0">${esc(t("dayMap"))}</div><div class="minimap mapwrap" id="miniMap">${$("#bigMap").innerHTML}</div>`;
+  h+=`<div class="tl${editMode?" em":""}">${d.stops.map(s=>stopHTML(s,list)).join("")}</div>`;
+  if(editMode&&!editing)h+=`<div class="addrow">${addBtn(list,t("addAct"),' data-kind="stop"')}${addBtn(list,t("addTravel"),' data-kind="move"')}${addBtn(list,t("addSection"),' data-kind="section"')}</div>`;
+  $("#dayBody").innerHTML=h;if(d.map)highlight($("#miniMap"),d.map);
+}
+$("#days").onclick=e=>{const b=e.target.closest(".daychip");if(!b)return;dropNew();editing=null;curDay=+b.dataset.i;renderDays()};
+
+/* ===== costs ===== */
+let student=store.get("sc-student",false);
+const price=x=>student&&x.student?x.student:x.rm;
+const sum=a=>a.reduce((s,x)=>s+(Number(x.rm)||0),0);
+function total(st){const c=T.costs;return sum(c.transport)+sum(c.hotel)+c.fees.reduce((s,x)=>s+Number(st&&x.student?x.student:x.rm||0),0)}
+function renderCost(){
+  const c=T.costs,tr=sum(c.transport),ho=sum(c.hotel),fe=c.fees.reduce((s,x)=>s+Number(price(x)||0),0),tot=tr+ho+fe;
+  const fl=Number(store.get("sc-flight",0))||0,left=(T.budget||0)-tot-fl;
+  const grp=(k,key)=>{const list="costs."+key,arr=c[key];return `<div class="label">${esc(t(k))} · RM${arr.reduce((s,x)=>s+Number(price(x)||0),0)}</div><div class="card">${arr.map(x=>isEd(list,x.id)?formHTML(schemaOf(list),x,"list",` data-list="${list}" data-id="${esc(x.id)}"`):`<div class="crow"><span>${esc(tx(x))}${x.student?` <span class="muted">(${L==="en"?"student":"pelajar"} RM${x.student})</span>`:""}</span><span class="cr"><b>RM${price(x)}</b>${ctl(list,x.id)}</span></div>`).join("")}${addBtn(list)}</div>`};
+  const pct=v=>(tot?v/tot*100:0).toFixed(1)+"%";
+  const budgetCard=editing&&editing.list==="budget"?formHTML(SCHEMA.budget(),{budget:T.budget,weather:T.weather},"budget"):`<div class="card"><h2>${esc(t("budgetTitle",{b:Number(T.budget||0).toLocaleString("en")}))}</h2><div class="budget"><div><span>${esc(t("ground"))}</span><b>RM${tot}</b></div><div><span>${esc(t("flightCost"))}</span><input id="flIn" type="number" inputmode="numeric" min="0" placeholder="RM" value="${fl||""}"></div></div><div class="left${left<0?" neg":""}"><span class="muted">${esc(left<0?t("overLbl"):t("leftLbl"))}</span><br><b>RM${Math.abs(left).toLocaleString("en")}</b></div>${editMode&&!editing?`<button class="linkb" type="button" data-a="ebudget" style="margin:8px 0 0">${esc(t("editBudget"))}</button>`:""}</div>`;
+  $("#costBody").innerHTML=editBtn()+budgetCard+`<div class="card"><h2>${esc(t("costTitle"))}</h2>
+    <div class="ctot"><span>${esc(t("total"))}</span><b>RM${tot}</b></div>
+    <div class="muted" style="text-align:right">${esc(t("buffer"))}: ~RM${Math.ceil(tot*1.05/10)*10}</div>
+    <div class="bars"><i style="width:${pct(tr)};background:#2B5E8C"></i><i style="width:${pct(ho)};background:#E8912D"></i><i style="width:${pct(fe)};background:#2E9A6A"></i></div>
+    <div class="legend"><span><i style="background:#2B5E8C"></i>${esc(t("transport"))} RM${tr}</span><span><i style="background:#E8912D"></i>${esc(t("hotel"))} RM${ho}</span><span><i style="background:#2E9A6A"></i>${esc(t("fees"))} RM${fe}</span></div>
+    <label class="ck"><input type="checkbox" id="stu"${student?" checked":""}> ${esc(t("student"))}</label></div>
+    ${grp("transport","transport")}${grp("hotel","hotel")}${grp("fees","fees")}
+    <p class="muted" style="padding:0 2px">${esc(tx(c.notIncluded))}</p>`;
+  const fi=$("#flIn");if(fi)fi.onchange=e=>{store.set("sc-flight",Math.max(0,Number(e.target.value)||0));renderCost()};
+  $("#stu").onchange=e=>{student=e.target.checked;store.set("sc-student",student);renderCost()};
+}
+
+/* ===== packing (local per phone) ===== */
+let bag=store.get("sc-bag",null);
+const CATS=()=>Object.keys(T.packing);
+const defBag=()=>{const a=[];CATS().forEach(c=>T.packing[c].forEach(([ms,en])=>a.push({id:uid(),c,n:{ms,en},d:false})));return a};
+function saveBag(){store.set("sc-bag",bag);renderBag()}
+function renderBag(){
+  if(!bag){bag=defBag();store.set("sc-bag",bag)}
+  const done=bag.filter(i=>i.d).length,tot=bag.length,pct=tot?Math.round(done/tot*100):0;
+  $("#progTxt").textContent=`${done} / ${tot}`;$("#progBar").style.width=pct+"%";$("#ring").style.setProperty("--p",pct);$("#ringTxt").textContent=pct+"%";
+  $("#packCats").innerHTML=CATS().filter(c=>bag.some(i=>i.c===c)).map(c=>{const it=bag.filter(i=>i.c===c);return `<div class="cat"><div class="ch"><b>${esc(t("bc_"+c))}</b><span>${it.filter(i=>i.d).length}/${it.length}</span></div><div class="list">${it.map(i=>`<div class="item${i.d?" done":""}" data-id="${i.id}"><span class="cb${i.d?" on":""}" data-p="tog"></span><span class="nm" data-p="tog">${esc(tx(i.n))}</span><button class="x" type="button" data-p="del" aria-label="Remove">×</button></div>`).join("")}</div></div>`}).join("");
+  const left=bag.filter(i=>!i.d).map(i=>"• "+tx(i.n));
+  $("#waShare").href="https://wa.me/?text="+encodeURIComponent(`${t("waHead")} (${done}/${tot}) ✅\n\n${t("waLeft")}:\n${left.join("\n")||"-"}`);
+  const sel=$("#addCat"),v=sel.value;sel.innerHTML=CATS().map(c=>`<option value="${c}">${esc(t("bc_"+c))}</option>`).join("");if(v)sel.value=v;
+}
+$("#packCats").onclick=e=>{const a=e.target.closest("[data-p]");if(!a)return;const id=a.closest(".item").dataset.id;if(a.dataset.p==="tog"){const i=bag.find(x=>x.id===id);if(i)i.d=!i.d}else bag=bag.filter(x=>x.id!==id);saveBag()};
+$("#addForm").onsubmit=e=>{e.preventDefault();const n=$("#addName").value.trim();if(!n)return;bag.push({id:uid(),c:$("#addCat").value,n,d:false});$("#addName").value="";saveBag()};
+$("#resetBtn").onclick=e=>{const b=e.currentTarget;if(b.dataset.arm){bag=defBag();saveBag();delete b.dataset.arm;b.textContent=t("reset");return}b.dataset.arm=1;b.textContent=t("confirm");setTimeout(()=>{delete b.dataset.arm;b.textContent=t("reset")},2500)};
+
+/* ===== apps + admin ===== */
+const ACATS=["hotels","food","maps","transport","essentials"];let appCat="hotels";
+const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+function renderApps(){
+  $("#appSeg").innerHTML=ACATS.map(c=>`<button type="button" data-k="${c}" class="${c===appCat?"on":""}">${esc(t("cat_"+c))}</button>`).join("");
+  $("#appList").innerHTML=T.apps.filter(a=>a.cat===appCat).map(a=>`<div class="appi"><div class="lg" style="background:hsl(${hue(a.name)} 45% 42%)">${esc(a.name[0])}</div><div><h3>${esc(a.name)}</h3><p>${esc(tx(a))}</p><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.url.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,""))} ↗</a></div></div>`).join("");
+  $("#adminCard").innerHTML=`<h2>${esc(t("adminTitle"))}</h2>`+(token?`<p class="muted">${esc(t("adminOn"))}</p><button class="btn ghost" type="button" id="tokOut" style="margin-top:10px">${esc(t("adminOut"))}</button>`
+    :`<p class="muted">${esc(t("adminOff"))}</p><p class="muted" style="margin-top:6px;font-size:12px">${esc(t("adminSteps"))}</p><a class="linkb" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">${esc(t("makeToken"))}</a><form class="add" id="tokForm"><input id="tokIn" type="password" autocomplete="off" placeholder="${esc(t("tokenPh"))}"><button class="btn">${esc(t("tokenSave"))}</button></form><p class="err" id="tokErr"></p>`);
+  const tf=$("#tokForm");if(tf)tf.onsubmit=async e=>{e.preventDefault();const v=$("#tokIn").value.trim();if(!v)return;
+    try{const r=await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}`,{headers:{Accept:"application/vnd.github+json",Authorization:"Bearer "+v}});const j=r.ok?await r.json():null;
+      if(j&&j.permissions&&j.permissions.push){token=v;store.set("sc-token",v);editMode=true;renderAll();pull()}else $("#tokErr").textContent=t("tokenBad")}catch(x){$("#tokErr").textContent=t("tokenBad")}};
+  const to=$("#tokOut");if(to)to.onclick=()=>{token="";store.del("sc-token");editMode=false;editing=null;renderAll()};
+}
+$("#appSeg").onclick=e=>{const b=e.target.closest("button");if(b){appCat=b.dataset.k;renderApps()}};
+
+function renderAll(){if(!T)return;renderTop();renderChips();renderDays();renderCost();renderBag();renderApps();setSync(syncState||"syncing")}
+$("#lang").onclick=e=>{const b=e.target.closest("button");if(!b)return;L=b.dataset.l;store.set("sc-lang",L);renderAll()};
+show(location.hash.slice(1));
+if(T)renderAll();else setSync("loading");
+pull();
+setInterval(()=>{if(document.visibilityState==="visible"&&!editing)pull()},60000);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")pull()});
+setInterval(()=>{if(syncState==="ok")setSync("ok")},30000);
+if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script>
+</body>
+</html>

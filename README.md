@@ -1,0 +1,27 @@
+# Trip Chengdu · 7–13 Jan 2027
+
+App trip (jadual, peta laluan, kos & bajet, cuti AL, senarai barang, apps), dwibahasa BM/EN. Boleh dipasang di telefon dan dibuka offline.
+
+**Link app:** https://fakhrulyoi.github.io/Chengdu/ (lepas GitHub Pages diaktifkan)
+
+## Aktifkan GitHub Pages (sekali sahaja)
+Settings → Pages → Build and deployment → **Source: Deploy from a branch** → **Branch: `main` / `(root)`** → Save.
+Tunggu 1–2 minit, kemudian buka link di atas.
+
+## Sync: semua orang nampak perubahan
+- Semua kandungan trip ada dalam **`data.json`** dalam repo ni.
+- App setiap orang semak `data.json` terbaru bila app dibuka dan setiap 1 minit.
+- **Admin edit terus dalam app:** buka tab **Apps → Admin: edit & sync**, masukkan token GitHub (sekali sahaja, disimpan dalam telefon kau sahaja). Lepas tu tekan **✎ Edit** di setiap tab. Bila tekan Simpan, app commit ke repo dan semua orang nampak dalam ~1 minit.
+- Boleh juga edit `data.json` terus di GitHub (ikon pensel → Commit).
+
+### Buat token admin
+GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens → Generate new token**
+- Repository access: **Only select repositories → Chengdu**
+- Permissions → Repository permissions → **Contents: Read and write**
+- Salin token (`github_pat_…`) dan tampal dalam app.
+
+Untuk co-admin, buat token berasingan untuk dia, atau tambah dia sebagai collaborator di repo ni dan dia buat token sendiri. **Jangan kongsi token dalam group chat.**
+
+## Nota
+- Senarai barang disimpan dalam telefon setiap orang. Guna butang **Kongsi ke WhatsApp** untuk tunjuk progress.
+- Peta (`map.svg` / `map.png`) ialah imej tetap. Kalau tempat atau laluan berubah, peta perlu dijana semula.
