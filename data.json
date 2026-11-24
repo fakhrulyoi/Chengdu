@@ -1,1192 +1,1263 @@
 {
-  "name": {
-    "ms": "Trip Chengdu",
-    "en": "Chengdu Trip"
+ "name": {
+  "ms": "Trip Chengdu",
+  "en": "Chengdu Trip"
+ },
+ "emoji": "🏔️",
+ "route": "KLIA → Chengdu (TFU) → Siguniang → Bipenggou → Xiling → Dujiangyan",
+ "start": "2027-01-07",
+ "end": "2027-01-13",
+ "budget": 3000,
+ "leave": [
+  {
+   "date": "2027-01-07",
+   "half": "am"
   },
-  "emoji": "🏔️",
-  "route": "KLIA → Chengdu (TFU) → Siguniang → Bipenggou → Xiling → Dujiangyan",
-  "start": "2027-01-07",
-  "end": "2027-01-13",
-  "budget": 3000,
-  "leave": [
-    {
-      "date": "2027-01-07",
-      "half": "am"
-    },
-    {
-      "date": "2027-01-08"
-    },
-    {
-      "date": "2027-01-11"
-    },
-    {
-      "date": "2027-01-12"
-    },
-    {
-      "date": "2027-01-13",
-      "half": "am"
-    }
-  ],
-  "weather": "-10 – 8°C",
-  "maps": "amap",
-  "reminders": [
-    {
-      "ic": "🏔️",
-      "ms": "Altitud tinggi: Siguniang sekitar 3,000m+, dan kawasan lembah boleh lebih tinggi. Jalan perlahan, minum air banyak, jangan terlalu penat. Kalau sakit kepala teruk, muntah atau sesak nafas, turun ke tempat rendah dan dapatkan bantuan.",
-      "en": "High altitude: Siguniang is around 3,000m+, and the valleys can go higher. Walk slowly, drink plenty of water and don't overexert. If you get a severe headache, vomiting or shortness of breath, go lower and get help.",
-      "id": "r1"
-    },
-    {
-      "ic": "❄️",
-      "ms": "Sejuk dan bersalji: suhu boleh jatuh jauh bawah 0°C di gunung. Bawa thermal, jaket tebal, sarung tangan kalis air dan kasut yang tak licin.",
-      "en": "Cold and snowy: mountain temperatures can drop well below 0°C. Bring thermals, a thick jacket, waterproof gloves and non-slip shoes.",
-      "id": "r2"
-    },
-    {
-      "ic": "🍱",
-      "ms": "Bawa makanan RTE untuk makan tengah hari di Shuangqiao, Bipenggou dan Xiling. Pilihan halal di kawasan scenic terhad.",
-      "en": "Bring RTE food for lunch at Shuangqiao, Bipenggou and Xiling. Halal options inside scenic areas are limited.",
-      "id": "r3"
-    },
-    {
-      "ic": "😴",
-      "ms": "Malam 7 Jan: tidur di airport TFU lepas imigresen sampai 4am. Simpan barang berharga dekat badan, dan bawa bantal leher serta jaket.",
-      "en": "Night of 7 Jan: sleep at TFU airport after immigration until 4am. Keep valuables close and bring a neck pillow and jacket.",
-      "id": "r4"
-    },
-    {
-      "ic": "⏰",
-      "ms": "Hari 4 mula 6am, tapi malam sebelumnya check-in 8pm dan makan 9pm. Tidur awal!",
-      "en": "Day 4 starts at 6am, and the night before has an 8pm check-in and 9pm dinner. Sleep early!",
-      "id": "r5"
-    },
-    {
-      "ic": "🛂",
-      "ms": "Tak perlu visa: rakyat Malaysia boleh masuk China tanpa visa sehingga 30 hari.",
-      "en": "No visa needed: Malaysians can enter China visa-free for up to 30 days.",
-      "id": "r6"
-    },
-    {
-      "ic": "📶",
-      "ms": "Pasang eSIM roaming dan set up Alipay (pautkan kad) sebelum terbang. Google dan WhatsApp disekat tanpa roaming.",
-      "en": "Install a roaming eSIM and set up Alipay (link your card) before you fly. Google and WhatsApp are blocked without roaming.",
-      "id": "r7"
-    },
-    {
-      "ic": "🛫",
-      "ms": "Flight balik 12 Jan pukul 23:55. Sampai TFU paling lewat 20:55 (3 jam awal); airport tu sekitar 1 jam dari bandar.",
-      "en": "Return flight on 12 Jan at 23:55. Be at TFU by 20:55 (3h early); the airport is about 1h from the city.",
-      "id": "r8"
-    }
-  ],
-  "flights": [
-    {
-      "date": "2027-01-07",
-      "from": "KUL",
-      "fromT": "18:05 · KLIA T2",
-      "to": "TFU",
-      "toT": "22:40",
-      "info": "AirAsia X · D7 326",
-      "note": {
-        "ms": "Imigresen di TFU, kemudian tidur di airport",
-        "en": "Immigration at TFU, then sleep at the airport"
-      },
-      "id": "f9"
-    },
-    {
-      "date": "2027-01-12",
-      "from": "TFU",
-      "fromT": "23:55",
-      "to": "KUL",
-      "toT": "04:50 · 13 Jan",
-      "info": "AirAsia X · D7 327",
-      "note": {
-        "ms": "Flight malam, sampai KL awal pagi Rabu",
-        "en": "Overnight flight, lands in KL early Wednesday"
-      },
-      "id": "fa"
-    }
-  ],
-  "costs": {
-    "transport": [
-      {
-        "ms": "Private driver (van Hari 2–3)",
-        "en": "Private driver (van, Days 2–3)",
-        "rm": 290,
-        "id": "cb"
-      },
-      {
-        "ms": "Bas ke Xiling",
-        "en": "Bus to Xiling",
-        "rm": 26,
-        "id": "cc"
-      },
-      {
-        "ms": "Balik dari Xiling (bas/tren)",
-        "en": "Back from Xiling (bus/train)",
-        "rm": 26,
-        "id": "cd"
-      },
-      {
-        "ms": "Tren Dujiangyan (pergi-balik)",
-        "en": "Dujiangyan train (return)",
-        "rm": 15,
-        "id": "ce"
-      }
-    ],
-    "hotel": [
-      {
-        "ms": "Hotel Siguniang (1 malam)",
-        "en": "Siguniang hotel (1 night)",
-        "rm": 17,
-        "id": "cf"
-      },
-      {
-        "ms": "Hotel Chengdu (3 malam)",
-        "en": "Chengdu hotel (3 nights)",
-        "rm": 50,
-        "id": "cg"
-      }
-    ],
-    "fees": [
-      {
-        "ms": "Shuangqiao Valley",
-        "en": "Shuangqiao Valley",
-        "rm": 92,
-        "student": 68,
-        "id": "ch"
-      },
-      {
-        "ms": "Bipenggou Valley",
-        "en": "Bipenggou Valley",
-        "rm": 117,
-        "id": "ci"
-      },
-      {
-        "ms": "Xiling Mountain (cable car)",
-        "en": "Xiling Mountain (cable car)",
-        "rm": 140,
-        "id": "cj"
-      },
-      {
-        "ms": "Dujiangyan Panda Valley",
-        "en": "Dujiangyan Panda Valley",
-        "rm": 34,
-        "id": "ck"
-      },
-      {
-        "ms": "Dujiangyan Scenic Area",
-        "en": "Dujiangyan Scenic Area",
-        "rm": 49,
-        "id": "cl"
-      }
-    ],
-    "notIncluded": {
-      "ms": "Tak termasuk: tiket flight, makan, permainan salji di Panyanghu, ole-ole dan belanja peribadi.",
-      "en": "Not included: flights, food, snow games at Panyanghu, souvenirs and personal spending."
-    }
+  {
+   "date": "2027-01-08"
   },
-  "days": [
-    {
-      "date": "2027-01-07",
-      "map": "",
-      "title": {
-        "ms": "Bertolak ke Chengdu",
-        "en": "Fly to Chengdu"
-      },
-      "city": "KLIA T2 → TFU",
-      "pace": "easy",
-      "stops": [
-        {
-          "t": "15:00",
-          "h": {
-            "ms": "Sampai KLIA Terminal 2",
-            "en": "Arrive at KLIA Terminal 2"
-          },
-          "p": {
-            "ms": "Sekitar 3 jam sebelum flight antarabangsa.",
-            "en": "About 3 hours before an international flight."
-          },
-          "id": "sm",
-          "kind": "stop"
-        },
-        {
-          "t": "18:05",
-          "h": {
-            "ms": "Flight AirAsia X D7 326 → Chengdu",
-            "en": "AirAsia X D7 326 → Chengdu"
-          },
-          "id": "sn",
-          "kind": "stop"
-        },
-        {
-          "t": "22:40",
-          "h": {
-            "ms": "Tiba TFU · imigresen",
-            "en": "Arrive TFU · immigration"
-          },
-          "map": "成都天府国际机场",
-          "city": "成都",
-          "id": "so",
-          "kind": "stop"
-        },
-        {
-          "t": "23:30",
-          "h": {
-            "ms": "Tidur di airport sampai 4am",
-            "en": "Sleep at the airport until 4am"
-          },
-          "id": "sp",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270107",
-      "food": [
-        "tfu"
-      ],
-      "alt": 50,
-      "place": "KLIA"
-    },
-    {
-      "date": "2027-01-08",
-      "map": "d2",
-      "title": {
-        "ms": "Checkpoint 1: Siguniang",
-        "en": "Checkpoint 1: Siguniang"
-      },
-      "city": "Siguniang",
-      "pace": "busy",
-      "stops": [
-        {
-          "t": "04:00",
-          "h": {
-            "ms": "Bangun & bersiap",
-            "en": "Wake up & get ready"
-          },
-          "id": "sq",
-          "kind": "stop"
-        },
-        {
-          "t": "05:00",
-          "h": {
-            "ms": "Tunggu van ambil",
-            "en": "Wait for van pickup"
-          },
-          "id": "sr",
-          "kind": "stop"
-        },
-        {
-          "kind": "move",
-          "h": {
-            "ms": "Van ke Siguniang · ~4 jam (via Wolong)",
-            "en": "Van to Siguniang · ~4h (via Wolong)"
-          },
-          "id": "ss"
-        },
-        {
-          "t": "09:00",
-          "h": {
-            "ms": "Sampai Siguniang",
-            "en": "Arrive Siguniang"
-          },
-          "map": "四姑娘山",
-          "city": "小金县",
-          "id": "st",
-          "kind": "stop"
-        },
-        {
-          "t": "09:30",
-          "h": {
-            "ms": "Sarapan (RTE / restoran halal)",
-            "en": "Breakfast (RTE / halal restaurant)"
-          },
-          "id": "su",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Scenic: Shuangqiao Valley",
-            "en": "Scenic: Shuangqiao Valley"
-          },
-          "p": {
-            "ms": "RM92 dewasa · RM68 pelajar. Bawa RTE untuk makan tengah hari.",
-            "en": "RM92 adult · RM68 student. Bring RTE for lunch."
-          },
-          "map": "双桥沟",
-          "city": "小金县",
-          "links": [
-            {
-              "l": "TikTok",
-              "u": "https://vt.tiktok.com/ZSs15VLDf/"
-            },
-            {
-              "l": "Trip.com",
-              "u": "https://my.trip.com/travel-guide/attraction/xiaojin/mount-siguniang-87387?poiType=3&curr=MYR&locale=en-MY&scene=ticket"
-            }
-          ],
-          "id": "sv",
-          "kind": "stop"
-        },
-        {
-          "t": "16:00",
-          "h": {
-            "ms": "Check-in hotel",
-            "en": "Hotel check-in"
-          },
-          "p": {
-            "ms": "RM17 seorang.",
-            "en": "RM17 per person."
-          },
-          "links": [
-            {
-              "l": "Hotel",
-              "u": "https://www.trip.com/w/0lSGbSFzFX2"
-            }
-          ],
-          "id": "sw",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270108",
-      "food": [
-        "siguniang"
-      ],
-      "alt": 3160,
-      "place": "Siguniang"
-    },
-    {
-      "date": "2027-01-09",
-      "map": "d3",
-      "title": {
-        "ms": "Checkpoint 2: Bipenggou",
-        "en": "Checkpoint 2: Bipenggou"
-      },
-      "city": "Bipenggou → Chengdu",
-      "pace": "busy",
-      "stops": [
-        {
-          "t": "08:00",
-          "h": {
-            "ms": "Check-out & sarapan",
-            "en": "Check out & breakfast"
-          },
-          "id": "sx",
-          "kind": "stop"
-        },
-        {
-          "t": "09:00",
-          "h": {
-            "ms": "Bertolak ke Bipenggou",
-            "en": "Leave for Bipenggou"
-          },
-          "id": "sy",
-          "kind": "stop"
-        },
-        {
-          "kind": "move",
-          "h": {
-            "ms": "Van ke Bipenggou · ~3 jam",
-            "en": "Van to Bipenggou · ~3h"
-          },
-          "id": "sz"
-        },
-        {
-          "kind": "section",
-          "h": {
-            "ms": "Scenic: Bipenggou Valley (RM117)",
-            "en": "Scenic: Bipenggou Valley (RM117)"
-          },
-          "id": "s10"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Longwahai Lake",
-            "en": "Longwahai Lake"
-          },
-          "p": {
-            "ms": "Jalan sekitar 1–1.5km dan nikmati pemandangan.",
-            "en": "Walk about 1–1.5km and enjoy the view."
-          },
-          "map": "毕棚沟 龙王海",
-          "city": "理县",
-          "id": "s11",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Shanghaizi",
-            "en": "Shanghaizi"
-          },
-          "p": {
-            "ms": "Naik shuttle bas elektrik kecil, dan makan di food court (boleh makan RTE).",
-            "en": "Board the small electric shuttle bus and eat at the food court (RTE allowed)."
-          },
-          "id": "s12",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Panyanghu",
-            "en": "Panyanghu"
-          },
-          "p": {
-            "ms": "Snowmobile, snow tubing, ski, skateboard dan lain-lain (bayar setiap permainan).",
-            "en": "Snowmobile, snow tubing, skiing, skateboarding and more (pay per game)."
-          },
-          "opt": true,
-          "id": "s13",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Yanziyanwo",
-            "en": "Yanziyanwo"
-          },
-          "p": {
-            "ms": "Pemandangan puncak gunung. Sumpah lawa 💯",
-            "en": "Peak view of the mountain. Seriously stunning 💯"
-          },
-          "id": "s14",
-          "kind": "stop"
-        },
-        {
-          "t": "16:00",
-          "h": {
-            "ms": "Gerak balik ke Chengdu",
-            "en": "Head back to Chengdu"
-          },
-          "id": "s15",
-          "kind": "stop"
-        },
-        {
-          "kind": "move",
-          "h": {
-            "ms": "Van ke Chengdu · ~4 jam",
-            "en": "Van to Chengdu · ~4h"
-          },
-          "id": "s16"
-        },
-        {
-          "t": "20:00",
-          "h": {
-            "ms": "Check-in hotel Chengdu",
-            "en": "Chengdu hotel check-in"
-          },
-          "p": {
-            "ms": "RM50 seorang untuk 3 malam.",
-            "en": "RM50 per person for 3 nights."
-          },
-          "id": "s17",
-          "kind": "stop"
-        },
-        {
-          "t": "21:00",
-          "h": {
-            "ms": "Makan malam: mala hotpot (TBC)",
-            "en": "Dinner: mala hotpot (TBC)"
-          },
-          "id": "s18",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270109",
-      "food": [
-        "bipenggou",
-        "chengdu"
-      ],
-      "alt": 3000,
-      "place": "Bipenggou"
-    },
-    {
-      "date": "2027-01-10",
-      "map": "d4",
-      "title": {
-        "ms": "Checkpoint 3: Xiling Mountain",
-        "en": "Checkpoint 3: Xiling Mountain"
-      },
-      "city": "Xiling",
-      "pace": "moderate",
-      "stops": [
-        {
-          "t": "06:00",
-          "h": {
-            "ms": "Ke checkpoint bas",
-            "en": "Go to the bus checkpoint"
-          },
-          "p": {
-            "ms": "RM26",
-            "en": "RM26"
-          },
-          "id": "s19",
-          "kind": "stop"
-        },
-        {
-          "t": "07:00",
-          "h": {
-            "ms": "Bas ke Xiling Mountain",
-            "en": "Bus to Xiling Mountain"
-          },
-          "id": "s1a",
-          "kind": "stop"
-        },
-        {
-          "kind": "move",
-          "h": {
-            "ms": "Bas · ~3 jam",
-            "en": "Bus · ~3h"
-          },
-          "id": "s1b"
-        },
-        {
-          "t": "10:00",
-          "h": {
-            "ms": "Sampai Xiling Mountain 🚡",
-            "en": "Arrive at Xiling Mountain 🚡"
-          },
-          "p": {
-            "ms": "Tiket RM140 termasuk: ski, slide (3 permainan), banana boat dan main salji.",
-            "en": "RM140 ticket includes: skiing, slide (3 games), banana boat and snow play."
-          },
-          "map": "西岭雪山",
-          "city": "大邑县",
-          "id": "s1c",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Balik ke Chengdu (bas/tren)",
-            "en": "Back to Chengdu (bus/train)"
-          },
-          "p": {
-            "ms": "RM26",
-            "en": "RM26"
-          },
-          "id": "s1d",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Free & easy: jalan-jalan area masjid",
-            "en": "Free & easy: explore around the mosque"
-          },
-          "map": "皇城清真寺",
-          "city": "成都",
-          "id": "s1e",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Bawa makanan RTE",
-            "en": "Bring RTE food"
-          },
-          "id": "s1f",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270110",
-      "food": [
-        "xiling",
-        "chengdu"
-      ],
-      "alt": 2400,
-      "place": "Xiling"
-    },
-    {
-      "date": "2027-01-11",
-      "map": "d5",
-      "title": {
-        "ms": "Chengdu City · Dujiangyan",
-        "en": "Chengdu City · Dujiangyan"
-      },
-      "city": "Dujiangyan",
-      "pace": "moderate",
-      "stops": [
-        {
-          "t": "",
-          "h": {
-            "ms": "Tren ke Dujiangyan (pergi-balik)",
-            "en": "Train to Dujiangyan (return)"
-          },
-          "p": {
-            "ms": "RM15",
-            "en": "RM15"
-          },
-          "id": "s1g",
-          "kind": "stop"
-        },
-        {
-          "kind": "move",
-          "h": {
-            "ms": "Tren · ~1 jam",
-            "en": "Train · ~1h"
-          },
-          "id": "s1h"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Dujiangyan Panda Valley",
-            "en": "Dujiangyan Panda Valley"
-          },
-          "p": {
-            "ms": "RM34",
-            "en": "RM34"
-          },
-          "map": "都江堰熊猫谷",
-          "city": "都江堰",
-          "id": "s1i",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Bookstore",
-            "en": "Bookstore"
-          },
-          "id": "s1j",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Dujiangyan Scenic Area",
-            "en": "Dujiangyan Scenic Area"
-          },
-          "p": {
-            "ms": "RM49",
-            "en": "RM49"
-          },
-          "map": "都江堰景区",
-          "city": "都江堰",
-          "id": "s1k",
-          "kind": "stop"
-        },
-        {
-          "t": "",
-          "h": {
-            "ms": "Dujiangyan Old Town",
-            "en": "Dujiangyan Old Town"
-          },
-          "p": {
-            "ms": "Beli ole-ole.",
-            "en": "Shop for souvenirs."
-          },
-          "map": "都江堰古城",
-          "city": "都江堰",
-          "id": "s1l",
-          "kind": "stop"
-        },
-        {
-          "t": "21:00",
-          "h": {
-            "ms": "Balik ke Chengdu",
-            "en": "Back to Chengdu"
-          },
-          "id": "s1m",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270111",
-      "food": [
-        "dujiangyan"
-      ],
-      "alt": 700,
-      "place": "Dujiangyan"
-    },
-    {
-      "date": "2027-01-12",
-      "map": "",
-      "title": {
-        "ms": "Chengdu · free & easy, terbang balik",
-        "en": "Chengdu · free & easy, fly home"
-      },
-      "city": "Chengdu → TFU",
-      "pace": "easy",
-      "stops": [
-        {
-          "t": "",
-          "h": {
-            "ms": "Free & easy",
-            "en": "Free & easy"
-          },
-          "p": {
-            "ms": "Check-out hotel dan simpan beg (tanya hotel untuk simpan beg).",
-            "en": "Check out and store your bags (ask the hotel to hold them)."
-          },
-          "id": "s1n",
-          "kind": "stop"
-        },
-        {
-          "t": "19:30",
-          "h": {
-            "ms": "Ambil beg & gerak ke airport",
-            "en": "Collect bags & head to the airport"
-          },
-          "id": "s1o",
-          "kind": "stop"
-        },
-        {
-          "kind": "move",
-          "h": {
-            "ms": "Didi / Metro ke TFU · ~1 jam",
-            "en": "Didi / Metro to TFU · ~1h"
-          },
-          "id": "s1p"
-        },
-        {
-          "t": "20:55",
-          "h": {
-            "ms": "Sampai TFU · check-in",
-            "en": "Arrive TFU · check in"
-          },
-          "map": "成都天府国际机场",
-          "city": "成都",
-          "id": "s1q",
-          "kind": "stop"
-        },
-        {
-          "t": "23:55",
-          "h": {
-            "ms": "Flight AirAsia X D7 327 → KL",
-            "en": "AirAsia X D7 327 → KL"
-          },
-          "id": "s1r",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270112",
-      "food": [
-        "chengdu"
-      ],
-      "alt": 500,
-      "place": "Chengdu"
-    },
-    {
-      "date": "2027-01-13",
-      "map": "",
-      "title": {
-        "ms": "Sampai KL",
-        "en": "Back in KL"
-      },
-      "city": "KLIA T2",
-      "pace": "easy",
-      "stops": [
-        {
-          "t": "04:50",
-          "h": {
-            "ms": "Tiba KLIA Terminal 2 🏠",
-            "en": "Arrive at KLIA Terminal 2 🏠"
-          },
-          "p": {
-            "ms": "Cuti separuh hari pagi, rehat dulu.",
-            "en": "Half-day leave in the morning, so get some rest."
-          },
-          "id": "s1s",
-          "kind": "stop"
-        }
-      ],
-      "id": "d20270113",
-      "alt": 50,
-      "place": "KLIA"
-    }
-  ],
-  "packing": {
-    "documents": [
-      [
-        "Pasport (sah 6 bulan ke atas)",
-        "Passport (6+ months valid)"
-      ],
-      [
-        "E-tiket flight (offline)",
-        "Flight e-tickets (offline)"
-      ],
-      [
-        "Tempahan hotel (offline)",
-        "Hotel bookings (offline)"
-      ],
-      [
-        "Insurans perjalanan",
-        "Travel insurance"
-      ],
-      [
-        "Kad dipautkan ke Alipay",
-        "Card linked to Alipay"
-      ],
-      [
-        "Duit tunai CNY",
-        "Some CNY cash"
-      ]
-    ],
-    "clothing": [
-      [
-        "Baju thermal (atas & bawah)",
-        "Thermal top & bottom"
-      ],
-      [
-        "Jaket tebal / down jacket",
-        "Thick / down jacket"
-      ],
-      [
-        "Sweater atau hoodie",
-        "Sweater or hoodie"
-      ],
-      [
-        "Seluar kalis air",
-        "Waterproof pants"
-      ],
-      [
-        "Kasut salji kalis air (tak licin)",
-        "Waterproof non-slip snow boots"
-      ],
-      [
-        "Stokin bulu ×4",
-        "Wool socks ×4"
-      ],
-      [
-        "Sarung tangan kalis air",
-        "Waterproof gloves"
-      ],
-      [
-        "Beanie & neck warmer",
-        "Beanie & neck warmer"
-      ],
-      [
-        "Cermin mata hitam (silau salji)",
-        "Sunglasses (snow glare)"
-      ]
-    ],
-    "toiletries": [
-      [
-        "Berus & ubat gigi",
-        "Toothbrush & toothpaste"
-      ],
-      [
-        "Pelembap & lip balm (udara kering)",
-        "Moisturiser & lip balm (dry air)"
-      ],
-      [
-        "Sunblock",
-        "Sunscreen"
-      ],
-      [
-        "Tisu & tisu basah",
-        "Tissues & wet wipes"
-      ]
-    ],
-    "electronics": [
-      [
-        "Telefon + pengecas",
-        "Phone + charger"
-      ],
-      [
-        "Power bank (sejuk cepat habis bateri)",
-        "Power bank (cold drains batteries)"
-      ],
-      [
-        "Adapter universal",
-        "Universal adapter"
-      ],
-      [
-        "eSIM dipasang & diuji",
-        "eSIM installed & tested"
-      ]
-    ],
-    "medication": [
-      [
-        "Ubat peribadi",
-        "Personal medication"
-      ],
-      [
-        "Paracetamol",
-        "Paracetamol"
-      ],
-      [
-        "Ubat selsema",
-        "Cold & flu meds"
-      ],
-      [
-        "Ubat perut",
-        "Stomach meds"
-      ],
-      [
-        "Tanya doktor pasal ubat altitud",
-        "Ask a doctor about altitude meds"
-      ]
-    ],
-    "food": [
-      [
-        "Makanan RTE (untuk 3 hari scenic)",
-        "RTE meals (for 3 scenic days)"
-      ],
-      [
-        "Snek & coklat",
-        "Snacks & chocolate"
-      ],
-      [
-        "Botol air / termos",
-        "Water bottle / thermos"
-      ],
-      [
-        "Pemanas tangan (hand warmer)",
-        "Hand warmers"
-      ]
-    ],
-    "other": [
-      [
-        "Bantal leher (tidur di airport)",
-        "Neck pillow (airport nap)"
-      ],
-      [
-        "Sejadah kecil",
-        "Compact prayer mat"
-      ],
-      [
-        "Beg galas kecil",
-        "Small daypack"
-      ],
-      [
-        "Plastik zip untuk telefon (salji)",
-        "Zip bag for phone (snow)"
-      ]
-    ]
+  {
+   "date": "2027-01-11"
   },
-  "apps": [
-    {
-      "cat": "hotels",
-      "name": "Trip.com",
-      "url": "https://www.trip.com",
-      "ms": "Hotel, tren dan tiket tarikan di China. Terima kad Malaysia.",
-      "en": "Hotels, trains and attraction tickets in China. Takes Malaysian cards.",
-      "id": "a1t"
-    },
-    {
-      "cat": "hotels",
-      "name": "Agoda",
-      "url": "https://www.agoda.com",
-      "ms": "Banding harga hotel.",
-      "en": "Compare hotel prices.",
-      "id": "a1u"
-    },
-    {
-      "cat": "food",
-      "name": "HalalTrip",
-      "url": "https://www.halaltrip.com",
-      "ms": "Panduan restoran halal dan masjid.",
-      "en": "Halal restaurant and mosque guide.",
-      "id": "a1v"
-    },
-    {
-      "cat": "food",
-      "name": "Muslim Pro",
-      "url": "https://www.muslimpro.com",
-      "ms": "Waktu solat, kiblat dan tempat halal.",
-      "en": "Prayer times, qibla and halal places.",
-      "id": "a1w"
-    },
-    {
-      "cat": "food",
-      "name": "Dianping (大众点评)",
-      "url": "https://www.dianping.com",
-      "ms": "Ulasan restoran. Cari \"清真\" untuk halal.",
-      "en": "Restaurant reviews. Search \"清真\" for halal.",
-      "id": "a1x"
-    },
-    {
-      "cat": "maps",
-      "name": "Amap (高德)",
-      "url": "https://www.amap.com",
-      "ms": "Peta paling tepat di China. Pautan 📍 dalam app buka di sini.",
-      "en": "The most accurate map in China. The 📍 links open here.",
-      "id": "a1y"
-    },
-    {
-      "cat": "maps",
-      "name": "Apple Maps",
-      "url": "https://www.apple.com/maps/",
-      "ms": "Berfungsi baik di China untuk pengguna iPhone.",
-      "en": "Works well in China for iPhone users.",
-      "id": "a1z"
-    },
-    {
-      "cat": "transport",
-      "name": "Didi",
-      "url": "https://www.didiglobal.com",
-      "ms": "Grab versi China. Boleh guna dalam Alipay.",
-      "en": "China's Grab. Works inside Alipay.",
-      "id": "a20"
-    },
-    {
-      "cat": "transport",
-      "name": "12306 / Trip.com trains",
-      "url": "https://www.12306.cn/en/",
-      "ms": "Tiket tren ke Dujiangyan. Perlu pasport.",
-      "en": "Train tickets to Dujiangyan. Needs your passport.",
-      "id": "a21"
-    },
-    {
-      "cat": "essentials",
-      "name": "Alipay",
-      "url": "https://global.alipay.com",
-      "ms": "Bayar hampir semua benda, termasuk metro.",
-      "en": "Pay for almost everything, including the metro.",
-      "id": "a22"
-    },
-    {
-      "cat": "essentials",
-      "name": "WeChat",
-      "url": "https://www.wechat.com",
-      "ms": "Mesej dan WeChat Pay.",
-      "en": "Messaging and WeChat Pay.",
-      "id": "a23"
-    },
-    {
-      "cat": "essentials",
-      "name": "Airalo eSIM",
-      "url": "https://www.airalo.com",
-      "ms": "Data yang masih boleh guna WhatsApp dan Google di China.",
-      "en": "Data that keeps WhatsApp and Google working in China.",
-      "id": "a24"
-    },
-    {
-      "cat": "essentials",
-      "name": "Google Translate",
-      "url": "https://translate.google.com",
-      "ms": "Muat turun bahasa Cina untuk offline.",
-      "en": "Download Chinese for offline use.",
-      "id": "a25"
-    }
-  ],
-  "expenses": {
-    "url": "https://docs.google.com/spreadsheets/d/1-40Gj4tMFFMjDaWg3-fWSPVn81xYNLZ9ZWzq45ZG1s0/edit?usp=drivesdk",
-    "title": "Expenses Tracker",
-    "by": "CA Muhammad Aiman, Finance Executive"
+  {
+   "date": "2027-01-12"
   },
-  "halal": [
-    {
-      "id": "h1",
-      "area": "chengdu",
-      "name": "Tianfanglou (天方楼)",
-      "map": "天方楼 皇城清真寺",
-      "city": "成都",
-      "ms": "Tingkat bawah Masjid Huangcheng. Masakan halal Sichuan & Xinjiang: big plate chicken (大盘鸡), sate kambing.",
-      "en": "Ground floor of Huangcheng Mosque. Halal Sichuan & Xinjiang food: big plate chicken (大盘鸡), lamb skewers.",
-      "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
-    },
-    {
-      "id": "h2",
-      "area": "chengdu",
-      "name": "Kawasan Masjid Huangcheng (皇城清真寺)",
-      "map": "皇城清真寺",
-      "city": "成都",
-      "ms": "Ada sekitar 7 restoran halal di sekeliling masjid: mi tarik, hotpot dan lauk Sichuan. Sesuai untuk free & easy Hari 4.",
-      "en": "About 7 halal restaurants around the mosque: hand-pulled noodles, hotpot and Sichuan dishes. Good for free & easy on Day 4.",
-      "src": "https://www.kosmo.com.my/2026/09/20/tak-puas-nikmati-keindahan-chengdu-makanan-halal-pun-mudah/"
-    },
-    {
-      "id": "h3",
-      "area": "chengdu",
-      "name": "Yuexiangcun (清真粤香村)",
-      "map": "清真粤香村 东城根南街",
-      "city": "成都",
-      "ms": "Masakan Sichuan halal yang terkenal dalam komuniti Muslim Chengdu. 66–68 Dongchenggen South St.",
-      "en": "Halal Sichuan cuisine, well known among Chengdu's Muslim community. 66–68 Dongchenggen South St.",
-      "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
-    },
-    {
-      "id": "h4",
-      "area": "chengdu",
-      "name": "Huangchengba Beef (皇城坝牛肉馆)",
-      "map": "皇城坝牛肉馆",
-      "city": "成都",
-      "ms": "Antara restoran halal paling sibuk di Chengdu. Hidangan daging lembu.",
-      "en": "One of the busiest halal restaurants in Chengdu. Beef dishes.",
-      "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
-    },
-    {
-      "id": "h5",
-      "area": "chengdu",
-      "name": "Hotpot halal: Niu Bu Bi (清真牛不比火锅)",
-      "map": "清真牛不比火锅",
-      "city": "成都",
-      "ms": "Pilihan untuk dinner mala hotpot Hari 3 (Yingmenkou). Status halal belum disahkan sumber, jadi tanya dulu.",
-      "en": "Option for the Day 3 mala hotpot dinner (Yingmenkou). The source hasn't verified halal status, so ask first.",
-      "src": "https://wildgreatwall.com/halal-restaurants-in-chengdu-china/"
-    },
-    {
-      "id": "h6",
-      "area": "siguniang",
-      "name": "Restoran halal dekat Masjid Siguniang (四姑娘山清真寺)",
-      "map": "四姑娘山清真寺",
-      "city": "小金县",
-      "ms": "Pekan Siguniang ada masjid. Pengembara Malaysia lapor ada satu restoran halal sahaja di pekan ni (nama tak disebut). Tanya penduduk: \"清真餐厅在哪里?\"",
-      "en": "Siguniang town has a mosque. A Malaysian traveller reported just one halal restaurant in town (not named). Ask locals: \"清真餐厅在哪里?\"",
-      "src": "https://www.kosmo.com.my/2026/09/20/tak-puas-nikmati-keindahan-chengdu-makanan-halal-pun-mudah/"
-    },
-    {
-      "id": "h7",
-      "area": "bipenggou",
-      "name": "Tiada restoran halal dijumpai",
-      "map": "",
-      "city": "",
-      "ms": "Kedai di Bipenggou kebanyakannya hotpot yak/Tibet (tak halal). Bawa RTE dan makan di food court Shanghaizi.",
-      "en": "Eateries at Bipenggou are mostly yak/Tibetan hotpot (not halal). Bring RTE and eat at the Shanghaizi food court.",
-      "src": ""
-    },
-    {
-      "id": "h8",
-      "area": "xiling",
-      "name": "Tiada restoran halal dijumpai",
-      "map": "",
-      "city": "",
-      "ms": "Restoran di Xiling dan pekan Dayi masakan biasa (banyak babi). Bawa RTE untuk tengah hari.",
-      "en": "Restaurants at Xiling and Dayi town serve regular food (lots of pork). Bring RTE for lunch.",
-      "src": ""
-    },
-    {
-      "id": "h9",
-      "area": "dujiangyan",
-      "name": "Jalan Selatan, Old Town (南街 · 灌县古城)",
-      "map": "灌县古城 南街 清真寺",
-      "city": "都江堰",
-      "ms": "Kawasan komuniti Hui dengan Masjid Nanjie dan kedai makan halal. Terkenal dengan daging lembu halal. Sesuai masa beli ole-ole Hari 5.",
-      "en": "Hui neighbourhood with Nanjie Mosque and halal eateries, famous for halal beef. Fits the Day 5 souvenir stop.",
-      "src": "https://www.meet99.com/jingdian-guanxiangucheng-122285.html"
-    },
-    {
-      "id": "h10",
-      "area": "tfu",
-      "name": "Tianfu Airport (TFU)",
-      "map": "",
-      "city": "",
-      "ms": "Ada laporan makanan halal di terminal, tapi flight tiba 22:40 dan banyak kedai dah tutup. Bawa snek untuk malam tu.",
-      "en": "Halal food is reported in the terminals, but you land at 22:40 when many outlets are closed. Bring snacks for that night.",
-      "src": "https://chinaairlinetravel.com/airport-guide/chengdu-tianfu/restaurants.html"
-    }
-  ],
-  "halalTips": {
-    "ms": "Cari papan tanda 清真 atau حلال. Dalam Dianping, cari \"清真\". Ada restoran \"halal\" di China yang jual arak, jadi pilih yang tiada arak dan tanya bila ragu.",
-    "en": "Look for the 清真 or حلال sign. On Dianping, search \"清真\". Some \"halal\" restaurants in China sell alcohol, so pick ones without it and ask when unsure."
-  },
-  "split": {
-    "rate": 0.61,
-    "people": [
-      {
-        "id": "p1",
-        "name": "Yoi"
-      },
-      {
-        "id": "p2",
-        "name": "Aiman"
-      }
-    ],
-    "items": []
+  {
+   "date": "2027-01-13",
+   "half": "am"
   }
+ ],
+ "weather": "-10 – 8°C",
+ "maps": "amap",
+ "reminders": [
+  {
+   "ic": "🏔️",
+   "ms": "Altitud tinggi: Siguniang sekitar 3,000m+, dan kawasan lembah boleh lebih tinggi. Jalan perlahan, minum air banyak, jangan terlalu penat. Kalau sakit kepala teruk, muntah atau sesak nafas, turun ke tempat rendah dan dapatkan bantuan.",
+   "en": "High altitude: Siguniang is around 3,000m+, and the valleys can go higher. Walk slowly, drink plenty of water and don't overexert. If you get a severe headache, vomiting or shortness of breath, go lower and get help.",
+   "id": "r1"
+  },
+  {
+   "ic": "❄️",
+   "ms": "Sejuk dan bersalji: suhu boleh jatuh jauh bawah 0°C di gunung. Bawa thermal, jaket tebal, sarung tangan kalis air dan kasut yang tak licin.",
+   "en": "Cold and snowy: mountain temperatures can drop well below 0°C. Bring thermals, a thick jacket, waterproof gloves and non-slip shoes.",
+   "id": "r2"
+  },
+  {
+   "ic": "🍱",
+   "ms": "Bawa makanan RTE untuk makan tengah hari di Shuangqiao, Bipenggou dan Xiling. Pilihan halal di kawasan scenic terhad.",
+   "en": "Bring RTE food for lunch at Shuangqiao, Bipenggou and Xiling. Halal options inside scenic areas are limited.",
+   "id": "r3"
+  },
+  {
+   "ic": "😴",
+   "ms": "Malam 7 Jan: tidur di airport TFU lepas imigresen sampai 4am. Simpan barang berharga dekat badan, dan bawa bantal leher serta jaket.",
+   "en": "Night of 7 Jan: sleep at TFU airport after immigration until 4am. Keep valuables close and bring a neck pillow and jacket.",
+   "id": "r4"
+  },
+  {
+   "ic": "⏰",
+   "ms": "Hari 4 mula 6am, tapi malam sebelumnya check-in 8pm dan makan 9pm. Tidur awal!",
+   "en": "Day 4 starts at 6am, and the night before has an 8pm check-in and 9pm dinner. Sleep early!",
+   "id": "r5"
+  },
+  {
+   "ic": "🛂",
+   "ms": "Tak perlu visa: rakyat Malaysia boleh masuk China tanpa visa sehingga 30 hari.",
+   "en": "No visa needed: Malaysians can enter China visa-free for up to 30 days.",
+   "id": "r6"
+  },
+  {
+   "ic": "📶",
+   "ms": "Pasang eSIM roaming dan set up Alipay (pautkan kad) sebelum terbang. Google dan WhatsApp disekat tanpa roaming.",
+   "en": "Install a roaming eSIM and set up Alipay (link your card) before you fly. Google and WhatsApp are blocked without roaming.",
+   "id": "r7"
+  },
+  {
+   "ic": "🛫",
+   "ms": "Flight balik 12 Jan pukul 23:55. Sampai TFU paling lewat 20:55 (3 jam awal); airport tu sekitar 1 jam dari bandar.",
+   "en": "Return flight on 12 Jan at 23:55. Be at TFU by 20:55 (3h early); the airport is about 1h from the city.",
+   "id": "r8"
+  }
+ ],
+ "flights": [
+  {
+   "date": "2027-01-07",
+   "from": "KUL",
+   "fromT": "18:05 · KLIA T2",
+   "to": "TFU",
+   "toT": "22:40",
+   "info": "AirAsia X · D7 326",
+   "note": {
+    "ms": "Imigresen di TFU, kemudian tidur di airport",
+    "en": "Immigration at TFU, then sleep at the airport"
+   },
+   "id": "f9"
+  },
+  {
+   "date": "2027-01-12",
+   "from": "TFU",
+   "fromT": "23:55",
+   "to": "KUL",
+   "toT": "04:50 · 13 Jan",
+   "info": "AirAsia X · D7 327",
+   "note": {
+    "ms": "Flight malam, sampai KL awal pagi Rabu",
+    "en": "Overnight flight, lands in KL early Wednesday"
+   },
+   "id": "fa"
+  }
+ ],
+ "costs": {
+  "transport": [
+   {
+    "ms": "Private driver (van Hari 2–3)",
+    "en": "Private driver (van, Days 2–3)",
+    "rm": 290,
+    "id": "cb"
+   },
+   {
+    "ms": "Bas ke Xiling",
+    "en": "Bus to Xiling",
+    "rm": 26,
+    "id": "cc"
+   },
+   {
+    "ms": "Balik dari Xiling (bas/tren)",
+    "en": "Back from Xiling (bus/train)",
+    "rm": 26,
+    "id": "cd"
+   },
+   {
+    "ms": "Tren Dujiangyan (pergi-balik)",
+    "en": "Dujiangyan train (return)",
+    "rm": 15,
+    "id": "ce"
+   }
+  ],
+  "hotel": [
+   {
+    "ms": "Hotel Siguniang (1 malam)",
+    "en": "Siguniang hotel (1 night)",
+    "rm": 17,
+    "id": "cf"
+   },
+   {
+    "ms": "Hotel Chengdu (3 malam)",
+    "en": "Chengdu hotel (3 nights)",
+    "rm": 50,
+    "id": "cg"
+   }
+  ],
+  "fees": [
+   {
+    "ms": "Shuangqiao Valley",
+    "en": "Shuangqiao Valley",
+    "rm": 92,
+    "student": 68,
+    "id": "ch"
+   },
+   {
+    "ms": "Bipenggou Valley",
+    "en": "Bipenggou Valley",
+    "rm": 117,
+    "id": "ci"
+   },
+   {
+    "ms": "Xiling Mountain (cable car)",
+    "en": "Xiling Mountain (cable car)",
+    "rm": 140,
+    "id": "cj"
+   },
+   {
+    "ms": "Dujiangyan Panda Valley",
+    "en": "Dujiangyan Panda Valley",
+    "rm": 34,
+    "id": "ck"
+   },
+   {
+    "ms": "Dujiangyan Scenic Area",
+    "en": "Dujiangyan Scenic Area",
+    "rm": 49,
+    "id": "cl"
+   }
+  ],
+  "notIncluded": {
+   "ms": "Tak termasuk: tiket flight, makan, permainan salji di Panyanghu, ole-ole dan belanja peribadi.",
+   "en": "Not included: flights, food, snow games at Panyanghu, souvenirs and personal spending."
+  }
+ },
+ "days": [
+  {
+   "date": "2027-01-07",
+   "map": "",
+   "title": {
+    "ms": "Bertolak ke Chengdu",
+    "en": "Fly to Chengdu"
+   },
+   "city": "KLIA T2 → TFU",
+   "pace": "easy",
+   "stops": [
+    {
+     "t": "15:00",
+     "h": {
+      "ms": "Sampai KLIA Terminal 2",
+      "en": "Arrive at KLIA Terminal 2"
+     },
+     "p": {
+      "ms": "Sekitar 3 jam sebelum flight antarabangsa.",
+      "en": "About 3 hours before an international flight."
+     },
+     "id": "sm",
+     "kind": "stop"
+    },
+    {
+     "t": "18:05",
+     "h": {
+      "ms": "Flight AirAsia X D7 326 → Chengdu",
+      "en": "AirAsia X D7 326 → Chengdu"
+     },
+     "id": "sn",
+     "kind": "stop"
+    },
+    {
+     "t": "22:40",
+     "h": {
+      "ms": "Tiba TFU · imigresen",
+      "en": "Arrive TFU · immigration"
+     },
+     "map": "成都天府国际机场",
+     "city": "成都",
+     "id": "so",
+     "kind": "stop"
+    },
+    {
+     "t": "23:30",
+     "h": {
+      "ms": "Tidur di airport sampai 4am",
+      "en": "Sleep at the airport until 4am"
+     },
+     "id": "sp",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270107",
+   "food": [
+    "tfu"
+   ],
+   "alt": 50,
+   "place": "KLIA",
+   "img": "skyline"
+  },
+  {
+   "date": "2027-01-08",
+   "map": "d2",
+   "title": {
+    "ms": "Checkpoint 1: Siguniang",
+    "en": "Checkpoint 1: Siguniang"
+   },
+   "city": "Siguniang",
+   "pace": "busy",
+   "stops": [
+    {
+     "t": "04:00",
+     "h": {
+      "ms": "Bangun & bersiap",
+      "en": "Wake up & get ready"
+     },
+     "id": "sq",
+     "kind": "stop"
+    },
+    {
+     "t": "05:00",
+     "h": {
+      "ms": "Tunggu van ambil",
+      "en": "Wait for van pickup"
+     },
+     "id": "sr",
+     "kind": "stop"
+    },
+    {
+     "kind": "move",
+     "h": {
+      "ms": "Van ke Siguniang · ~4 jam (via Wolong)",
+      "en": "Van to Siguniang · ~4h (via Wolong)"
+     },
+     "id": "ss"
+    },
+    {
+     "t": "09:00",
+     "h": {
+      "ms": "Sampai Siguniang",
+      "en": "Arrive Siguniang"
+     },
+     "map": "四姑娘山",
+     "city": "小金县",
+     "id": "st",
+     "kind": "stop"
+    },
+    {
+     "t": "09:30",
+     "h": {
+      "ms": "Sarapan (RTE / restoran halal)",
+      "en": "Breakfast (RTE / halal restaurant)"
+     },
+     "id": "su",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Scenic: Shuangqiao Valley",
+      "en": "Scenic: Shuangqiao Valley"
+     },
+     "p": {
+      "ms": "RM92 dewasa · RM68 pelajar. Bawa RTE untuk makan tengah hari.",
+      "en": "RM92 adult · RM68 student. Bring RTE for lunch."
+     },
+     "map": "双桥沟",
+     "city": "小金县",
+     "links": [
+      {
+       "l": "TikTok",
+       "u": "https://vt.tiktok.com/ZSs15VLDf/"
+      },
+      {
+       "l": "Trip.com",
+       "u": "https://my.trip.com/travel-guide/attraction/xiaojin/mount-siguniang-87387?poiType=3&curr=MYR&locale=en-MY&scene=ticket"
+      }
+     ],
+     "id": "sv",
+     "kind": "stop"
+    },
+    {
+     "t": "16:00",
+     "h": {
+      "ms": "Check-in hotel",
+      "en": "Hotel check-in"
+     },
+     "p": {
+      "ms": "RM17 seorang.",
+      "en": "RM17 per person."
+     },
+     "links": [
+      {
+       "l": "Hotel",
+       "u": "https://www.trip.com/w/0lSGbSFzFX2"
+      }
+     ],
+     "id": "sw",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270108",
+   "food": [
+    "siguniang"
+   ],
+   "alt": 3160,
+   "place": "Siguniang",
+   "img": "siguniang"
+  },
+  {
+   "date": "2027-01-09",
+   "map": "d3",
+   "title": {
+    "ms": "Checkpoint 2: Bipenggou",
+    "en": "Checkpoint 2: Bipenggou"
+   },
+   "city": "Bipenggou → Chengdu",
+   "pace": "busy",
+   "stops": [
+    {
+     "t": "08:00",
+     "h": {
+      "ms": "Check-out & sarapan",
+      "en": "Check out & breakfast"
+     },
+     "id": "sx",
+     "kind": "stop"
+    },
+    {
+     "t": "09:00",
+     "h": {
+      "ms": "Bertolak ke Bipenggou",
+      "en": "Leave for Bipenggou"
+     },
+     "id": "sy",
+     "kind": "stop"
+    },
+    {
+     "kind": "move",
+     "h": {
+      "ms": "Van ke Bipenggou · ~3 jam",
+      "en": "Van to Bipenggou · ~3h"
+     },
+     "id": "sz"
+    },
+    {
+     "kind": "section",
+     "h": {
+      "ms": "Scenic: Bipenggou Valley (RM117)",
+      "en": "Scenic: Bipenggou Valley (RM117)"
+     },
+     "id": "s10"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Longwahai Lake",
+      "en": "Longwahai Lake"
+     },
+     "p": {
+      "ms": "Jalan sekitar 1–1.5km dan nikmati pemandangan.",
+      "en": "Walk about 1–1.5km and enjoy the view."
+     },
+     "map": "毕棚沟 龙王海",
+     "city": "理县",
+     "id": "s11",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Shanghaizi",
+      "en": "Shanghaizi"
+     },
+     "p": {
+      "ms": "Naik shuttle bas elektrik kecil, dan makan di food court (boleh makan RTE).",
+      "en": "Board the small electric shuttle bus and eat at the food court (RTE allowed)."
+     },
+     "id": "s12",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Panyanghu",
+      "en": "Panyanghu"
+     },
+     "p": {
+      "ms": "Snowmobile, snow tubing, ski, skateboard dan lain-lain (bayar setiap permainan).",
+      "en": "Snowmobile, snow tubing, skiing, skateboarding and more (pay per game)."
+     },
+     "opt": true,
+     "id": "s13",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Yanziyanwo",
+      "en": "Yanziyanwo"
+     },
+     "p": {
+      "ms": "Pemandangan puncak gunung. Sumpah lawa 💯",
+      "en": "Peak view of the mountain. Seriously stunning 💯"
+     },
+     "id": "s14",
+     "kind": "stop"
+    },
+    {
+     "t": "16:00",
+     "h": {
+      "ms": "Gerak balik ke Chengdu",
+      "en": "Head back to Chengdu"
+     },
+     "id": "s15",
+     "kind": "stop"
+    },
+    {
+     "kind": "move",
+     "h": {
+      "ms": "Van ke Chengdu · ~4 jam",
+      "en": "Van to Chengdu · ~4h"
+     },
+     "id": "s16"
+    },
+    {
+     "t": "20:00",
+     "h": {
+      "ms": "Check-in hotel Chengdu",
+      "en": "Chengdu hotel check-in"
+     },
+     "p": {
+      "ms": "RM50 seorang untuk 3 malam.",
+      "en": "RM50 per person for 3 nights."
+     },
+     "id": "s17",
+     "kind": "stop"
+    },
+    {
+     "t": "21:00",
+     "h": {
+      "ms": "Makan malam: mala hotpot (TBC)",
+      "en": "Dinner: mala hotpot (TBC)"
+     },
+     "id": "s18",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270109",
+   "food": [
+    "bipenggou",
+    "chengdu"
+   ],
+   "alt": 3000,
+   "place": "Bipenggou",
+   "img": "bipenggou"
+  },
+  {
+   "date": "2027-01-10",
+   "map": "d4",
+   "title": {
+    "ms": "Checkpoint 3: Xiling Mountain",
+    "en": "Checkpoint 3: Xiling Mountain"
+   },
+   "city": "Xiling",
+   "pace": "moderate",
+   "stops": [
+    {
+     "t": "06:00",
+     "h": {
+      "ms": "Ke checkpoint bas",
+      "en": "Go to the bus checkpoint"
+     },
+     "p": {
+      "ms": "RM26",
+      "en": "RM26"
+     },
+     "id": "s19",
+     "kind": "stop"
+    },
+    {
+     "t": "07:00",
+     "h": {
+      "ms": "Bas ke Xiling Mountain",
+      "en": "Bus to Xiling Mountain"
+     },
+     "id": "s1a",
+     "kind": "stop"
+    },
+    {
+     "kind": "move",
+     "h": {
+      "ms": "Bas · ~3 jam",
+      "en": "Bus · ~3h"
+     },
+     "id": "s1b"
+    },
+    {
+     "t": "10:00",
+     "h": {
+      "ms": "Sampai Xiling Mountain 🚡",
+      "en": "Arrive at Xiling Mountain 🚡"
+     },
+     "p": {
+      "ms": "Tiket RM140 termasuk: ski, slide (3 permainan), banana boat dan main salji.",
+      "en": "RM140 ticket includes: skiing, slide (3 games), banana boat and snow play."
+     },
+     "map": "西岭雪山",
+     "city": "大邑县",
+     "id": "s1c",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Balik ke Chengdu (bas/tren)",
+      "en": "Back to Chengdu (bus/train)"
+     },
+     "p": {
+      "ms": "RM26",
+      "en": "RM26"
+     },
+     "id": "s1d",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Free & easy: jalan-jalan area masjid",
+      "en": "Free & easy: explore around the mosque"
+     },
+     "map": "皇城清真寺",
+     "city": "成都",
+     "id": "s1e",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Bawa makanan RTE",
+      "en": "Bring RTE food"
+     },
+     "id": "s1f",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270110",
+   "food": [
+    "xiling",
+    "chengdu"
+   ],
+   "alt": 2400,
+   "place": "Xiling"
+  },
+  {
+   "date": "2027-01-11",
+   "map": "d5",
+   "title": {
+    "ms": "Chengdu City · Dujiangyan",
+    "en": "Chengdu City · Dujiangyan"
+   },
+   "city": "Dujiangyan",
+   "pace": "moderate",
+   "stops": [
+    {
+     "t": "",
+     "h": {
+      "ms": "Tren ke Dujiangyan (pergi-balik)",
+      "en": "Train to Dujiangyan (return)"
+     },
+     "p": {
+      "ms": "RM15",
+      "en": "RM15"
+     },
+     "id": "s1g",
+     "kind": "stop"
+    },
+    {
+     "kind": "move",
+     "h": {
+      "ms": "Tren · ~1 jam",
+      "en": "Train · ~1h"
+     },
+     "id": "s1h"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Dujiangyan Panda Valley",
+      "en": "Dujiangyan Panda Valley"
+     },
+     "p": {
+      "ms": "RM34",
+      "en": "RM34"
+     },
+     "map": "都江堰熊猫谷",
+     "city": "都江堰",
+     "id": "s1i",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Bookstore",
+      "en": "Bookstore"
+     },
+     "id": "s1j",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Dujiangyan Scenic Area",
+      "en": "Dujiangyan Scenic Area"
+     },
+     "p": {
+      "ms": "RM49",
+      "en": "RM49"
+     },
+     "map": "都江堰景区",
+     "city": "都江堰",
+     "id": "s1k",
+     "kind": "stop"
+    },
+    {
+     "t": "",
+     "h": {
+      "ms": "Dujiangyan Old Town",
+      "en": "Dujiangyan Old Town"
+     },
+     "p": {
+      "ms": "Beli ole-ole.",
+      "en": "Shop for souvenirs."
+     },
+     "map": "都江堰古城",
+     "city": "都江堰",
+     "id": "s1l",
+     "kind": "stop"
+    },
+    {
+     "t": "21:00",
+     "h": {
+      "ms": "Balik ke Chengdu",
+      "en": "Back to Chengdu"
+     },
+     "id": "s1m",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270111",
+   "food": [
+    "dujiangyan"
+   ],
+   "alt": 700,
+   "place": "Dujiangyan",
+   "img": [
+    "dujiangyan",
+    "panda"
+   ]
+  },
+  {
+   "date": "2027-01-12",
+   "map": "",
+   "title": {
+    "ms": "Chengdu · free & easy, terbang balik",
+    "en": "Chengdu · free & easy, fly home"
+   },
+   "city": "Chengdu → TFU",
+   "pace": "easy",
+   "stops": [
+    {
+     "t": "",
+     "h": {
+      "ms": "Free & easy",
+      "en": "Free & easy"
+     },
+     "p": {
+      "ms": "Check-out hotel dan simpan beg (tanya hotel untuk simpan beg).",
+      "en": "Check out and store your bags (ask the hotel to hold them)."
+     },
+     "id": "s1n",
+     "kind": "stop"
+    },
+    {
+     "t": "19:30",
+     "h": {
+      "ms": "Ambil beg & gerak ke airport",
+      "en": "Collect bags & head to the airport"
+     },
+     "id": "s1o",
+     "kind": "stop"
+    },
+    {
+     "kind": "move",
+     "h": {
+      "ms": "Didi / Metro ke TFU · ~1 jam",
+      "en": "Didi / Metro to TFU · ~1h"
+     },
+     "id": "s1p"
+    },
+    {
+     "t": "20:55",
+     "h": {
+      "ms": "Sampai TFU · check-in",
+      "en": "Arrive TFU · check in"
+     },
+     "map": "成都天府国际机场",
+     "city": "成都",
+     "id": "s1q",
+     "kind": "stop"
+    },
+    {
+     "t": "23:55",
+     "h": {
+      "ms": "Flight AirAsia X D7 327 → KL",
+      "en": "AirAsia X D7 327 → KL"
+     },
+     "id": "s1r",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270112",
+   "food": [
+    "chengdu"
+   ],
+   "alt": 500,
+   "place": "Chengdu",
+   "img": "panda2"
+  },
+  {
+   "date": "2027-01-13",
+   "map": "",
+   "title": {
+    "ms": "Sampai KL",
+    "en": "Back in KL"
+   },
+   "city": "KLIA T2",
+   "pace": "easy",
+   "stops": [
+    {
+     "t": "04:50",
+     "h": {
+      "ms": "Tiba KLIA Terminal 2 🏠",
+      "en": "Arrive at KLIA Terminal 2 🏠"
+     },
+     "p": {
+      "ms": "Cuti separuh hari pagi, rehat dulu.",
+      "en": "Half-day leave in the morning, so get some rest."
+     },
+     "id": "s1s",
+     "kind": "stop"
+    }
+   ],
+   "id": "d20270113",
+   "alt": 50,
+   "place": "KLIA"
+  }
+ ],
+ "packing": {
+  "documents": [
+   [
+    "Pasport (sah 6 bulan ke atas)",
+    "Passport (6+ months valid)"
+   ],
+   [
+    "E-tiket flight (offline)",
+    "Flight e-tickets (offline)"
+   ],
+   [
+    "Tempahan hotel (offline)",
+    "Hotel bookings (offline)"
+   ],
+   [
+    "Insurans perjalanan",
+    "Travel insurance"
+   ],
+   [
+    "Kad dipautkan ke Alipay",
+    "Card linked to Alipay"
+   ],
+   [
+    "Duit tunai CNY",
+    "Some CNY cash"
+   ]
+  ],
+  "clothing": [
+   [
+    "Baju thermal (atas & bawah)",
+    "Thermal top & bottom"
+   ],
+   [
+    "Jaket tebal / down jacket",
+    "Thick / down jacket"
+   ],
+   [
+    "Sweater atau hoodie",
+    "Sweater or hoodie"
+   ],
+   [
+    "Seluar kalis air",
+    "Waterproof pants"
+   ],
+   [
+    "Kasut salji kalis air (tak licin)",
+    "Waterproof non-slip snow boots"
+   ],
+   [
+    "Stokin bulu ×4",
+    "Wool socks ×4"
+   ],
+   [
+    "Sarung tangan kalis air",
+    "Waterproof gloves"
+   ],
+   [
+    "Beanie & neck warmer",
+    "Beanie & neck warmer"
+   ],
+   [
+    "Cermin mata hitam (silau salji)",
+    "Sunglasses (snow glare)"
+   ]
+  ],
+  "toiletries": [
+   [
+    "Berus & ubat gigi",
+    "Toothbrush & toothpaste"
+   ],
+   [
+    "Pelembap & lip balm (udara kering)",
+    "Moisturiser & lip balm (dry air)"
+   ],
+   [
+    "Sunblock",
+    "Sunscreen"
+   ],
+   [
+    "Tisu & tisu basah",
+    "Tissues & wet wipes"
+   ]
+  ],
+  "electronics": [
+   [
+    "Telefon + pengecas",
+    "Phone + charger"
+   ],
+   [
+    "Power bank (sejuk cepat habis bateri)",
+    "Power bank (cold drains batteries)"
+   ],
+   [
+    "Adapter universal",
+    "Universal adapter"
+   ],
+   [
+    "eSIM dipasang & diuji",
+    "eSIM installed & tested"
+   ]
+  ],
+  "medication": [
+   [
+    "Ubat peribadi",
+    "Personal medication"
+   ],
+   [
+    "Paracetamol",
+    "Paracetamol"
+   ],
+   [
+    "Ubat selsema",
+    "Cold & flu meds"
+   ],
+   [
+    "Ubat perut",
+    "Stomach meds"
+   ],
+   [
+    "Tanya doktor pasal ubat altitud",
+    "Ask a doctor about altitude meds"
+   ]
+  ],
+  "food": [
+   [
+    "Makanan RTE (untuk 3 hari scenic)",
+    "RTE meals (for 3 scenic days)"
+   ],
+   [
+    "Snek & coklat",
+    "Snacks & chocolate"
+   ],
+   [
+    "Botol air / termos",
+    "Water bottle / thermos"
+   ],
+   [
+    "Pemanas tangan (hand warmer)",
+    "Hand warmers"
+   ]
+  ],
+  "other": [
+   [
+    "Bantal leher (tidur di airport)",
+    "Neck pillow (airport nap)"
+   ],
+   [
+    "Sejadah kecil",
+    "Compact prayer mat"
+   ],
+   [
+    "Beg galas kecil",
+    "Small daypack"
+   ],
+   [
+    "Plastik zip untuk telefon (salji)",
+    "Zip bag for phone (snow)"
+   ]
+  ]
+ },
+ "apps": [
+  {
+   "cat": "hotels",
+   "name": "Trip.com",
+   "url": "https://www.trip.com",
+   "ms": "Hotel, tren dan tiket tarikan di China. Terima kad Malaysia.",
+   "en": "Hotels, trains and attraction tickets in China. Takes Malaysian cards.",
+   "id": "a1t"
+  },
+  {
+   "cat": "hotels",
+   "name": "Agoda",
+   "url": "https://www.agoda.com",
+   "ms": "Banding harga hotel.",
+   "en": "Compare hotel prices.",
+   "id": "a1u"
+  },
+  {
+   "cat": "food",
+   "name": "HalalTrip",
+   "url": "https://www.halaltrip.com",
+   "ms": "Panduan restoran halal dan masjid.",
+   "en": "Halal restaurant and mosque guide.",
+   "id": "a1v"
+  },
+  {
+   "cat": "food",
+   "name": "Muslim Pro",
+   "url": "https://www.muslimpro.com",
+   "ms": "Waktu solat, kiblat dan tempat halal.",
+   "en": "Prayer times, qibla and halal places.",
+   "id": "a1w"
+  },
+  {
+   "cat": "food",
+   "name": "Dianping (大众点评)",
+   "url": "https://www.dianping.com",
+   "ms": "Ulasan restoran. Cari \"清真\" untuk halal.",
+   "en": "Restaurant reviews. Search \"清真\" for halal.",
+   "id": "a1x"
+  },
+  {
+   "cat": "maps",
+   "name": "Amap (高德)",
+   "url": "https://www.amap.com",
+   "ms": "Peta paling tepat di China. Pautan 📍 dalam app buka di sini.",
+   "en": "The most accurate map in China. The 📍 links open here.",
+   "id": "a1y"
+  },
+  {
+   "cat": "maps",
+   "name": "Apple Maps",
+   "url": "https://www.apple.com/maps/",
+   "ms": "Berfungsi baik di China untuk pengguna iPhone.",
+   "en": "Works well in China for iPhone users.",
+   "id": "a1z"
+  },
+  {
+   "cat": "transport",
+   "name": "Didi",
+   "url": "https://www.didiglobal.com",
+   "ms": "Grab versi China. Boleh guna dalam Alipay.",
+   "en": "China's Grab. Works inside Alipay.",
+   "id": "a20"
+  },
+  {
+   "cat": "transport",
+   "name": "12306 / Trip.com trains",
+   "url": "https://www.12306.cn/en/",
+   "ms": "Tiket tren ke Dujiangyan. Perlu pasport.",
+   "en": "Train tickets to Dujiangyan. Needs your passport.",
+   "id": "a21"
+  },
+  {
+   "cat": "essentials",
+   "name": "Alipay",
+   "url": "https://global.alipay.com",
+   "ms": "Bayar hampir semua benda, termasuk metro.",
+   "en": "Pay for almost everything, including the metro.",
+   "id": "a22"
+  },
+  {
+   "cat": "essentials",
+   "name": "WeChat",
+   "url": "https://www.wechat.com",
+   "ms": "Mesej dan WeChat Pay.",
+   "en": "Messaging and WeChat Pay.",
+   "id": "a23"
+  },
+  {
+   "cat": "essentials",
+   "name": "Airalo eSIM",
+   "url": "https://www.airalo.com",
+   "ms": "Data yang masih boleh guna WhatsApp dan Google di China.",
+   "en": "Data that keeps WhatsApp and Google working in China.",
+   "id": "a24"
+  },
+  {
+   "cat": "essentials",
+   "name": "Google Translate",
+   "url": "https://translate.google.com",
+   "ms": "Muat turun bahasa Cina untuk offline.",
+   "en": "Download Chinese for offline use.",
+   "id": "a25"
+  }
+ ],
+ "expenses": {
+  "url": "https://docs.google.com/spreadsheets/d/1-40Gj4tMFFMjDaWg3-fWSPVn81xYNLZ9ZWzq45ZG1s0/edit?usp=drivesdk",
+  "title": "Expenses Tracker",
+  "by": "CA Muhammad Aiman, Finance Executive"
+ },
+ "halal": [
+  {
+   "id": "h1",
+   "area": "chengdu",
+   "name": "Tianfanglou (天方楼)",
+   "map": "天方楼 皇城清真寺",
+   "city": "成都",
+   "ms": "Tingkat bawah Masjid Huangcheng. Masakan halal Sichuan & Xinjiang: big plate chicken (大盘鸡), sate kambing.",
+   "en": "Ground floor of Huangcheng Mosque. Halal Sichuan & Xinjiang food: big plate chicken (大盘鸡), lamb skewers.",
+   "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
+  },
+  {
+   "id": "h2",
+   "area": "chengdu",
+   "name": "Kawasan Masjid Huangcheng (皇城清真寺)",
+   "map": "皇城清真寺",
+   "city": "成都",
+   "ms": "Ada sekitar 7 restoran halal di sekeliling masjid: mi tarik, hotpot dan lauk Sichuan. Sesuai untuk free & easy Hari 4.",
+   "en": "About 7 halal restaurants around the mosque: hand-pulled noodles, hotpot and Sichuan dishes. Good for free & easy on Day 4.",
+   "src": "https://www.kosmo.com.my/2026/09/20/tak-puas-nikmati-keindahan-chengdu-makanan-halal-pun-mudah/"
+  },
+  {
+   "id": "h3",
+   "area": "chengdu",
+   "name": "Yuexiangcun (清真粤香村)",
+   "map": "清真粤香村 东城根南街",
+   "city": "成都",
+   "ms": "Masakan Sichuan halal yang terkenal dalam komuniti Muslim Chengdu. 66–68 Dongchenggen South St.",
+   "en": "Halal Sichuan cuisine, well known among Chengdu's Muslim community. 66–68 Dongchenggen South St.",
+   "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
+  },
+  {
+   "id": "h4",
+   "area": "chengdu",
+   "name": "Huangchengba Beef (皇城坝牛肉馆)",
+   "map": "皇城坝牛肉馆",
+   "city": "成都",
+   "ms": "Antara restoran halal paling sibuk di Chengdu. Hidangan daging lembu.",
+   "en": "One of the busiest halal restaurants in Chengdu. Beef dishes.",
+   "src": "https://muslim2china.com/blog/Top-4-Chengdu-Halal-Restaurants-3095.html"
+  },
+  {
+   "id": "h5",
+   "area": "chengdu",
+   "name": "Hotpot halal: Niu Bu Bi (清真牛不比火锅)",
+   "map": "清真牛不比火锅",
+   "city": "成都",
+   "ms": "Pilihan untuk dinner mala hotpot Hari 3 (Yingmenkou). Status halal belum disahkan sumber, jadi tanya dulu.",
+   "en": "Option for the Day 3 mala hotpot dinner (Yingmenkou). The source hasn't verified halal status, so ask first.",
+   "src": "https://wildgreatwall.com/halal-restaurants-in-chengdu-china/"
+  },
+  {
+   "id": "h6",
+   "area": "siguniang",
+   "name": "Restoran halal dekat Masjid Siguniang (四姑娘山清真寺)",
+   "map": "四姑娘山清真寺",
+   "city": "小金县",
+   "ms": "Pekan Siguniang ada masjid. Pengembara Malaysia lapor ada satu restoran halal sahaja di pekan ni (nama tak disebut). Tanya penduduk: \"清真餐厅在哪里?\"",
+   "en": "Siguniang town has a mosque. A Malaysian traveller reported just one halal restaurant in town (not named). Ask locals: \"清真餐厅在哪里?\"",
+   "src": "https://www.kosmo.com.my/2026/09/20/tak-puas-nikmati-keindahan-chengdu-makanan-halal-pun-mudah/"
+  },
+  {
+   "id": "h7",
+   "area": "bipenggou",
+   "name": "Tiada restoran halal dijumpai",
+   "map": "",
+   "city": "",
+   "ms": "Kedai di Bipenggou kebanyakannya hotpot yak/Tibet (tak halal). Bawa RTE dan makan di food court Shanghaizi.",
+   "en": "Eateries at Bipenggou are mostly yak/Tibetan hotpot (not halal). Bring RTE and eat at the Shanghaizi food court.",
+   "src": ""
+  },
+  {
+   "id": "h8",
+   "area": "xiling",
+   "name": "Tiada restoran halal dijumpai",
+   "map": "",
+   "city": "",
+   "ms": "Restoran di Xiling dan pekan Dayi masakan biasa (banyak babi). Bawa RTE untuk tengah hari.",
+   "en": "Restaurants at Xiling and Dayi town serve regular food (lots of pork). Bring RTE for lunch.",
+   "src": ""
+  },
+  {
+   "id": "h9",
+   "area": "dujiangyan",
+   "name": "Jalan Selatan, Old Town (南街 · 灌县古城)",
+   "map": "灌县古城 南街 清真寺",
+   "city": "都江堰",
+   "ms": "Kawasan komuniti Hui dengan Masjid Nanjie dan kedai makan halal. Terkenal dengan daging lembu halal. Sesuai masa beli ole-ole Hari 5.",
+   "en": "Hui neighbourhood with Nanjie Mosque and halal eateries, famous for halal beef. Fits the Day 5 souvenir stop.",
+   "src": "https://www.meet99.com/jingdian-guanxiangucheng-122285.html"
+  },
+  {
+   "id": "h10",
+   "area": "tfu",
+   "name": "Tianfu Airport (TFU)",
+   "map": "",
+   "city": "",
+   "ms": "Ada laporan makanan halal di terminal, tapi flight tiba 22:40 dan banyak kedai dah tutup. Bawa snek untuk malam tu.",
+   "en": "Halal food is reported in the terminals, but you land at 22:40 when many outlets are closed. Bring snacks for that night.",
+   "src": "https://chinaairlinetravel.com/airport-guide/chengdu-tianfu/restaurants.html"
+  }
+ ],
+ "halalTips": {
+  "ms": "Cari papan tanda 清真 atau حلال. Dalam Dianping, cari \"清真\". Ada restoran \"halal\" di China yang jual arak, jadi pilih yang tiada arak dan tanya bila ragu.",
+  "en": "Look for the 清真 or حلال sign. On Dianping, search \"清真\". Some \"halal\" restaurants in China sell alcohol, so pick ones without it and ask when unsure."
+ },
+ "split": {
+  "rate": 0.61,
+  "people": [
+   {
+    "id": "p1",
+    "name": "Yoi"
+   },
+   {
+    "id": "p2",
+    "name": "Aiman"
+   }
+  ],
+  "items": []
+ },
+ "photos": {
+  "skyline": {
+   "file": "在成都遥望雪山 Chengdu skyline with a view of Mount Siguniang.jpg",
+   "by": "书剑飘零",
+   "lic": "CC BY-SA 4.0",
+   "alt": {
+    "ms": "Chengdu, Siguniang di belakang",
+    "en": "Chengdu with Siguniang behind"
+   }
+  },
+  "siguniang": {
+   "file": "四姑娘山景区 Mount Siguniang Scenic Area 45.jpg",
+   "by": "George N",
+   "lic": "CC BY 2.0",
+   "alt": {
+    "ms": "Gunung Siguniang",
+    "en": "Mount Siguniang"
+   }
+  },
+  "bipenggou": {
+   "file": "毕棚沟.jpg",
+   "by": "Wikimedia Commons",
+   "lic": "CC BY-SA",
+   "alt": {
+    "ms": "Lembah Bipenggou",
+    "en": "Bipenggou Valley"
+   }
+  },
+  "dujiangyan": {
+   "file": "Dujiangyan_irrigation_system,_Sichuan,_China.JPG",
+   "by": "Isabelle (Naama) Liu",
+   "lic": "CC BY-SA 3.0",
+   "alt": {
+    "ms": "Sistem pengairan Dujiangyan",
+    "en": "Dujiangyan irrigation system"
+   }
+  },
+  "panda": {
+   "file": "Giant Panda at Chengdu Panda Base.jpg",
+   "by": "Mikael Häggström",
+   "lic": "Public domain",
+   "alt": {
+    "ms": "Panda gergasi",
+    "en": "Giant panda"
+   }
+  },
+  "panda2": {
+   "file": "Chengdu Panda (46774337332).jpg",
+   "by": "David Stanley",
+   "lic": "CC BY 2.0",
+   "alt": {
+    "ms": "Panda di Chengdu",
+    "en": "Panda in Chengdu"
+   }
+  }
+ },
+ "hero": "skyline",
+ "areaImg": {
+  "chengdu": "skyline",
+  "siguniang": "siguniang",
+  "bipenggou": "bipenggou",
+  "dujiangyan": "dujiangyan"
+ }
 }
